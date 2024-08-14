@@ -12,6 +12,7 @@ public class Employee {
     private float salary;
     private boolean isEmployed;
     private String[] addressCountryStateCity;
+
     public int getEmpId() {
         return empId;
     }
@@ -98,4 +99,17 @@ public class Employee {
                 ", addressCountryStateCity=" + Arrays.toString(addressCountryStateCity) +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        return this.empId == ((Employee) object).empId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(empId);
+    }
+
 }
