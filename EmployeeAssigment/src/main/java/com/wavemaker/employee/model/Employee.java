@@ -1,7 +1,5 @@
 package com.wavemaker.employee.model;
 
-import com.wavemaker.employee.constant.GenderConstant;
-
 import java.util.Objects;
 
 public class Employee {

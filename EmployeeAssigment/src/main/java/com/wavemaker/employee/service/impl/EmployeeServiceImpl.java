@@ -1,24 +1,18 @@
 package com.wavemaker.employee.service.impl;
 
 import com.wavemaker.employee.constant.Storage_Type;
+import com.wavemaker.employee.factory.EmployeeRepositoryFactory;
 import com.wavemaker.employee.model.Employee;
 import com.wavemaker.employee.repository.EmployeeRepository;
-import com.wavemaker.employee.repository.impl.InFileEmployeeRepository;
-import com.wavemaker.employee.repository.impl.InMemoryEmployeeRepository;
 import com.wavemaker.employee.service.EmployeeService;
 
 import java.util.List;
 
 public class EmployeeServiceImpl implements EmployeeService {
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
+
     public EmployeeServiceImpl(Storage_Type storageType) {
-        if (storageType == Storage_Type.IN_MEMORY) {
-            employeeRepository = new InMemoryEmployeeRepository();
-        } else if (storageType == Storage_Type.IN_FILE) {
-            employeeRepository = new InFileEmployeeRepository();
-        } else {
-            throw new IllegalArgumentException("Invalid storage type provided.");
-        }
+        employeeRepository = EmployeeRepositoryFactory.getEmployeeRepositoryInstance(storageType); //calling the employee factory;
     }
 
     @Override
