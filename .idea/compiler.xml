@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Vehicle_Assignment" />
         <module name="WavemakerTraining" />
+        <module name="EmployeeAssigment" />
       </profile>
     </annotationProcessing>
   </component>

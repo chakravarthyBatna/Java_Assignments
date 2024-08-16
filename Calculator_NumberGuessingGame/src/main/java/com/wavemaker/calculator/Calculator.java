@@ -1,16 +1,21 @@
 package com.wavemaker.calculator;
 
+import com.wavemaker.calculator.exception.InvalidOptionException;
+
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.calculate();
+        try {
+            calculator.calculate();
+        } catch (InvalidOptionException invalidOptionException) {
+            System.out.println(invalidOptionException.getMessage());
+        }
     }
 
-    public void calculate() {
+    public void calculate() throws InvalidOptionException {
         Calculate calculate = new Calculate();
         BigDecimal numOne = null, numTwo = null, answer = null;
         int choice;
@@ -23,14 +28,17 @@ public class Calculator {
             System.out.println("3 for Multiplication (*)");
             System.out.println("4 for Division (/)");
             choice = scanner.nextInt();
-
+            if (!(choice >= 1 && choice <= 4)) {
+                throw new InvalidOptionException("Invalid Option", 405);
+            }
             System.out.println("Enter First Number : ");
             numOne = scanner.nextBigDecimal();
             System.out.println("Enter Second Number : ");
             numTwo = scanner.nextBigDecimal();
 
             switch (choice) {
-                case 0 : System.exit(0);
+                case 0:
+                    System.exit(0);
                 case 1:
                     answer = calculate.addNum(numOne, numTwo);
                     System.out.println("Result: " + answer);
@@ -53,7 +61,7 @@ public class Calculator {
                     }
                     break;
                 default:
-                    System.out.println("Invalid selection! Please choose a valid operation.");
+                    throw new InvalidOptionException("Invalid Option", 405);
             }
 
         }
