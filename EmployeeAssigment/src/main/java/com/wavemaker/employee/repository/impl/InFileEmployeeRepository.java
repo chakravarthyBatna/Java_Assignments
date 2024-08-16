@@ -3,9 +3,11 @@ package com.wavemaker.employee.repository.impl;
 import com.wavemaker.employee.model.Employee;
 import com.wavemaker.employee.repository.EmployeeRepository;
 
+import java.io.File;
 import java.util.List;
 
 public class InFileEmployeeRepository implements EmployeeRepository {
+
     @Override
     public Employee getEmployeeById(int empId) {
         return null;
@@ -17,17 +19,22 @@ public class InFileEmployeeRepository implements EmployeeRepository {
     }
 
     @Override
-    public List<Employee> getAllEmployee() {
+    public List<Employee> getAllEmployeeDetails() {
         return List.of();
     }
 
     @Override
-    public boolean updateEmployee(Employee employee) {
-        return false;
+    public Employee updateEmployee(Employee employee) {
+        return null;
     }
 
     @Override
-    public boolean deleteEmployee(Employee employee) {
+    public Employee deleteEmployee(int empId) {
+        return null;
+    }
+
+    @Override
+    public boolean isEmployeeExists(int empId) {
         return false;
     }
 }

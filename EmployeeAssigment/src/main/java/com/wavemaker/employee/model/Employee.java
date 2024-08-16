@@ -2,10 +2,11 @@ package com.wavemaker.employee.model;
 
 import com.wavemaker.employee.constant.GenderConstant;
 
+import java.util.Objects;
+
 public class Employee {
     private int empId;
-    private String fistName;
-    private String lastName;
+    private String name;
     private String gender;
     private int age;
     private Department department;
@@ -17,22 +18,6 @@ public class Employee {
 
     public void setEmpId(int empId) {
         this.empId = empId;
-    }
-
-    public String getFistName() {
-        return fistName;
-    }
-
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public Department getDepartment() {
@@ -65,5 +50,38 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Employee employee = (Employee) object;
+        return empId == employee.empId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(empId);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", department=" + department +
+                ", address=" + address +
+                '}';
     }
 }

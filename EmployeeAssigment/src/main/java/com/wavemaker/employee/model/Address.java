@@ -1,9 +1,11 @@
 package com.wavemaker.employee.model;
 
+import java.util.Objects;
+
 public class Address {
     private int addressId;
     private String state;
-    private String city;
+    private String country;
     private int pincode;
 
     public int getAddressId() {
@@ -22,19 +24,42 @@ public class Address {
         this.state = state;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public int getPincode() {
         return pincode;
     }
 
     public void setPincode(int pincode) {
         this.pincode = pincode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Address address = (Address) object;
+        return addressId == address.addressId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(addressId);
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressId=" + addressId +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", pincode=" + pincode +
+                '}';
     }
 }

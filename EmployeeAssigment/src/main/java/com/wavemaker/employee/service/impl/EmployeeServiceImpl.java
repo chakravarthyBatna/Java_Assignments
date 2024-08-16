@@ -1,5 +1,6 @@
 package com.wavemaker.employee.service.impl;
 
+import com.wavemaker.employee.constant.Storage_Type;
 import com.wavemaker.employee.model.Employee;
 import com.wavemaker.employee.repository.EmployeeRepository;
 import com.wavemaker.employee.repository.impl.InFileEmployeeRepository;
@@ -10,37 +11,43 @@ import java.util.List;
 
 public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
-    private int userChoice;
-    public EmployeeServiceImpl(int userChoice) {
-        if (userChoice == 1) {
+    public EmployeeServiceImpl(Storage_Type storageType) {
+        if (storageType == Storage_Type.IN_MEMORY) {
             employeeRepository = new InMemoryEmployeeRepository();
-        } else {
+        } else if (storageType == Storage_Type.IN_FILE) {
             employeeRepository = new InFileEmployeeRepository();
+        } else {
+            throw new IllegalArgumentException("Invalid storage type provided.");
         }
-
     }
+
     @Override
     public Employee getEmployeeById(int empId) {
-        return null;
+        return employeeRepository.getEmployeeById(empId);
     }
 
     @Override
     public boolean addEmployee(Employee employee) {
-        return false;
+        return employeeRepository.addEmployee(employee);
     }
 
     @Override
-    public List<Employee> getAllEmployee() {
-        return List.of();
+    public List<Employee> getAllEmployeeDetails() {
+        return employeeRepository.getAllEmployeeDetails();
     }
 
     @Override
-    public boolean updateEmployee(Employee employee) {
-        return false;
+    public Employee updateEmployee(Employee employee) {
+        return employeeRepository.updateEmployee(employee);
     }
 
     @Override
-    public boolean deleteEmployee(Employee employee) {
-        return false;
+    public Employee deleteEmployee(int empId) {
+        return employeeRepository.deleteEmployee(empId);
+    }
+
+    @Override
+    public boolean isEmployeeExists(int empId) {
+        return employeeRepository.isEmployeeExists(empId);
     }
 }

@@ -5,7 +5,8 @@ import java.util.List;
 public interface EmployeeService {
     public Employee getEmployeeById(int empId);
     public boolean addEmployee(Employee employee);
-    public List<Employee> getAllEmployee();
-    public boolean updateEmployee(Employee employee);
-    public boolean deleteEmployee(Employee employee);
+    public List<Employee> getAllEmployeeDetails();
+    public Employee updateEmployee(Employee employee);
+    public Employee deleteEmployee(int empId);
+    public boolean isEmployeeExists(int empId);
 }
