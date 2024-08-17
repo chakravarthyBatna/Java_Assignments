@@ -84,7 +84,7 @@ public class EmployeeController {
     private static Employee updateEmployee(Scanner scanner) {
         Employee employee = EmployeeDataReaderUtil.fetchEmployeeDetails(scanner, "Update");
         employee.setAddress(EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Update"));
-        employeeService.addEmployee(employee);
+        employeeService.updateEmployee(employee);
         return employee;
     }
 

@@ -32,9 +32,6 @@ public class EmployeeDataReaderUtil {
         scanner.nextLine();
         if (userChoice == 1) {
             Address address = new Address();
-            System.out.println("Enter Address Id : ");
-            int addressId = scanner.nextInt();
-            scanner.nextLine();
             System.out.println("Enter Country :");
             String country = scanner.nextLine();
             System.out.println("Enter State : ");
@@ -42,7 +39,6 @@ public class EmployeeDataReaderUtil {
             System.out.println("Enter Pincode : ");
             int pincode = scanner.nextInt();
             scanner.nextLine();
-            address.setAddressId(addressId);
             address.setCountry(country);
             address.setState(state);
             address.setPincode(pincode);

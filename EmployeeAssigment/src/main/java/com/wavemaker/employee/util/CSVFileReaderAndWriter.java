@@ -1,5 +1,6 @@
 package com.wavemaker.employee.util;
 
+import com.wavemaker.employee.exception.DuplicateEmployeeRecordFoundException;
 import com.wavemaker.employee.exception.EmployeeFileReadException;
 import com.wavemaker.employee.exception.EmployeeFileWriteException;
 import com.wavemaker.employee.model.Employee;
@@ -12,6 +13,9 @@ public class CSVFileReaderAndWriter {
         this.file = file;
     }
     public boolean writeEmployee(Employee employee) throws EmployeeFileWriteException {
+        if (isEmployeeExists(employee.getEmpId())) {
+            throw new DuplicateEmployeeRecordFoundException("Employee with Id : ")
+        }
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(this.file, true));
@@ -33,6 +37,9 @@ public class CSVFileReaderAndWriter {
         }
     }
 
+    public Employee getEmployeeById(int empId) {
+
+    }
     public boolean isEmployeeExists(int empId) {
         BufferedReader reader = null;
         try {

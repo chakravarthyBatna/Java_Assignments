@@ -50,7 +50,7 @@ public class InFileEmployeeRepository implements EmployeeRepository {
     }
 
     @Override
-    public boolean isEmployeeExists(int empId) {
+    public boolean isEmployeeExists(int empId) throws ServerUnavilableException {
         boolean isOperationSuccess = false;
         try {
             isOperationSuccess = csvFileReaderAndWriter.isEmployeeExists(empId);
@@ -58,5 +58,6 @@ public class InFileEmployeeRepository implements EmployeeRepository {
         } catch (EmployeeFileReadException e) {
             throw new ServerUnavilableException("Server Unavailable while Reading the employee", 500);
         }
+        return isOperationSuccess;
     }
 }
