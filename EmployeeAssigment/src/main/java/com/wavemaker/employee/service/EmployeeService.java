@@ -1,6 +1,6 @@
 package com.wavemaker.employee.service;
 
-import com.wavemaker.employee.model.Employee;
+import com.wavemaker.employee.pojo.Employee;
 import java.util.List;
 public interface EmployeeService {
     public Employee getEmployeeById(int empId);

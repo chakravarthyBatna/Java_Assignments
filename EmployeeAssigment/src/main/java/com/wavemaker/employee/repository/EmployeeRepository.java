@@ -1,7 +1,7 @@
 package com.wavemaker.employee.repository;
 
-import com.wavemaker.employee.exception.DuplicateEmployeeRecordFoundException;
-import com.wavemaker.employee.model.Employee;
+import com.wavemaker.employee.exception.employee.DuplicateEmployeeRecordFoundException;
+import com.wavemaker.employee.pojo.Employee;
 
 import java.util.List;
 

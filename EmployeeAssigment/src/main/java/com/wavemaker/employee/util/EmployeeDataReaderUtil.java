@@ -1,7 +1,7 @@
 package com.wavemaker.employee.util;
 
-import com.wavemaker.employee.model.Address;
-import com.wavemaker.employee.model.Employee;
+import com.wavemaker.employee.pojo.Address;
+import com.wavemaker.employee.pojo.Employee;
 
 import java.util.Scanner;
 
@@ -32,6 +32,12 @@ public class EmployeeDataReaderUtil {
         scanner.nextLine();
         if (userChoice == 1) {
             Address address = new Address();
+            if (!operation.equals("Update")) {
+                System.out.println("Enter Employee Address Id");
+                int addressId = scanner.nextInt();
+                scanner.nextLine();
+                address.setAddressId(addressId);
+            }
             System.out.println("Enter Country :");
             String country = scanner.nextLine();
             System.out.println("Enter State : ");

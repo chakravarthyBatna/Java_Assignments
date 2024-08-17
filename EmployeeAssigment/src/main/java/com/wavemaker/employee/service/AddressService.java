@@ -1,8 +1,8 @@
-package com.wavemaker.employee.repository;
+package com.wavemaker.employee.service;
 
 import com.wavemaker.employee.pojo.Address;
 
-public interface AddressRepository {
+public interface AddressService {
     public Address getAddressByEmpId(int empId);
     public boolean addAddress(Address address);
     public Address deleteAddressByEmpId(int empId);
