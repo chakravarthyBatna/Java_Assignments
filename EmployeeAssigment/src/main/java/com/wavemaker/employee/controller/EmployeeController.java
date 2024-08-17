@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class EmployeeController {
     private static EmployeeService employeeService;
     private static AddressService addressService;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Storage_Type userStorageChoice = null;
@@ -37,8 +38,12 @@ public class EmployeeController {
             System.out.println("3. Get All Employees");
             System.out.println("4. Update Employee");
             System.out.println("5. Delete Employee");
-            System.out.println("6. Know That Employee Exists or Not");
-            System.out.println("7. Exit");
+            System.out.println("6. Know If Employee Exists or Not");
+            System.out.println("7. Get Address by Employee ID");
+            System.out.println("8. Delete Address by Employee ID");
+            System.out.println("9. Add Address by Employee ID");
+            System.out.println("10. Update Address by Employee ID");
+            System.out.println("11. Exit");
             System.out.println("Enter your choice:");
 
             userChoice = scanner.nextInt();
@@ -50,7 +55,7 @@ public class EmployeeController {
                     addEmployee(scanner);
                     break;
                 case 2:
-                    System.out.println("Enter Employee Id To get Details :");
+                    System.out.println("Enter Employee Id to Get Details:");
                     empId = scanner.nextInt();
                     System.out.println(employeeService.getEmployeeById(empId));
                     break;
@@ -68,15 +73,47 @@ public class EmployeeController {
                     System.out.println("Enter Employee ID to Delete:");
                     empId = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Employee Details : " + employeeService.deleteEmployee(empId) + " Deleted Successfully");
+                    System.out.println("Employee Details: " + employeeService.deleteEmployee(empId) + " Deleted Successfully");
                     break;
                 case 6:
-                    System.out.println("Enter Employee Id To Know ");
+                    System.out.println("Enter Employee Id to Check:");
                     empId = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Is Employee Exists : " + employeeService.isEmployeeExists(empId));
+                    System.out.println("Is Employee Exists: " + employeeService.isEmployeeExists(empId));
                     break;
                 case 7:
+                    System.out.println("Enter Employee Id to Get Address:");
+                    empId = scanner.nextInt();
+                    Address address = addressService.getAddressByEmpId(empId);
+                    System.out.println(address != null ? address : "No Address Found for Employee ID " + empId);
+                    break;
+                case 8:
+                    System.out.println("Enter Employee ID to Delete Address:");
+                    empId = scanner.nextInt();
+                    Address isDeleted = addressService.deleteAddressByEmpId(empId);
+                    if (isDeleted != null) {
+                        System.out.println("Address Deleted Successfully Address Deletion Failed");
+                    }
+                    break;
+                case 9:
+                    System.out.println("Enter Employee ID to Add Address:");
+                    empId = scanner.nextInt();
+                    scanner.nextLine(); // consume newline
+                    Address newAddress = EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Add");
+                    newAddress.setEmpId(empId);
+                    addressService.addAddress(newAddress);
+                    System.out.println("Address Added Successfully");
+                    break;
+                case 10:
+                    System.out.println("Enter Employee ID to Update Address:");
+                    empId = scanner.nextInt();
+                    scanner.nextLine(); // consume newline
+                    Address updatedAddress = EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Update");
+                    updatedAddress.setEmpId(empId);
+                    addressService.updateAddress(updatedAddress);
+                    System.out.println("Address Updated Successfully");
+                    break;
+                case 11:
                     exit = true;
                     break;
                 default:

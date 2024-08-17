@@ -1,1 +1,2 @@
 20,up,32,male
+21,chaki,32,male
