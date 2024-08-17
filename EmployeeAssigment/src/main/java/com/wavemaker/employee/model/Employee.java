@@ -7,7 +7,6 @@ public class Employee {
     private String name;
     private String gender;
     private int age;
-    private Department department;
     private Address address;
 
     public int getEmpId() {
@@ -16,14 +15,6 @@ public class Employee {
 
     public void setEmpId(int empId) {
         this.empId = empId;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
     }
 
     public Address getAddress() {
@@ -78,7 +69,6 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
                 ", age=" + age +
-                ", department=" + department +
                 ", address=" + address +
                 '}';
     }
