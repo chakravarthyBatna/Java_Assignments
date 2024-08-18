@@ -1,6 +1,9 @@
 package com.wavemaker.employee.controller;
 
 import com.wavemaker.employee.constant.Storage_Type;
+import com.wavemaker.employee.exception.FileCreationException;
+import com.wavemaker.employee.exception.ServerUnavilableException;
+import com.wavemaker.employee.exception.employee.*;
 import com.wavemaker.employee.pojo.Address;
 import com.wavemaker.employee.pojo.Employee;
 import com.wavemaker.employee.service.AddressService;
@@ -16,7 +19,7 @@ public class EmployeeController {
     private static EmployeeService employeeService;
     private static AddressService addressService;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileCreationException {
         Scanner scanner = new Scanner(System.in);
         Storage_Type userStorageChoice = null;
         boolean exit = false;
@@ -52,34 +55,65 @@ public class EmployeeController {
             switch (userChoice) {
                 case 1:
                     System.out.println("Enter Employee Details:");
-                    addEmployee(scanner);
+                    try {
+                        addEmployee(scanner);
+                    } catch (ServerUnavilableException serverUnavilableException) {
+                        System.out.println("Error While Adding the Employee" + serverUnavilableException.getMessage());
+                    } catch (DuplicateEmployeeRecordFoundException e) {
+                        System.out.println("Duplicate Record Found" + e.getMessage());
+                    }
                     break;
                 case 2:
                     System.out.println("Enter Employee Id to Get Details:");
                     empId = scanner.nextInt();
-                    System.out.println(employeeService.getEmployeeById(empId));
+                    try {
+                        System.out.println(employeeService.getEmployeeById(empId));
+                    } catch (EmployeeFileReadException e) {
+                        System.out.println("Exception While reading the employee : " + e.getMessage());
+                    }
                     break;
                 case 3:
-                    List<Employee> employees = employeeService.getAllEmployeeDetails();
+                    List<Employee> employees = null;
+                    try {
+                        employees = employeeService.getAllEmployeeDetails();
+                    } catch (EmployeeFileReadException e) {
+                        System.out.println("Exception while getting all the employees data ; " + e.getMessage());
+                    }
                     System.out.println("Employee List:");
                     for (Employee emp : employees) {
                         System.out.println(emp);
                     }
                     break;
                 case 4:
-                    updateEmployee(scanner);
+                    try {
+                        updateEmployee(scanner);
+                    } catch (EmployeeNotFoundException e) {
+                        System.out.println("Employee Not Found to Update " + e.getMessage());
+                    } catch (EmployeeFileUpdateException e) {
+                        System.out.println("Error while updating the employee" + e.getMessage());
+                    }
                     break;
                 case 5:
                     System.out.println("Enter Employee ID to Delete:");
                     empId = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Employee Details: " + employeeService.deleteEmployee(empId) + " Deleted Successfully");
+                    try {
+                        Employee employee = employeeService.deleteEmployee(empId);
+                        System.out.println("Employee Details: " + employee + "Deleted Successfully");
+                    } catch (EmployeeNotFoundException | EmployeeFileReadException | EmployeeFileUpdateException | EmployeeFileDeletionException exception) {
+                        System.out.println("Error while deleting the employee " + exception.getMessage());
+                    }
                     break;
                 case 6:
                     System.out.println("Enter Employee Id to Check:");
                     empId = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Is Employee Exists: " + employeeService.isEmployeeExists(empId));
+                    try {
+                        boolean isEmployeeExists = employeeService.isEmployeeExists(empId);
+                        System.out.println("Is Employee Exists: " + isEmployeeExists);
+                    } catch (ServerUnavilableException e) {
+                        System.out.println("Exception while getting the employee details + " + e.getMessage());
+                    }
                     break;
                 case 7:
                     System.out.println("Enter Employee Id to Get Address:");
@@ -99,10 +133,19 @@ public class EmployeeController {
                     System.out.println("Enter Employee ID to Add Address:");
                     empId = scanner.nextInt();
                     scanner.nextLine(); // consume newline
-                    Address newAddress = EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Add");
-                    newAddress.setEmpId(empId);
-                    addressService.addAddress(newAddress);
-                    System.out.println("Address Added Successfully");
+                    try {
+                        Employee employee = employeeService.getEmployeeById(empId);
+                        if (employee != null) {
+                            Address newAddress = EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Add");
+                            if (newAddress != null) {
+                                newAddress.setEmpId(empId);
+                                addressService.addAddress(newAddress);
+                                System.out.println("Address Added Successfully");
+                            }
+                        }
+                    } catch (EmployeeFileReadException e) {
+                        System.out.println("Exception while adding address" + e.getMessage());
+                    }
                     break;
                 case 10:
                     System.out.println("Enter Employee ID to Update Address:");
@@ -124,7 +167,7 @@ public class EmployeeController {
         scanner.close();
     }
 
-    private static Employee updateEmployee(Scanner scanner) {
+    private static Employee updateEmployee(Scanner scanner) throws EmployeeFileUpdateException, EmployeeNotFoundException {
         Employee employee = EmployeeDataReaderUtil.fetchEmployeeDetails(scanner, "New");
         Address address = addressService.getAddressByEmpId(employee.getEmpId());
         if (address != null) {
@@ -138,7 +181,7 @@ public class EmployeeController {
         return employee;
     }
 
-    private static boolean addEmployee(Scanner scanner) {
+    private static boolean addEmployee(Scanner scanner) throws ServerUnavilableException, DuplicateEmployeeRecordFoundException {
         Employee employee = EmployeeDataReaderUtil.fetchEmployeeDetails(scanner, "");
         employee.setAddress(EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Add"));
         Address address = employee.getAddress();

@@ -1,6 +1,6 @@
 package com.wavemaker.employee.exception.employee;
 
-public class EmployeeFileReadException extends RuntimeException {
+public class EmployeeFileReadException extends Exception {
     private int statusCode;
     private String errorMessage;
 

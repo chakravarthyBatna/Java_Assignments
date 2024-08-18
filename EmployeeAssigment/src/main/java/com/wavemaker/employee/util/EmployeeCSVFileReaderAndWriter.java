@@ -83,7 +83,7 @@ public class EmployeeCSVFileReaderAndWriter {
         return employees;
     }
 
-    public boolean writeEmployee(Employee employee) throws EmployeeFileWriteException {
+    public boolean writeEmployee(Employee employee) throws EmployeeFileWriteException, DuplicateEmployeeRecordFoundException, EmployeeFileReadException {
         if (isEmployeeExists(employee.getEmpId())) {
             throw new DuplicateEmployeeRecordFoundException("Employee with Id : " + employee.getEmpId() + " already exists.", 409);
         }
@@ -109,7 +109,7 @@ public class EmployeeCSVFileReaderAndWriter {
     }
 
 
-    public boolean isEmployeeExists(int empId) {
+    public boolean isEmployeeExists(int empId) throws EmployeeFileReadException {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(this.file));
@@ -130,7 +130,7 @@ public class EmployeeCSVFileReaderAndWriter {
         }
         return false;
     }
-    public Employee deleteEmployee(int empId) {
+    public Employee deleteEmployee(int empId) throws EmployeeFileDeletionException, EmployeeFileUpdateException {
         BufferedReader reader = null;
         BufferedWriter writer = null;
         File tempFile = new File(file.getAbsolutePath().replace(".txt", "_temp.txt"));

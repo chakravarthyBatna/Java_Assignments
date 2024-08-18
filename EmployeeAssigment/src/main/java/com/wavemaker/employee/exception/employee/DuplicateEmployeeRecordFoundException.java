@@ -1,6 +1,6 @@
 package com.wavemaker.employee.exception.employee;
 
-public class DuplicateEmployeeRecordFoundException extends RuntimeException {
+public class DuplicateEmployeeRecordFoundException extends Exception {
     private int statusCode;
     private String errorMessage;
 

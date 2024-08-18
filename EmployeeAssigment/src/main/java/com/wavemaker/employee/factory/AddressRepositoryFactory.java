@@ -1,6 +1,7 @@
 package com.wavemaker.employee.factory;
 
 import com.wavemaker.employee.constant.Storage_Type;
+import com.wavemaker.employee.exception.FileCreationException;
 import com.wavemaker.employee.repository.AddressRepository;
 
 import java.util.HashMap;
@@ -10,7 +11,7 @@ public class AddressRepositoryFactory {
     private static AddressRepository addressRepository;
     private static final Map<Storage_Type, AddressRepository> repositoryMap = new HashMap<>();
 
-    public static AddressRepository getAddressRepositoryInstance(Storage_Type storageType) {
+    public static AddressRepository getAddressRepositoryInstance(Storage_Type storageType) throws FileCreationException {
         if (repositoryMap.containsKey(storageType)) {
             return repositoryMap.get(storageType);
         }

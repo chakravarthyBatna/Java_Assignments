@@ -1,6 +1,7 @@
 package com.wavemaker.employee.service.impl;
 
 import com.wavemaker.employee.constant.Storage_Type;
+import com.wavemaker.employee.exception.FileCreationException;
 import com.wavemaker.employee.factory.AddressRepositoryFactory;
 import com.wavemaker.employee.pojo.Address;
 import com.wavemaker.employee.repository.AddressRepository;
@@ -8,7 +9,7 @@ import com.wavemaker.employee.service.AddressService;
 
 public class AddressServiceImpl implements AddressService {
     private static AddressRepository addressRepository;
-    public AddressServiceImpl(Storage_Type storageType) {
+    public AddressServiceImpl(Storage_Type storageType) throws FileCreationException {
         addressRepository = AddressRepositoryFactory.getAddressRepositoryInstance(storageType);
     }
 

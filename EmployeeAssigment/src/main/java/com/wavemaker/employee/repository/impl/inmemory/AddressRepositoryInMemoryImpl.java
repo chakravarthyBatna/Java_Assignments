@@ -1,4 +1,4 @@
-package com.wavemaker.employee.repository.impl;
+package com.wavemaker.employee.repository.impl.inmemory;
 
 import com.wavemaker.employee.pojo.Address;
 import com.wavemaker.employee.repository.AddressRepository;

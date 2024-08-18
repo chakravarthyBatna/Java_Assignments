@@ -1,8 +1,9 @@
 package com.wavemaker.employee.factory;
 
+import com.wavemaker.employee.exception.FileCreationException;
 import com.wavemaker.employee.repository.EmployeeRepository;
-import com.wavemaker.employee.repository.impl.EmployeeRepositoryInFileImpl;
-import com.wavemaker.employee.repository.impl.EmployeeRepositoryInMemoryImpl;
+import com.wavemaker.employee.repository.impl.file.EmployeeRepositoryInFileImpl;
+import com.wavemaker.employee.repository.impl.inmemory.EmployeeRepositoryInMemoryImpl;
 
 public class EmployeeRepositoryInstanceHandler {
     private EmployeeRepositoryInstanceHandler() {}
@@ -21,7 +22,7 @@ public class EmployeeRepositoryInstanceHandler {
         return inMemoryRepository;
     }
 
-    public static EmployeeRepository getInFileEmployeeRepositoryInstance() {
+    public static EmployeeRepository getInFileEmployeeRepositoryInstance() throws FileCreationException {
         if (inFileRepository == null) {
             synchronized (EmployeeRepositoryInstanceHandler.class) {
                 if (inFileRepository == null) {

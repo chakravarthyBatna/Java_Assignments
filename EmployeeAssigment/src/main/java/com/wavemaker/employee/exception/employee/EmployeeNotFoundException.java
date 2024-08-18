@@ -1,6 +1,6 @@
 package com.wavemaker.employee.exception.employee;
 
-public class EmployeeNotFoundException extends RuntimeException {
+public class EmployeeNotFoundException extends Exception {
     private int statusCode;
     private String errorMessage;
 

@@ -1,4 +1,4 @@
-package com.wavemaker.employee.repository.impl;
+package com.wavemaker.employee.repository.impl.inmemory;
 
 import com.wavemaker.employee.exception.employee.DuplicateEmployeeRecordFoundException;
 import com.wavemaker.employee.exception.employee.EmployeeNotFoundException;

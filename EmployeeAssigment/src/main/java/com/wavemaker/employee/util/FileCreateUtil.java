@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class FileCreateUtil {
-    public static File createFileIfNotExists(String FILE_PATH) {
+    public static File createFileIfNotExists(String FILE_PATH) throws FileCreationException {
         File file = new File(FILE_PATH);
         if (!file.exists()) {
             try {

@@ -1,6 +1,6 @@
 package com.wavemaker.employee.exception;
 
-public class ServerUnavilableException extends RuntimeException {
+public class ServerUnavilableException extends Exception {
     private int statusCode;
     private String errorMessage;
 
