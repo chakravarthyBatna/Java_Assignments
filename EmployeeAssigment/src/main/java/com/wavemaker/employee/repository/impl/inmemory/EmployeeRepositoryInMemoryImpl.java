@@ -7,6 +7,7 @@ import com.wavemaker.employee.repository.EmployeeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class EmployeeRepositoryInMemoryImpl implements EmployeeRepository {
@@ -55,4 +56,10 @@ public class EmployeeRepositoryInMemoryImpl implements EmployeeRepository {
     public boolean isEmployeeExists(int empId) {
         return employeeMap.containsKey(empId);
     }
+
+    @Override
+    public int getCount() {
+        return employeeMap.size();
+    }
+
 }

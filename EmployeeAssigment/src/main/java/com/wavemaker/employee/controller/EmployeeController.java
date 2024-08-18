@@ -2,6 +2,7 @@ package com.wavemaker.employee.controller;
 
 import com.wavemaker.employee.constant.Storage_Type;
 import com.wavemaker.employee.exception.FileCreationException;
+import com.wavemaker.employee.exception.InvalidUserInputException;
 import com.wavemaker.employee.exception.ServerUnavilableException;
 import com.wavemaker.employee.exception.employee.*;
 import com.wavemaker.employee.pojo.Address;
@@ -35,30 +36,20 @@ public class EmployeeController {
         employeeService = new EmployeeServiceImpl(userStorageChoice);
         addressService = new AddressServiceImpl(userStorageChoice);
         while (!exit) {
-            System.out.println("\nWelcome:");
-            System.out.println("1. Add Employee");
-            System.out.println("2. Get Employee by ID");
-            System.out.println("3. Get All Employees");
-            System.out.println("4. Update Employee");
-            System.out.println("5. Delete Employee");
-            System.out.println("6. Know If Employee Exists or Not");
-            System.out.println("7. Get Address by Employee ID");
-            System.out.println("8. Delete Address by Employee ID");
-            System.out.println("9. Add Address by Employee ID");
-            System.out.println("10. Update Address by Employee ID");
-            System.out.println("11. Exit");
-            System.out.println("Enter your choice:");
-
-            userChoice = scanner.nextInt();
-            scanner.nextLine(); // consume newline
-
+            try {
+                userChoice = fetchUserInput(scanner);
+            } catch (InvalidUserInputException e) {
+                System.out.println(e.getMessage());
+                continue;
+            }
             switch (userChoice) {
                 case 1:
                     System.out.println("Enter Employee Details:");
                     try {
-                        addEmployee(scanner);
-                    } catch (ServerUnavilableException serverUnavilableException) {
-                        System.out.println("Error While Adding the Employee" + serverUnavilableException.getMessage());
+                        empId = addEmployee(scanner);
+                        System.out.println("Your Generated Employee Id is : " + empId);
+                    } catch (ServerUnavilableException | EmployeeFileReadException exception) {
+                        System.out.println("Error While Adding the Employee" + exception.getMessage());
                     } catch (DuplicateEmployeeRecordFoundException e) {
                         System.out.println("Duplicate Record Found" + e.getMessage());
                     }
@@ -100,7 +91,8 @@ public class EmployeeController {
                     try {
                         Employee employee = employeeService.deleteEmployee(empId);
                         System.out.println("Employee Details: " + employee + "Deleted Successfully");
-                    } catch (EmployeeNotFoundException | EmployeeFileReadException | EmployeeFileUpdateException | EmployeeFileDeletionException exception) {
+                    } catch (EmployeeNotFoundException | EmployeeFileReadException | EmployeeFileUpdateException |
+                             EmployeeFileDeletionException exception) {
                         System.out.println("Error while deleting the employee " + exception.getMessage());
                     }
                     break;
@@ -181,7 +173,7 @@ public class EmployeeController {
         return employee;
     }
 
-    private static boolean addEmployee(Scanner scanner) throws ServerUnavilableException, DuplicateEmployeeRecordFoundException {
+    private static int addEmployee(Scanner scanner) throws ServerUnavilableException, DuplicateEmployeeRecordFoundException, EmployeeFileReadException {
         Employee employee = EmployeeDataReaderUtil.fetchEmployeeDetails(scanner, "");
         employee.setAddress(EmployeeDataReaderUtil.fetchEmployeeAddress(scanner, "Add"));
         Address address = employee.getAddress();
@@ -189,5 +181,27 @@ public class EmployeeController {
             address.setEmpId(employee.getEmpId());
         }
         return employeeService.addEmployee(employee);
+    }
+
+    private static int fetchUserInput(Scanner scanner) throws InvalidUserInputException {
+        System.out.println("\nWelcome:");
+        System.out.println("1. Add Employee");
+        System.out.println("2. Get Employee by ID");
+        System.out.println("3. Get All Employees");
+        System.out.println("4. Update Employee");
+        System.out.println("5. Delete Employee");
+        System.out.println("6. Know If Employee Exists or Not");
+        System.out.println("7. Get Address by Employee ID");
+        System.out.println("8. Delete Address by Employee ID");
+        System.out.println("9. Add Address by Employee ID");
+        System.out.println("10. Update Address by Employee ID");
+        System.out.println("11. Exit");
+        System.out.println("Enter your choice:");
+        int userInput = scanner.nextInt();
+        scanner.nextLine();
+        if (userInput < 1 || userInput > 11) {
+            throw new InvalidUserInputException("Invalid User Input Please enter the correct Input",400); //400 = bad request
+        }
+        return userInput;
     }
 }

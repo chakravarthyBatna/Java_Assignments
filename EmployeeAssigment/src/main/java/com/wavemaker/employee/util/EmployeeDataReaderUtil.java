@@ -9,9 +9,12 @@ public class EmployeeDataReaderUtil {
 
     public static Employee fetchEmployeeDetails(Scanner scanner, String operation) {
         Employee employee = new Employee();
-        System.out.print("Enter Employee Id : ");
-        int empId = scanner.nextInt();
-        scanner.nextLine();
+        if (!(operation.isEmpty())) {
+            System.out.print("Enter Employee Id : ");
+            int empId = scanner.nextInt();
+            scanner.nextLine();
+            employee.setEmpId(empId);
+        }
         System.out.print("Enter " + operation + " Employee Name : ");
         String name = scanner.nextLine();
         System.out.print("Enter " + operation + " Employee Gender : ");
@@ -19,7 +22,6 @@ public class EmployeeDataReaderUtil {
         System.out.print("Enter " + operation + " Employee Age : ");
         int age = scanner.nextInt();
         scanner.nextLine();
-        employee.setEmpId(empId);
         employee.setName(name);
         employee.setAge(age);
         employee.setGender(gender);
@@ -32,7 +34,7 @@ public class EmployeeDataReaderUtil {
         scanner.nextLine();
         if (userChoice == 1) {
             Address address = new Address();
-            if (!operation.equals("Update")) {
+            if (operation.equals("Update")) {
                 System.out.println("Enter Employee Address Id");
                 int addressId = scanner.nextInt();
                 scanner.nextLine();

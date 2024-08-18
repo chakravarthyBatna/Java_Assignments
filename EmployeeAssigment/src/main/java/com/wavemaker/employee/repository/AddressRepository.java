@@ -7,4 +7,5 @@ public interface AddressRepository {
     public boolean addAddress(Address address);
     public Address deleteAddressByEmpId(int empId);
     public Address updateAddress(Address address);
+    public int getCount();
 }

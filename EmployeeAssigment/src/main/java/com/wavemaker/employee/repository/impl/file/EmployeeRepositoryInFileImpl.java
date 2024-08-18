@@ -60,4 +60,9 @@ public class EmployeeRepositoryInFileImpl implements EmployeeRepository {
         }
         return isOperationSuccess;
     }
+
+    @Override
+    public int getCount() throws EmployeeFileReadException {
+        return employeeCsvFileReaderAndWriter.getNoOfLinesInAFile();
+    }
 }

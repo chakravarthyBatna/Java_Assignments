@@ -207,6 +207,23 @@ public class EmployeeCSVFileReaderAndWriter {
         return employee;
     }
 
+    public int getNoOfLinesInAFile() throws EmployeeFileReadException {
+        BufferedReader reader = null;
+        int lineCount = 0;
+        try {
+            reader = new BufferedReader(new FileReader(this.file));
+            while (reader.readLine() != null) {
+                lineCount++;
+            }
+        } catch (IOException e) {
+            throw new EmployeeFileReadException("Error reading the file to count lines", 500);
+        } finally {
+            closeBufferedReader(reader);
+        }
+        return lineCount;
+    }
+
+
     private boolean renameTo(File source, File destination) throws EmployeeFileUpdateException {
         try {
             if (destination.exists() && !destination.delete()) {

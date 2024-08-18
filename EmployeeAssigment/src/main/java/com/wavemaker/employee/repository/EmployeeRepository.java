@@ -13,4 +13,5 @@ public interface EmployeeRepository {
     public Employee updateEmployee(Employee employee) throws EmployeeNotFoundException, EmployeeFileUpdateException;
     public Employee deleteEmployee(int empId) throws EmployeeNotFoundException, EmployeeFileDeletionException, EmployeeFileUpdateException;
     public boolean isEmployeeExists(int empId) throws ServerUnavilableException;
+    public int getCount() throws EmployeeFileReadException;
 }

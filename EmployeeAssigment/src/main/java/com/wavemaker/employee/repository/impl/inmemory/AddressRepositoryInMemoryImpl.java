@@ -9,7 +9,6 @@ public class AddressRepositoryInMemoryImpl implements AddressRepository {
     //key = empId(foreign key) and value = address object
     ConcurrentHashMap<Integer, Address> addressMap = new ConcurrentHashMap<>();
 
-
     @Override
     public Address getAddressByEmpId(int empId) {
         return addressMap.get(empId);
@@ -33,5 +32,10 @@ public class AddressRepositoryInMemoryImpl implements AddressRepository {
             updatedAddress = addressMap.put(address.getEmpId(), address);
         }
         return updatedAddress;
+    }
+
+    @Override
+    public int getCount() {
+        return addressMap.size();
     }
 }

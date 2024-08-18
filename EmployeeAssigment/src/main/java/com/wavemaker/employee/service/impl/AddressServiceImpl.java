@@ -6,6 +6,7 @@ import com.wavemaker.employee.factory.AddressRepositoryFactory;
 import com.wavemaker.employee.pojo.Address;
 import com.wavemaker.employee.repository.AddressRepository;
 import com.wavemaker.employee.service.AddressService;
+import com.wavemaker.employee.util.GenerateUniqueId;
 
 public class AddressServiceImpl implements AddressService {
     private static AddressRepository addressRepository;
@@ -20,6 +21,8 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public boolean addAddress(Address address) {
+        int addressId = GenerateUniqueId.getUniqueForAddress(addressRepository);
+        address.setAddressId(addressId);
         return addressRepository.addAddress(address);
     }
 

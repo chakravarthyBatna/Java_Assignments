@@ -216,6 +216,23 @@ public class AddressCSVFileReadAndWrite {
         return address;
     }
 
+    public int getNoOfLinesInAFile() throws AddressFileReadException {
+        BufferedReader reader = null;
+        int lineCount = 0;
+        try {
+            reader = new BufferedReader(new FileReader(this.file));
+            while (reader.readLine() != null) {
+                lineCount++;
+            }
+        } catch (IOException e) {
+            throw new AddressFileReadException("Error reading the file to count lines", 500);
+        } finally {
+            closeBufferedReader(reader);
+        }
+        return lineCount;
+    }
+
+
     private boolean renameTo(File source, File destination) throws AddressFileUpdateException {
         try {
             if (destination.exists() && !destination.delete()) {

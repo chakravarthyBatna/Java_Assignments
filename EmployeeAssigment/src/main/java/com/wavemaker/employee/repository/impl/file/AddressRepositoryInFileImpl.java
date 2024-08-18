@@ -33,4 +33,9 @@ public class AddressRepositoryInFileImpl implements AddressRepository {
     public Address updateAddress(Address address) {
         return addressCSVFileReadAndWrite.updateAddress(address);
     }
+
+    @Override
+    public int getCount() {
+        return addressCSVFileReadAndWrite.getNoOfLinesInAFile();
+    }
 }

@@ -11,6 +11,7 @@ import com.wavemaker.employee.pojo.Employee;
 import com.wavemaker.employee.repository.AddressRepository;
 import com.wavemaker.employee.repository.EmployeeRepository;
 import com.wavemaker.employee.service.EmployeeService;
+import com.wavemaker.employee.util.GenerateUniqueId;
 
 import java.util.List;
 
@@ -34,11 +35,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public boolean addEmployee(Employee employee) throws ServerUnavilableException, DuplicateEmployeeRecordFoundException {
+    public int addEmployee(Employee employee) throws ServerUnavilableException, DuplicateEmployeeRecordFoundException, EmployeeFileReadException {
+        int empId = GenerateUniqueId.getUniqueIdForEmployee(employeeRepository);
+        employee.setEmpId(empId);
         if (employee.getAddress() != null) {
-            addressRepository.addAddress(employee.getAddress());
+            int addressId = GenerateUniqueId.getUniqueForAddress(addressRepository);
+            employee.getAddress().setEmpId(empId);
+            employee.getAddress().setAddressId(addressId);
+            if (addressRepository.addAddress(employee.getAddress())) {
+                return empId;
+            }
         }
-        return employeeRepository.addEmployee(employee);
+        employeeRepository.addEmployee(employee);
+        return empId;
     }
 
     @Override
