@@ -9,12 +9,13 @@ import java.util.List;
 
 public class AddressCSVFileReadAndWrite {
     private final File file;
+    private static int maxEmployeeId = 0;
 
     public AddressCSVFileReadAndWrite(File file) {
         this.file = file;
     }
 
-    public Address getAddressByEmpId(int empId) throws AddressFileReadException{
+    public Address getAddressByEmpId(int empId) throws AddressFileReadException {
         BufferedReader reader = null;
         Address address = null;
         try {
@@ -85,11 +86,7 @@ public class AddressCSVFileReadAndWrite {
         return addresses;
     }
 
-    public boolean addAddress(Address address) throws AddressFileWriteException, DuplicateAddressRecordFoundException {
-        if (isAddressExistsForEmpId(address.getEmpId())) {
-            throw new DuplicateAddressRecordFoundException("Address for Employee with ID: " + address.getEmpId() + " already exists.", 409);
-        }
-
+    public Address addAddress(Address address) throws AddressFileWriteException{
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(this.file, true));
@@ -103,7 +100,7 @@ public class AddressCSVFileReadAndWrite {
             writer.write(line);
             writer.newLine();
             writer.flush();
-            return true;
+            return address;
         } catch (IOException e) {
             throw new AddressFileWriteException("Error writing address details to file", 500);
         } finally {
@@ -216,22 +213,20 @@ public class AddressCSVFileReadAndWrite {
         return address;
     }
 
-    public int getNoOfLinesInAFile() throws AddressFileReadException {
-        BufferedReader reader = null;
-        int lineCount = 0;
+    public int getMaxEmployeeId() throws AddressFileReadException {
         try {
-            reader = new BufferedReader(new FileReader(this.file));
-            while (reader.readLine() != null) {
-                lineCount++;
+            BufferedReader reader = new BufferedReader(new FileReader(this.file));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                int id = Integer.parseInt(parts[0]);
+                maxEmployeeId = Math.max(maxEmployeeId, id);
             }
         } catch (IOException e) {
-            throw new AddressFileReadException("Error reading the file to count lines", 500);
-        } finally {
-            closeBufferedReader(reader);
+            throw new AddressFileReadException("Unable to read the address file", 500);
         }
-        return lineCount;
+        return maxEmployeeId;
     }
-
 
     private boolean renameTo(File source, File destination) throws AddressFileUpdateException {
         try {

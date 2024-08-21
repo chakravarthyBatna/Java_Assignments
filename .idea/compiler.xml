@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="EmployeeAssigment" />
+        <module name="TaskApplication" />
         <module name="Vehicle_Assignment" />
         <module name="WavemakerTraining" />
-        <module name="EmployeeAssigment" />
+        <module name="Employee_Assignment_Servlet" />
       </profile>
     </annotationProcessing>
   </component>

@@ -9,9 +9,25 @@ import java.util.List;
 
 public class EmployeeCSVFileReaderAndWriter {
     private final File file;
+    private static int maxEmployeeId = 0;
 
     public EmployeeCSVFileReaderAndWriter(File file) {
         this.file = file;
+    }
+
+    public int getMaxEmployeeId() throws EmployeeFileReadException {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(this.file));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                int id = Integer.parseInt(parts[0]);
+                maxEmployeeId = Math.max(maxEmployeeId, id);
+            }
+        } catch (IOException e) {
+            throw new EmployeeFileReadException("Unable to read the employee file", 500);
+        }
+        return maxEmployeeId;
     }
 
     public Employee readEmployeeByEmpId(int empId) throws EmployeeFileReadException {
@@ -83,7 +99,7 @@ public class EmployeeCSVFileReaderAndWriter {
         return employees;
     }
 
-    public boolean writeEmployee(Employee employee) throws EmployeeFileWriteException, DuplicateEmployeeRecordFoundException, EmployeeFileReadException {
+    public Employee writeEmployee(Employee employee) throws EmployeeFileWriteException, DuplicateEmployeeRecordFoundException, EmployeeFileReadException {
         if (isEmployeeExists(employee.getEmpId())) {
             throw new DuplicateEmployeeRecordFoundException("Employee with Id : " + employee.getEmpId() + " already exists.", 409);
         }
@@ -100,7 +116,7 @@ public class EmployeeCSVFileReaderAndWriter {
             writer.write(line);
             writer.newLine();
             writer.flush();
-            return true;
+            return employee;
         } catch (IOException e) {
             throw new EmployeeFileWriteException("Error writing employee details to file", 500);
         } finally {
@@ -130,6 +146,7 @@ public class EmployeeCSVFileReaderAndWriter {
         }
         return false;
     }
+
     public Employee deleteEmployee(int empId) throws EmployeeFileDeletionException, EmployeeFileUpdateException {
         BufferedReader reader = null;
         BufferedWriter writer = null;
@@ -206,23 +223,6 @@ public class EmployeeCSVFileReaderAndWriter {
 
         return employee;
     }
-
-    public int getNoOfLinesInAFile() throws EmployeeFileReadException {
-        BufferedReader reader = null;
-        int lineCount = 0;
-        try {
-            reader = new BufferedReader(new FileReader(this.file));
-            while (reader.readLine() != null) {
-                lineCount++;
-            }
-        } catch (IOException e) {
-            throw new EmployeeFileReadException("Error reading the file to count lines", 500);
-        } finally {
-            closeBufferedReader(reader);
-        }
-        return lineCount;
-    }
-
 
     private boolean renameTo(File source, File destination) throws EmployeeFileUpdateException {
         try {
