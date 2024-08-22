@@ -11,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class EmployeeRepositoryInMemoryImpl implements EmployeeRepository {
     private static final Map<Integer, Employee> employeeMap = new ConcurrentHashMap<>();
+    private static final Map<String, Employee> employeeEmailMap = new ConcurrentHashMap<>();
     private static int maxEmployeeId = 0;
     @Override
     public Employee getEmployeeById(int empId) {
@@ -25,6 +26,7 @@ public class EmployeeRepositoryInMemoryImpl implements EmployeeRepository {
             maxEmployeeId += 1;
         }
         employee.setEmpId(maxEmployeeId);
+        employeeEmailMap.put(employee.getEmail(),employee);
         employeeMap.put(employee.getEmpId(), employee);
         return employee;
 
@@ -48,6 +50,7 @@ public class EmployeeRepositoryInMemoryImpl implements EmployeeRepository {
     @Override
     public Employee deleteEmployee(int empId) throws EmployeeNotFoundException {
         Employee removedEmployee = employeeMap.remove(empId);
+        employeeEmailMap.remove(removedEmployee.getEmail());
         if (removedEmployee == null) {
             throw new EmployeeNotFoundException("Employee with Id: " + empId + " Not Found To Delete", 404);
         }
@@ -56,7 +59,7 @@ public class EmployeeRepositoryInMemoryImpl implements EmployeeRepository {
 
     @Override
     public Employee getEmployeeByEmail(String email) {
-        return null;
+        return employeeEmailMap.get(email);
     }
 
     @Override

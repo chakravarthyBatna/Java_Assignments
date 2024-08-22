@@ -81,7 +81,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee searchByEmployeeEmail(String email) {
-        return null;
+    public Employee searchByEmployeeEmail(String email) throws ServerUnavilableException {
+        return employeeRepository.getEmployeeByEmail(email);
     }
 }

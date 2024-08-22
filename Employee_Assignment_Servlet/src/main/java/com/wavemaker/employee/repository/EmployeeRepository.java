@@ -1,6 +1,10 @@
 package com.wavemaker.employee.repository;
 
 import com.wavemaker.employee.exception.ServerUnavilableException;
+import com.wavemaker.employee.exception.employee.EmployeeFileDeletionException;
+import com.wavemaker.employee.exception.employee.EmployeeFileReadException;
+import com.wavemaker.employee.exception.employee.EmployeeFileUpdateException;
+import com.wavemaker.employee.exception.employee.EmployeeNotFoundException;
 import com.wavemaker.employee.pojo.Employee;
 
 import java.util.List;

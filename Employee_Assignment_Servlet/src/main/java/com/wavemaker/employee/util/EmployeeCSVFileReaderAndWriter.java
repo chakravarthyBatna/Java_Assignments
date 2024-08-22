@@ -1,5 +1,6 @@
 package com.wavemaker.employee.util;
 
+import com.wavemaker.employee.exception.employee.*;
 import com.wavemaker.employee.pojo.Employee;
 
 import java.io.*;
@@ -46,13 +47,13 @@ public class EmployeeCSVFileReaderAndWriter {
                     String name = fields[1];
                     int age = Integer.parseInt(fields[2]);
                     String gender = fields[3];
-
+                    String email = fields[4];
                     employee = new Employee();
                     employee.setEmpId(empId);
                     employee.setName(name);
                     employee.setAge(age);
                     employee.setGender(gender);
-
+                    employee.setEmail(email);
                     return employee;
                 }
             }
@@ -82,12 +83,13 @@ public class EmployeeCSVFileReaderAndWriter {
                 String name = fields[1];
                 int age = Integer.parseInt(fields[2]);
                 String gender = fields[3];
+                String email = fields[4];
                 Employee employee = new Employee();
                 employee.setEmpId(empId);
                 employee.setName(name);
                 employee.setAge(age);
                 employee.setGender(gender);
-
+                employee.setEmail(email);
                 employees.add(employee);
             }
         } catch (IOException e) {
@@ -106,11 +108,12 @@ public class EmployeeCSVFileReaderAndWriter {
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(this.file, true));
-            String line = String.format("%d,%s,%d,%s",
+            String line = String.format("%d,%s,%d,%s,%s",
                     employee.getEmpId(),
                     employee.getName(),
                     employee.getAge(),
-                    employee.getGender());
+                    employee.getGender(),
+                    employee.getEmail());
 
             writer.write(line);
             writer.newLine();
@@ -166,6 +169,7 @@ public class EmployeeCSVFileReaderAndWriter {
                     deletedEmployee.setName(fields[1]);
                     deletedEmployee.setAge(Integer.parseInt(fields[2]));
                     deletedEmployee.setGender(fields[3]);
+                    deletedEmployee.setEmail(fields[4]);
                     continue;
                 }
                 writer.write(line + "\n");
@@ -200,11 +204,12 @@ public class EmployeeCSVFileReaderAndWriter {
                 String[] fields = line.split(",");
                 int empId = Integer.parseInt(fields[0]);
                 if (empId == employee.getEmpId()) {
-                    line = String.format("%d,%s,%d,%s",
+                    line = String.format("%d,%s,%d,%s,%s",
                             employee.getEmpId(),
                             employee.getName(),
                             employee.getAge(),
-                            employee.getGender());
+                            employee.getGender(),
+                            employee.getEmail());
                 }
                 writer.write(line + "\n");
                 writer.flush();
@@ -223,6 +228,9 @@ public class EmployeeCSVFileReaderAndWriter {
         return employee;
     }
 
+    public Employee readEmployeeByEmail(String email) {
+        return null;
+    }
     private boolean renameTo(File source, File destination) throws EmployeeFileUpdateException {
         try {
             if (destination.exists() && !destination.delete()) {

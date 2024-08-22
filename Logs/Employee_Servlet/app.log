@@ -1,0 +1,105 @@
+2024-08-21 21:22:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 9
+2024-08-21 21:22:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 9
+2024-08-21 21:22:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for empId: 9
+2024-08-21 21:22:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 21:22:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:04:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: null
+2024-08-21 22:04:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching all employee details
+2024-08-21 22:04:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched all employee details
+2024-08-21 22:04:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:04:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:05:21 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received PUT request to update employee details
+2024-08-21 22:05:21 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully updated employee: Employee{empId=1, name='chakrUpdated', gender='female', age=23, email='chakrilcon', address=null}
+2024-08-21 22:05:21 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:05:21 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:05:32 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 1
+2024-08-21 22:05:32 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 1
+2024-08-21 22:05:32 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for emp: Employee{empId=1, name='chakrUpdated', gender='female', age=23, email='chakrilcon', address=null}
+2024-08-21 22:05:32 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:05:32 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:27:15 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 10
+2024-08-21 22:27:15 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 10
+2024-08-21 22:27:15 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for emp: Employee{empId=10, name='Chakri', gender='MALE', age=30, email='chakri.batna@example.com', address=Address{addressId=15, state='ap', country='india', pincode=90001, empId=10}}
+2024-08-21 22:27:15 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:27:15 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:27:24 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: null
+2024-08-21 22:27:24 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching all employee details
+2024-08-21 22:27:24 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched all employee details
+2024-08-21 22:27:24 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:27:24 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:40:50 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received DELETE request with empId: 1
+2024-08-21 22:40:50 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully deleted employee: Employee{empId=1, name='chakrUpdated', gender='female', age=23, email='chakrilcon', address=null}
+2024-08-21 22:40:50 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:40:50 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-21 22:41:03 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: null
+2024-08-21 22:41:03 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching all employee details
+2024-08-21 22:41:03 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched all employee details
+2024-08-21 22:41:03 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-21 22:41:03 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 00:51:18 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: null
+2024-08-22 00:51:18 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching all employee details
+2024-08-22 00:51:18 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched all employee details
+2024-08-22 00:51:18 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 00:51:18 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 00:52:29 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.AddressController - Received GET request with empId: 2
+2024-08-22 00:52:29 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.AddressController - Fetching address details for empId: 2
+2024-08-22 00:52:29 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.AddressController - Successfully fetched address details for empId: 2
+2024-08-22 00:52:29 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:52:29 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:54:32 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Received POST request for Address
+2024-08-22 00:54:32 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Successfully added address: Address{addressId=16, state='California', country='United States', pincode=90210, empId=2}
+2024-08-22 00:54:32 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:54:32 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:54:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 2
+2024-08-22 00:54:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 2
+2024-08-22 00:54:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for emp: Employee{empId=2, name='new name', gender='male', age=23, email='chakri.com', address=Address{addressId=16, state='California', country='United States', pincode=90210, empId=2}}
+2024-08-22 00:54:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 00:54:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 00:55:50 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.AddressController - Received DELETE request to delete address for empId: 2
+2024-08-22 00:55:50 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.AddressController - Successfully deleted address for empId: 2
+2024-08-22 00:55:50 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:55:50 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:56:00 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 2
+2024-08-22 00:56:00 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 2
+2024-08-22 00:56:00 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for emp: Employee{empId=2, name='new name', gender='male', age=23, email='chakri.com', address=null}
+2024-08-22 00:56:00 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 00:56:00 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 00:57:10 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.AddressController - Received POST request for Address
+2024-08-22 00:57:10 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.AddressController - Successfully added address: Address{addressId=17, state='California', country='United States', pincode=90210, empId=2}
+2024-08-22 00:57:10 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:57:10 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:57:11 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.AddressController - Received POST request for Address
+2024-08-22 00:57:11 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.AddressController - Successfully added address: Address{addressId=18, state='California', country='United States', pincode=90210, empId=2}
+2024-08-22 00:57:11 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:57:11 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:57:19 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Received GET request with empId: 2
+2024-08-22 00:57:19 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Fetching address details for empId: 2
+2024-08-22 00:57:19 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Successfully fetched address details for empId: 2
+2024-08-22 00:57:19 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:57:19 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:58:17 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.AddressController - Received PUT request to update address
+2024-08-22 00:58:17 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.AddressController - Successfully updated address: Address{addressId=0, state='updated', country='United States', pincode=90210, empId=2}
+2024-08-22 00:58:17 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.AddressController - Preparing response to send back to client
+2024-08-22 00:58:17 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.AddressController - Response successfully sent back to client
+2024-08-22 00:58:29 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 2
+2024-08-22 00:58:29 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 2
+2024-08-22 00:58:29 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for emp: Employee{empId=2, name='new name', gender='male', age=23, email='chakri.com', address=Address{addressId=17, state='updated', country='United States', pincode=90210, empId=2}}
+2024-08-22 00:58:29 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 00:58:29 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 11:54:25 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: null
+2024-08-22 11:54:25 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching all employee details
+2024-08-22 11:54:26 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched all employee details
+2024-08-22 11:54:26 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 11:54:26 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 11:54:51 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received GET request with empId: 10
+2024-08-22 11:54:51 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Fetching employee details for empId: 10
+2024-08-22 11:54:51 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully fetched employee details for emp: Employee{empId=10, name='Chakri', gender='MALE', age=30, email='chakri.batna@example.com', address=Address{addressId=15, state='ap', country='india', pincode=90001, empId=10}}
+2024-08-22 11:54:51 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 11:54:51 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 11:55:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received PUT request to update employee details
+2024-08-22 11:55:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 11:55:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-22 11:55:27 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Received POST request to add a new employee
+2024-08-22 11:55:27 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully added employee: Employee{empId=11, name='chakravarthy batna', gender='MALE', age=30, email='chakri.batna@example.com', address=Address{addressId=19, state='ap', country='india', pincode=90001, empId=11}}
+2024-08-22 11:55:27 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
+2024-08-22 11:55:27 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client

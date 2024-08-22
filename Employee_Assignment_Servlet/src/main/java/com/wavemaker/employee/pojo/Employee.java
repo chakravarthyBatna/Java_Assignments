@@ -74,8 +74,16 @@ public class Employee implements Cloneable, Serializable, Comparable<Employee>{
 
     @Override
     public String toString() {
-        return String.format("%-10d%-15s%-10s%-10d%s", empId, name, gender, age, (address != null ? address.toString() : "No Address"));
+        return "Employee{" +
+                "empId=" + empId +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                '}';
     }
+
     @Override
     public Employee clone() {
         Employee cloned = null;

@@ -11,5 +11,5 @@ public interface EmployeeService {
     public Employee updateEmployee(Employee employee) throws EmployeeFileUpdateException, EmployeeNotFoundException, ServerUnavilableException;
     public Employee deleteEmployee(int empId) throws EmployeeNotFoundException, EmployeeFileReadException, EmployeeFileDeletionException, EmployeeFileUpdateException, ServerUnavilableException;
     public boolean isEmployeeExists(int empId) throws ServerUnavilableException;
-    public Employee searchByEmployeeEmail(String email);
+    public Employee searchByEmployeeEmail(String email) throws ServerUnavilableException;
 }

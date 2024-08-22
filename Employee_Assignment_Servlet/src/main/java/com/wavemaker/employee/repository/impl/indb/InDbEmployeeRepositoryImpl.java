@@ -1,6 +1,8 @@
 package com.wavemaker.employee.repository.impl.indb;
 
 import com.wavemaker.employee.exception.ServerUnavilableException;
+import com.wavemaker.employee.exception.employee.EmployeeFileReadException;
+import com.wavemaker.employee.exception.employee.EmployeeNotFoundException;
 import com.wavemaker.employee.pojo.Employee;
 import com.wavemaker.employee.repository.EmployeeRepository;
 import com.wavemaker.employee.util.DBConnector;

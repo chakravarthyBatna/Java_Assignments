@@ -64,7 +64,13 @@ public class Address implements Cloneable, Serializable, Comparable<Address> {
 
     @Override
     public String toString() {
-        return String.format("%-10d%-15s%-15s%-10d", addressId, state, country, pincode);
+        return "Address{" +
+                "addressId=" + addressId +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", pincode=" + pincode +
+                ", empId=" + empId +
+                '}';
     }
 
     @Override
