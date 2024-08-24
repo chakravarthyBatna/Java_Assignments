@@ -20,17 +20,17 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task getTaskById(int taskId) {
+    public Task getTaskById(int taskId) throws ServerUnavilableException {
         return taskRepository.getTaskById(taskId);
     }
 
     @Override
-    public Task deleteTaskById(int taskId) {
+    public Task deleteTaskById(int taskId) throws ServerUnavilableException {
         return taskRepository.deleteTaskById(taskId);
     }
 
     @Override
-    public Task updateTask(Task task) {
+    public Task updateTask(Task task) throws ServerUnavilableException {
         return taskRepository.updateTask(task);
     }
 

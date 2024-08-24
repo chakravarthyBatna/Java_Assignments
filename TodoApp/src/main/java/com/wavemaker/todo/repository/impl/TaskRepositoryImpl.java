@@ -17,6 +17,10 @@ public class TaskRepositoryImpl implements TaskRepository {
             " WHEN 'High' THEN 1 WHEN 'Medium' THEN 2 WHEN 'Low' THEN 3 ELSE 4 END";
     private static final String INSERT_QUERY = "INSERT INTO TASKS (USER_ID, TASK_NAME, DUE_DATE," +
             " DUE_TIME, PRIORITY, COMPLETED) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String GET_QUERY = "SELECT TASK_ID, USER_ID, TASK_NAME, DUE_DATE, DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE TASK_ID = ?";
+    private static final String UPDATE_QUERY = "UPDATE TASKS SET TASK_NAME = ?, DUE_DATE = ?, DUE_TIME = ?, PRIORITY = ?, COMPLETED = ? WHERE TASK_ID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM TASKS WHERE TASK_ID = ?";
+
 
     public TaskRepositoryImpl() throws SQLException {
         connection = DBConnector.getConnectionInstance();
@@ -81,9 +85,8 @@ public class TaskRepositoryImpl implements TaskRepository {
 
     @Override
     public Task getTaskById(int taskId) throws ServerUnavilableException {
-        String query = "SELECT TASK_ID, USER_ID, TASK_NAME, DUE_DATE, DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE TASK_ID = ?";
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_QUERY);
             preparedStatement.setInt(1, taskId);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
@@ -107,10 +110,9 @@ public class TaskRepositoryImpl implements TaskRepository {
 
     @Override
     public Task deleteTaskById(int taskId) throws ServerUnavilableException {
-        String query = "DELETE FROM TASKS WHERE TASK_ID = ?";
         try {
             Task taskToDelete = getTaskById(taskId); // Retrieve the task before deletion
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_QUERY);
             preparedStatement.setInt(1, taskId);
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {
@@ -125,9 +127,8 @@ public class TaskRepositoryImpl implements TaskRepository {
 
     @Override
     public Task updateTask(Task task) throws ServerUnavilableException {
-        String query = "UPDATE TASKS SET TASK_NAME = ?, DUE_DATE = ?, DUE_TIME = ?, PRIORITY = ?, COMPLETED = ? WHERE TASK_ID = ?";
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
             preparedStatement.setString(1, task.getTaskName());
             preparedStatement.setDate(2, Date.valueOf(task.getDueDate()));
             preparedStatement.setTime(3, Time.valueOf(task.getDueTime()));
@@ -137,7 +138,7 @@ public class TaskRepositoryImpl implements TaskRepository {
 
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {
-                return task; // Return the updated task details
+                return task;
             } else {
                 throw new ServerUnavilableException("Task update failed, no rows affected.", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }

@@ -14,13 +14,14 @@ initializeSortable();
 
 sortPriority.addEventListener('change', showAllTasks); //showAllTasks called when we use the sort by priority
 sortDueDate.addEventListener('change', showAllTasks);  //showAllTasks called when we use the sort by due-date
-function addTask() {
+async function addTask() {
     // Get form fields
     const taskName = inputBox.value.trim();
     const dueDate = taskDueDate.value;
     const dueTime = taskDueTime.value;
     const priority = taskPriority.value;
 
+    // Validate task name
     if (!taskName) {
         alert('You must write something for a task.');
         return;
@@ -32,12 +33,41 @@ function addTask() {
         return;
     }
 
+    const task = {
+        taskName: taskName,
+        dueDate: dueDate,
+        dueTime: dueTime,
+        priority: priority,
+        completed: false
+    };
+
+    try {
+        // Call the API
+        const response = await fetch('http://localhost:8080/TodoApp/tasks', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(task)
+        });
+
+        if (response.ok) {
+            const createdTask = await response.json();
+            console.log('Task created:', createdTask);
+
+        } else {
+            console.error('Failed to create task:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+
     // Schedule notification
     if (dueDate && dueTime) {
         scheduleNotification(taskName, dueDate, dueTime);
     }
 
-    // Show updated task list
+// Show updated task list
     showAllTasks();
 
     // Clear input fields
@@ -74,16 +104,6 @@ function showAllTasks() {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
-//function showAllTasks() {
-//    // Fetch and display pending tasks
-//    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-//    showPendingTasks(tasks);
-//
-//    // Fetch and display completed tasks
-//    const completedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
-//    showCompletedTasks(completedTasks);
-//}
-
 
 function showCompletedTasks(tasks) {
     const completedListContainer = document.getElementById('completed-list-container');
@@ -105,13 +125,13 @@ function buildHtmlForEachCompletedTask(tasks) {
         listItem.appendChild(taskId);
 
         switch (task.priority) {
-            case 'Low':
+            case 'low':
                 listItem.classList.add('task-priority-low');
                 break;
-            case 'Medium':
+            case 'medium':
                 listItem.classList.add('task-priority-medium');
                 break;
-            case 'High':
+            case 'high':
                 listItem.classList.add('task-priority-high');
                 break;
             default:
@@ -204,13 +224,13 @@ function buildHtmlForEachPendingTask(tasks) {
         listItem.appendChild(taskId);
 
         switch (task.priority) {
-            case 'Low':
+            case 'low':
                 listItem.classList.add('task-priority-low');
                 break;
-            case 'Medium':
+            case 'medium':
                 listItem.classList.add('task-priority-medium');
                 break;
-            case 'High':
+            case 'high':
                 listItem.classList.add('task-priority-high');
                 break;
             default:
