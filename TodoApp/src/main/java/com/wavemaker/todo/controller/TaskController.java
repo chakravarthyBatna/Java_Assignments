@@ -11,7 +11,6 @@ import com.wavemaker.todo.service.impl.TaskServiceImpl;
 import com.wavemaker.todo.service.impl.UserCookieServiceImpl;
 import com.wavemaker.todo.util.CookieHandler;
 import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -50,13 +49,20 @@ public class TaskController extends HttpServlet {
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonResponse = null;
         List<Task> taskList = null;
+        Task task = null;
+        String taskId = httpServletRequest.getParameter("taskId");
         String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
         if (cookieValue != null) {
             try {
                 int userId = userCookieService.getUserIdByCookieValue(cookieValue);
                 if (userId != -1) {
-                    taskList = taskService.getAllTasks(userId);
-                    jsonResponse = gson.toJson(taskList);
+                    if (taskId != null) {
+                        task = taskService.getTaskById(Integer.parseInt(taskId));
+                        jsonResponse = gson.toJson(task);
+                    } else {
+                        taskList = taskService.getAllTasks(userId);
+                        jsonResponse = gson.toJson(taskList);
+                    }
                 } else {
                     ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                     jsonResponse = gson.toJson(errorResponse);
@@ -67,6 +73,10 @@ public class TaskController extends HttpServlet {
                 logger.error("Error fetching Task details ", e);
                 ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
                 jsonResponse = gson.toJson(errorResponse);
+            } catch (Exception e) {
+                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                httpServletResponse.setStatus(500);
+                jsonResponse = gson.toJson(errorResponse);
             } finally {
                 sendResponse(httpServletResponse, jsonResponse);
             }
@@ -74,7 +84,7 @@ public class TaskController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonResponse = null;
         Task task = null;
         int userId = -1;
@@ -96,9 +106,13 @@ public class TaskController extends HttpServlet {
                     httpServletResponse.setStatus(400);
                     sendResponse(httpServletResponse, jsonResponse);
                 }
-            } catch (ServerUnavilableException e) {
+            } catch (ServerUnavilableException | IOException e) {
                 logger.error("Error fetching Task details ", e);
                 ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+                jsonResponse = gson.toJson(errorResponse);
+            } catch (Exception e) {
+                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                httpServletResponse.setStatus(500);
                 jsonResponse = gson.toJson(errorResponse);
             } finally {
                 sendResponse(httpServletResponse, jsonResponse);
@@ -108,13 +122,73 @@ public class TaskController extends HttpServlet {
 
 
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPut(req, resp);
+    protected void doPut(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        String jsonResponse = null;
+        Task updatedTask = null;
+        Task task = null;
+        int taskId = Integer.parseInt(httpServletRequest.getParameter("taskId"));
+        BufferedReader bufferedReader = null;
+        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
+        if (cookieValue != null) {
+            try {
+                int userId = userCookieService.getUserIdByCookieValue(cookieValue);
+                if (userId != -1) {
+                    bufferedReader = httpServletRequest.getReader();
+                    task = gson.fromJson(bufferedReader, Task.class);
+                    task.setTaskId(taskId);
+                    updatedTask = taskService.updateTask(task);
+                    task = null;
+                    jsonResponse = gson.toJson(updatedTask);
+                } else {
+                    ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
+                    jsonResponse = gson.toJson(errorResponse);
+                    httpServletResponse.setStatus(400);
+                    sendResponse(httpServletResponse, jsonResponse);
+                }
+            } catch (ServerUnavilableException | IOException e) {
+                logger.error("Error fetching Task details ", e);
+                ErrorResponse errorResponse = new ErrorResponse("Unable to Update Task", HttpServletResponse.SC_BAD_REQUEST);
+                jsonResponse = gson.toJson(errorResponse);
+            } catch (Exception e) {
+                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                httpServletResponse.setStatus(500);
+                jsonResponse = gson.toJson(errorResponse);
+            } finally {
+                sendResponse(httpServletResponse, jsonResponse);
+            }
+        }
     }
 
     @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp);
+    protected void doDelete(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        String jsonResponse = null;
+        Task task = null;
+        int taskId = Integer.parseInt(httpServletRequest.getParameter("taskId"));
+        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
+        if (cookieValue != null) {
+            try {
+                int userId = userCookieService.getUserIdByCookieValue(cookieValue);
+                if (userId != -1) {
+                    task = taskService.deleteTaskById(taskId);
+                    jsonResponse = gson.toJson(task);
+                } else {
+                    ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
+                    jsonResponse = gson.toJson(errorResponse);
+                    httpServletResponse.setStatus(400);
+                    sendResponse(httpServletResponse, jsonResponse);
+                }
+            } catch (ServerUnavilableException e) {
+                logger.error("Error fetching Task details ", e);
+                ErrorResponse errorResponse = new ErrorResponse("Unable to Delete Task", HttpServletResponse.SC_BAD_REQUEST);
+                jsonResponse = gson.toJson(errorResponse);
+            } catch (Exception e) {
+                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                httpServletResponse.setStatus(500);
+                jsonResponse = gson.toJson(errorResponse);
+            } finally {
+                sendResponse(httpServletResponse, jsonResponse);
+            }
+        }
     }
 
     private void sendResponse(HttpServletResponse httpServletResponse, String jsonResponse) {
@@ -132,6 +206,12 @@ public class TaskController extends HttpServlet {
             ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500);
             jsonResponse = gson.toJson(errorResponse);
             httpServletResponse.setStatus(500);
+            printWriter.print(jsonResponse);
+            printWriter.flush();
+        } catch (Exception e) {
+            ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setStatus(500);
+            jsonResponse = gson.toJson(errorResponse);
             printWriter.print(jsonResponse);
             printWriter.flush();
         } finally {

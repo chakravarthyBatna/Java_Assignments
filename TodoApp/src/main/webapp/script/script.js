@@ -207,11 +207,6 @@ function showPendingTasks(tasks) {
     initializeDetailsEvent(); // Details button
 }
 
-
-
-
-
-
 function buildHtmlForEachPendingTask(tasks) {
     // Build the HTML for each task and append it to the UI
     tasks.forEach(task => {
@@ -393,52 +388,67 @@ function initializeDetailsEvent() {
         };
     });
 }
-function showDetailsDialog(listItem) {
-    // Retrieve task details
-    const taskNameElement = listItem.querySelector('.task-name');
-    const dueDateElement = listItem.querySelector('.task-due-date-time .due-info:nth-child(1)'); // Updated selector
-    const dueTimeElement = listItem.querySelector('.task-due-date-time .due-info:nth-child(2)'); // Updated selector
 
-    const taskName = taskNameElement ? taskNameElement.textContent.trim() : '';
-    const taskDueDate = dueDateElement ? dueDateElement.textContent.trim() : '';
-    const taskDueTime = dueTimeElement ? dueTimeElement.textContent.trim() : '';
+async function showDetailsDialog(listItem) {
+    // Retrieve the taskId from the hidden div
+    const taskIdElement = listItem.querySelector('div[style="display: none;"]');
+    const taskId = taskIdElement ? taskIdElement.textContent.trim() : null;
 
-    // Determine priority
-    const priority = listItem.classList.contains('task-priority-high') ? 'High' :
-        listItem.classList.contains('task-priority-medium') ? 'Medium' : 'Low';
+    if (!taskId) {
+        console.error('Task ID not found.');
+        return;
+    }
 
-    // Create the details dialog
-    const detailsDialog = document.createElement('div');
-    detailsDialog.classList.add('details-dialog');
-    detailsDialog.innerHTML = `
-        <div class="details-dialog-content">
-            <h3>Task Details</h3>
-            <p><strong>Task Name:</strong> ${taskName}</p>
-            <p><strong>Due Date:</strong> ${taskDueDate}</p>
-            <p><strong>Due Time:</strong> ${taskDueTime}</p>
-            <p><strong>Priority:</strong> ${priority}</p>
-            <button id="close-details" class="btn btn-secondary">Go Back</button>
-        </div>
-    `;
+    try {
+        // Fetch task details from the API
+        const response = await fetch(`http://localhost:8080/TodoApp/tasks?taskId=${taskId}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch task details');
+        }
+        const task = await response.json();
 
-    // Create overlay
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
+        // Extract task details from the API response
+        const taskName = task.taskName;
+        const taskDueDate = task.dueDate;
+        const taskDueTime = task.dueTime;
+        const priority = task.priority.toLowerCase();
 
-    // Append overlay and dialog to the body
-    document.body.appendChild(overlay);
-    document.body.appendChild(detailsDialog);
+        // Create the details dialog
+        const detailsDialog = document.createElement('div');
+        detailsDialog.classList.add('details-dialog');
+        detailsDialog.innerHTML = `
+            <div class="details-dialog-content">
+                <h3>Task Details</h3>
+                <p><strong>Task Name:</strong> ${taskName}</p>
+                <p><strong>Due Date:</strong> ${taskDueDate}</p>
+                <p><strong>Due Time:</strong> ${taskDueTime}</p>
+                <p><strong>Priority:</strong> ${priority}</p>
+                <button id="close-details" class="btn btn-secondary">Go Back</button>
+            </div>
+        `;
 
-    // Set display to block
-    detailsDialog.style.display = 'block';
-    overlay.style.display = 'block';
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
 
-    // Add event listener to close button
-    document.getElementById('close-details').onclick = function () {
-        document.body.removeChild(detailsDialog);
-        document.body.removeChild(overlay);
-    };
+        // Append overlay and dialog to the body
+        document.body.appendChild(overlay);
+        document.body.appendChild(detailsDialog);
+
+        // Set display to block
+        detailsDialog.style.display = 'block';
+        overlay.style.display = 'block';
+
+        // Add event listener to close button
+        document.getElementById('close-details').onclick = function () {
+            document.body.removeChild(detailsDialog);
+            document.body.removeChild(overlay);
+        };
+    } catch (error) {
+        console.error('Error fetching task details:', error);
+    }
 }
+
 
 
 // closes all the dropdown menus if clicked outside
@@ -457,12 +467,14 @@ function attachEllipsisEvent(ellipsis, listItem) {
         menu.style.display = isVisible ? 'none' : 'block';
     };
 }
-
 function showEditDialog(listItem) {
+    // Retrieve the task ID from the hidden div
+    const taskIdElement = listItem.querySelector('div[style="display: none;"]');
+    const taskId = taskIdElement ? taskIdElement.textContent.trim() : null;
+
     const taskNameElement = listItem.querySelector('.task-name');
     const dueDateElement = listItem.querySelector('.task-due-date-time .due-info:nth-of-type(1)');
     const dueTimeElement = listItem.querySelector('.task-due-date-time .due-info:nth-of-type(2)');
-
 
     const taskName = taskNameElement ? taskNameElement.textContent.trim() : '';
     const taskDueDateValue = dueDateElement ? dueDateElement.textContent.trim() : '';
@@ -473,25 +485,36 @@ function showEditDialog(listItem) {
     const editDialog = document.createElement('div');
     editDialog.classList.add('edit-dialog');
     editDialog.innerHTML = `
-    <div class="edit-dialog-content">
-        <h3>Edit Task</h3>
-        <input type="date" id="edit-task-due-date" class="form-control" value="${taskDueDateValue}">
-        <input type="time" id="edit-task-due-time" class="form-control" value="${taskDueTimeValue}">
-        <select id="edit-task-priority" class="form-control">
-            <option value="low" ${priority === 'low' ? 'selected' : ''}>Low Priority</option>
-            <option value="medium" ${priority === 'medium' ? 'selected' : ''}>Medium Priority</option>
-            <option value="high" ${priority === 'high' ? 'selected' : ''}>High Priority</option>
-        </select>
-        <button id="save-edit" class="btn btn-primary">Save</button>
-        <button id="cancel-edit" class="btn btn-secondary">Cancel</button>
-    </div>
-`;
+        <div class="edit-dialog-content">
+            <h3>Edit Task</h3>
+            <input type="text" id="edit-task-name" class="form-control" value="${taskName}">
+            <input type="date" id="edit-task-due-date" class="form-control" value="${taskDueDateValue}">
+            <input type="time" id="edit-task-due-time" class="form-control" value="${taskDueTimeValue}">
+            <select id="edit-task-priority" class="form-control">
+                <option value="low" ${priority === 'low' ? 'selected' : ''}>Low Priority</option>
+                <option value="medium" ${priority === 'medium' ? 'selected' : ''}>Medium Priority</option>
+                <option value="high" ${priority === 'high' ? 'selected' : ''}>High Priority</option>
+            </select>
+            <button id="save-edit" class="btn btn-primary">Save</button>
+            <button id="cancel-edit" class="btn btn-secondary">Cancel</button>
+        </div>
+    `;
 
     document.body.appendChild(editDialog);
 
     document.getElementById('save-edit').onclick = function () {
+        const editedTaskName = document.getElementById('edit-task-name').value.trim();
+        const editedTaskDueDate = document.getElementById('edit-task-due-date').value;
+        const editedTaskDueTime = document.getElementById('edit-task-due-time').value;
+        const editedTaskPriority = document.getElementById('edit-task-priority').value;
 
-        updateTaskData(taskName);
+        // Validate task name
+        if (!editedTaskName) {
+            alert('Task name cannot be empty.');
+            return;
+        }
+
+        updateTaskData(taskId, editedTaskName, editedTaskDueDate, editedTaskDueTime, editedTaskPriority);
     };
 
     document.getElementById('cancel-edit').onclick = function () {
@@ -499,52 +522,47 @@ function showEditDialog(listItem) {
     };
 }
 
+async function updateTaskData(taskId, taskName, dueDate, dueTime, priority) {
+    console.log('Updating task with ID:', taskId);
 
-function updateTaskData(taskName) {
-    console.log('entering to updateTaskData function');
+    // Create the task object with updated details
+    const updatedTask = {
+        taskId: taskId,
+        taskName: taskName,
+        dueDate: dueDate,
+        dueTime: dueTime,
+        priority: priority,
+        completed: false // Assuming the task completion status is not changed here
+    };
 
-    const editedTaskDueDate = document.getElementById('edit-task-due-date').value;
-    const editedTaskDueTime = document.getElementById('edit-task-due-time').value;
-    const editedTaskPriority = document.getElementById('edit-task-priority').value;
+    try {
+        // Send the PUT request to update the task
+        const response = await fetch(`http://localhost:8080/TodoApp/tasks?taskId=${taskId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedTask)
+        });
 
-    updateTaskToLocalStorage(taskName, editedTaskDueDate, editedTaskDueTime, editedTaskPriority);
-    // Remove the edit dialog
-    const editDialog = document.querySelector('.edit-dialog');
-    if (editDialog) {
-        document.body.removeChild(editDialog);
-    }
-    // Call showAllTasks to update the UI
-    showAllTasks();
-}
-
-function updateTaskToLocalStorage(editedTaskName, editedTaskDueDate, editedTaskDueTime, editedTaskPriority) {
-
-
-    // Retrieve existing tasks from localStorage
-    console.log('in updateTaskToLocalStorage', editedTaskName, editedTaskDueDate, editedTaskDueTime, editedTaskPriority);
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
-    // Update the task
-    tasks = tasks.map(task => {
-        console.log(task.taskName === editedTaskName);
-        if (task.taskName === editedTaskName) {
-
-            console.log(task.taskName === editedTaskName);
-            return {
-                ...task,
-                taskName: editedTaskName,
-                dueDate: editedTaskDueDate,
-                dueTime: editedTaskDueTime,
-                priority: editedTaskPriority
-            };
+        if (response.ok) {
+            const updatedTaskResponse = await response.json();
+            console.log('Task updated successfully:', updatedTaskResponse);
+            showAllTasks(); // Refresh the task list after updating
+        } else {
+            console.error('Failed to update task:', response.statusText);
         }
-        return task;
-    });
-
-    console.log('saving updated task to localStorage');
-    // Save updated tasks to localStorage
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    } catch (error) {
+        console.error('Error updating task:', error);
+    } finally {
+        // Remove the edit dialog
+        const editDialog = document.querySelector('.edit-dialog');
+        if (editDialog) {
+            document.body.removeChild(editDialog);
+        }
+    }
 }
+
 
 function scheduleNotification(task, dueDate, dueTime) {
     if (!("Notification" in window)) {
@@ -633,51 +651,33 @@ function attachEditDeleteEvents(listItem) {
         markAsComplete(listItem);
     };
 }
-function deleteTask(listItem) {
+async function deleteTask(listItem) {
     console.log('Deleting task item:', listItem);
 
-    const taskNameElement = listItem.querySelector('.task-name');
-    const dueDateElement = listItem.querySelector('.task-due-date-time .due-info:nth-child(1)');
-    const dueTimeElement = listItem.querySelector('.task-due-date-time .due-info:nth-child(2)');
+    // Retrieve the taskId from the hidden div
+    const taskIdElement = listItem.querySelector('div[style="display: none;"]');
+    const taskId = taskIdElement ? taskIdElement.textContent.trim() : null;
 
-    console.log('Task Name Element:', taskNameElement);
-    console.log('Due Date Element:', dueDateElement);
-    console.log('Due Time Element:', dueTimeElement);
+    if (!taskId) {
+        console.error('Task ID not found.');
+        return;
+    }
 
-    const taskName = taskNameElement ? taskNameElement.textContent.trim() : '';
-    const dueDate = dueDateElement ? dueDateElement.textContent.trim() : '';
-    const dueTime = dueTimeElement ? dueTimeElement.textContent.trim() : '';
+    try {
+        // Make the API call to delete the task
+        const response = await fetch(`http://localhost:8080/TodoApp/tasks?taskId=${taskId}`, {
+            method: 'DELETE'
+        });
 
-    console.log('Task Name:', taskName);
-    console.log('Due Date:', dueDate);
-    console.log('Due Time:', dueTime);
-
-    deleteTaskFromLocalStorage(taskName, dueDate, dueTime);
-
-    showAllTasks();
-}
-
-function deleteTaskFromLocalStorage(taskName, dueDate, dueTime) {
-    console.log(' task : deleting from localStorage');
-    console.log('Task Name:', taskName);
-    console.log('Due Date:', dueDate);
-    console.log('Due Time:', dueTime);
-
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks.forEach(task => {
-        console.log('Checking Task:', task.taskName.trim().toLowerCase(), task.dueDate.trim(), task.dueTime.trim());
-    });
-
-    tasks = tasks.filter(task => {
-        return !(
-            task.taskName.trim().toLowerCase() === taskName.trim().toLowerCase() &&
-            task.dueDate.trim() === dueDate.trim() &&
-            task.dueTime.trim() === dueTime.trim()
-        );
-    });
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-
-    showAllTasks();
+        if (response.ok) {
+            console.log(`Task with ID ${taskId} deleted successfully.`);
+            showAllTasks(); // Refresh the task list after deletion
+        } else {
+            console.error(`Failed to delete task with ID ${taskId}:`, response.statusText);
+        }
+    } catch (error) {
+        console.error('Error deleting task:', error);
+    }
 }
 
 function markAsComplete(listItem) {
