@@ -7,11 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EmployeeAssigment" />
-        <module name="TaskApplication" />
+        <module name="TodoApp" />
         <module name="Vehicle_Assignment" />
         <module name="WavemakerTraining" />
         <module name="Employee_Assignment_Servlet" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TaskApplication" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>

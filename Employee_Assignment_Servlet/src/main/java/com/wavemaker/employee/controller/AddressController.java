@@ -8,10 +8,12 @@ import com.wavemaker.employee.exception.ServerUnavilableException;
 import com.wavemaker.employee.pojo.Address;
 import com.wavemaker.employee.service.AddressService;
 import com.wavemaker.employee.service.impl.AddressServiceImpl;
+import com.wavemaker.employee.util.HttpUtil;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,95 +81,123 @@ public class AddressController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        BufferedReader addressBufferReader = null;
         String jsonResponse = null;
-        Address address = null;
-        logger.info("Received POST request for Address");
-        try {
-            addressBufferReader = httpServletRequest.getReader();
-            address = gson.fromJson(addressBufferReader, Address.class);
-            Address addedAddress = addressService.addAddress(address);
-            jsonResponse = gson.toJson(addedAddress);
-            logger.info("Successfully added address: {}", addedAddress);
-        } catch (IOException e) {
-            logger.error("Error reading or processing request data", e);
-            ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500); // Internal Server Error
+        HttpSession userSession = httpServletRequest.getSession(true);
+        String cookieValue = HttpUtil.getCookieByName("my_auth_cookie", httpServletRequest);
+        if (userSession.getAttribute(cookieValue) != null) {
+
+            BufferedReader addressBufferReader = null;
+            Address address = null;
+            logger.info("Received POST request for Address");
+            try {
+                addressBufferReader = httpServletRequest.getReader();
+                address = gson.fromJson(addressBufferReader, Address.class);
+                Address addedAddress = addressService.addAddress(address);
+                jsonResponse = gson.toJson(addedAddress);
+                logger.info("Successfully added address: {}", addedAddress);
+            } catch (IOException e) {
+                logger.error("Error reading or processing request data", e);
+                ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500); // Internal Server Error
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(500);
+            } catch (Exception e) {
+                logger.error("Unexpected error while processing address data", e);
+                ErrorResponse errorResponse = new ErrorResponse("Unexpected error", 500); // Internal Server Error
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(500);
+            } finally {
+                sendResponse(httpServletResponse, jsonResponse);
+            }
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
             jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-        } catch (Exception e) {
-            logger.error("Unexpected error while processing address data", e);
-            ErrorResponse errorResponse = new ErrorResponse("Unexpected error", 500); // Internal Server Error
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-        } finally {
+            httpServletResponse.setStatus(400);
             sendResponse(httpServletResponse, jsonResponse);
         }
     }
 
     @Override
     protected void doPut(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        BufferedReader addressBufferReader = null;
-        PrintWriter printWriter = null;
         String jsonResponse = null;
-        Address address = null;
-        logger.info("Received PUT request to update address");
-        try {
-            addressBufferReader = httpServletRequest.getReader();
-            address = gson.fromJson(addressBufferReader, Address.class);
-            Address updatedAddress = addressService.updateAddress(address);
-            jsonResponse = gson.toJson(updatedAddress);
-            logger.info("Successfully updated address: {}", updatedAddress);
-        } catch (ServerUnavilableException e) {
-            logger.error("Server error while updating address", e);
-            ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500); // Internal Server Error
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-        } catch (Exception e) {
-            logger.error("Unexpected error while processing address update", e);
-            ErrorResponse errorResponse = new ErrorResponse("Unexpected error", 500); // Internal Server Error
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-        } finally {
-            sendResponse(httpServletResponse, jsonResponse);
+        HttpSession userSession = httpServletRequest.getSession(true);
+        String cookieValue = HttpUtil.getCookieByName("my_auth_cookie", httpServletRequest);
+        if (userSession.getAttribute(cookieValue) != null) {
+            BufferedReader addressBufferReader = null;
+            PrintWriter printWriter = null;
+            Address address = null;
+            logger.info("Received PUT request to update address");
             try {
-                closeBufferReader(addressBufferReader);
-            } catch (IOException e) {
-                logger.error("Error While closing the BufferReader");
-                ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+                addressBufferReader = httpServletRequest.getReader();
+                address = gson.fromJson(addressBufferReader, Address.class);
+                Address updatedAddress = addressService.updateAddress(address);
+                jsonResponse = gson.toJson(updatedAddress);
+                logger.info("Successfully updated address: {}", updatedAddress);
+            } catch (ServerUnavilableException e) {
+                logger.error("Server error while updating address", e);
+                ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500); // Internal Server Error
                 jsonResponse = gson.toJson(errorResponse);
                 httpServletResponse.setStatus(500);
+            } catch (Exception e) {
+                logger.error("Unexpected error while processing address update", e);
+                ErrorResponse errorResponse = new ErrorResponse("Unexpected error", 500); // Internal Server Error
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(500);
+            } finally {
                 sendResponse(httpServletResponse, jsonResponse);
+                try {
+                    closeBufferReader(addressBufferReader);
+                } catch (IOException e) {
+                    logger.error("Error While closing the BufferReader");
+                    ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+                    jsonResponse = gson.toJson(errorResponse);
+                    httpServletResponse.setStatus(500);
+                    sendResponse(httpServletResponse, jsonResponse);
+                }
             }
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
+            jsonResponse = gson.toJson(errorResponse);
+            httpServletResponse.setStatus(400);
+            sendResponse(httpServletResponse, jsonResponse);
         }
 
     }
 
     @Override
     protected void doDelete(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        String empId = httpServletRequest.getParameter("empId");
         String jsonResponse = null;
-        logger.info("Received DELETE request to delete address for empId: {}", empId);
-        try {
-            Address addedAddress = addressService.deleteAddressByEmpId(Integer.parseInt(empId));
-            logger.info("Successfully deleted address for empId: {}", empId);
-            jsonResponse = gson.toJson(addedAddress);
-            httpServletResponse.setStatus(200); // OK
-        } catch (ServerUnavilableException e) {
-            logger.error("Server error while deleting address for empId: {}", empId, e);
-            ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500); // Internal Server Error
+        HttpSession userSession = httpServletRequest.getSession(true);
+        String cookieValue = HttpUtil.getCookieByName("my_auth_cookie", httpServletRequest);
+        if (userSession.getAttribute(cookieValue) != null) {
+            String empId = httpServletRequest.getParameter("empId");
+            logger.info("Received DELETE request to delete address for empId: {}", empId);
+            try {
+                Address addedAddress = addressService.deleteAddressByEmpId(Integer.parseInt(empId));
+                logger.info("Successfully deleted address for empId: {}", empId);
+                jsonResponse = gson.toJson(addedAddress);
+                httpServletResponse.setStatus(200); // OK
+            } catch (ServerUnavilableException e) {
+                logger.error("Server error while deleting address for empId: {}", empId, e);
+                ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500); // Internal Server Error
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(500);
+            } catch (NumberFormatException e) {
+                logger.error("Invalid empId format: {}", empId, e);
+                ErrorResponse errorResponse = new ErrorResponse("Invalid empId format", 400); // Bad Request
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(400); // Bad Request
+            } catch (Exception e) {
+                logger.error("Unexpected error while deleting address for empId: {}", empId, e);
+                ErrorResponse errorResponse = new ErrorResponse("Unexpected error", 500); // Internal Server Error
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(500); // Internal Server Error
+            } finally {
+                sendResponse(httpServletResponse, jsonResponse);
+            }
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
             jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-        } catch (NumberFormatException e) {
-            logger.error("Invalid empId format: {}", empId, e);
-            ErrorResponse errorResponse = new ErrorResponse("Invalid empId format", 400); // Bad Request
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(400); // Bad Request
-        } catch (Exception e) {
-            logger.error("Unexpected error while deleting address for empId: {}", empId, e);
-            ErrorResponse errorResponse = new ErrorResponse("Unexpected error", 500); // Internal Server Error
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500); // Internal Server Error
-        } finally {
+            httpServletResponse.setStatus(400);
             sendResponse(httpServletResponse, jsonResponse);
         }
     }

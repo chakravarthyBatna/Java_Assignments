@@ -14,10 +14,12 @@ import com.wavemaker.employee.service.AddressService;
 import com.wavemaker.employee.service.EmployeeService;
 import com.wavemaker.employee.service.impl.AddressServiceImpl;
 import com.wavemaker.employee.service.impl.EmployeeServiceImpl;
+import com.wavemaker.employee.util.HttpUtil;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,84 +89,104 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        BufferedReader employeeBufferReader = null;
-        Employee employee = null;
-        Employee addedEmployee = null;
         String jsonResponse = null;
 
-        try {
-            logger.info("Received POST request to add a new employee");
-            employeeBufferReader = httpServletRequest.getReader();
-            employee = gson.fromJson(employeeBufferReader, Employee.class);
-            addedEmployee = employeeService.addEmployee(employee);
-            jsonResponse = gson.toJson(addedEmployee);
-            logger.info("Successfully added employee: {}", addedEmployee);
-        } catch (ServerUnavilableException | EmployeeFileReadException exception) {
-            logger.error("Error adding employee", exception);
-            ErrorResponse errorResponse = new ErrorResponse(exception.getMessage(), 500);
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-        } catch (IOException e) {
-            logger.error("Error parsing request body", e);
-            ErrorResponse errorResponse = new ErrorResponse("Invalid input format", 400);
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(400);
-        } finally {
-            sendResponse(httpServletResponse, jsonResponse);
+        HttpSession userSession = httpServletRequest.getSession(true);
+        String cookieValue = HttpUtil.getCookieByName("my_auth_cookie", httpServletRequest);
+        if (userSession.getAttribute(cookieValue) != null) {
+            logger.info("User Found to be an Admin");
+            BufferedReader employeeBufferReader = null;
+            Employee employee = null;
+            Employee addedEmployee = null;
+
             try {
-                closeBufferReader(employeeBufferReader);
-            } catch (IOException e) {
-                logger.error("Error While closing the BufferReader");
-                ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+                logger.info("Received POST request to add a new employee");
+                employeeBufferReader = httpServletRequest.getReader();
+                employee = gson.fromJson(employeeBufferReader, Employee.class);
+                addedEmployee = employeeService.addEmployee(employee);
+                jsonResponse = gson.toJson(addedEmployee);
+                logger.info("Successfully added employee: {}", addedEmployee);
+            } catch (ServerUnavilableException | EmployeeFileReadException exception) {
+                logger.error("Error adding employee", exception);
+                ErrorResponse errorResponse = new ErrorResponse(exception.getMessage(), 500);
                 jsonResponse = gson.toJson(errorResponse);
                 httpServletResponse.setStatus(500);
+            } catch (IOException e) {
+                logger.error("Error parsing request body", e);
+                ErrorResponse errorResponse = new ErrorResponse("Invalid input format", 400);
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(400);
+            } finally {
                 sendResponse(httpServletResponse, jsonResponse);
+                try {
+                    closeBufferReader(employeeBufferReader);
+                } catch (IOException e) {
+                    logger.error("Error While closing the BufferReader");
+                    ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+                    jsonResponse = gson.toJson(errorResponse);
+                    httpServletResponse.setStatus(500);
+                    sendResponse(httpServletResponse, jsonResponse);
+                }
             }
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
+            jsonResponse = gson.toJson(errorResponse);
+            httpServletResponse.setStatus(400);
+            sendResponse(httpServletResponse, jsonResponse);
         }
     }
 
 
     @Override
     protected void doPut(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        Employee employee = null;
-        Employee updatedEmployee = null;
         String jsonResponse = null;
-        BufferedReader employeeBufferReader = null;
+        HttpSession userSession = httpServletRequest.getSession(true);
+        String cookieValue = HttpUtil.getCookieByName("my_auth_cookie", httpServletRequest);
+        if (userSession.getAttribute(cookieValue) != null) {
+            Employee employee = null;
+            Employee updatedEmployee = null;
+            BufferedReader employeeBufferReader = null;
 
-        try {
-            logger.info("Received PUT request to update employee details");
-            employeeBufferReader = httpServletRequest.getReader();
-            employee = gson.fromJson(employeeBufferReader, Employee.class);
-            updatedEmployee = employeeService.updateEmployee(employee);
-            jsonResponse = gson.toJson(updatedEmployee);
+            try {
+                logger.info("Received PUT request to update employee details");
+                employeeBufferReader = httpServletRequest.getReader();
+                employee = gson.fromJson(employeeBufferReader, Employee.class);
+                updatedEmployee = employeeService.updateEmployee(employee);
+                jsonResponse = gson.toJson(updatedEmployee);
 
-            logger.info("Successfully updated employee: {}", updatedEmployee);
-        } catch (EmployeeFileUpdateException | EmployeeNotFoundException exception) {
-            logger.error("Error updating employee", exception);
-            ErrorResponse errorResponse = new ErrorResponse(exception.getMessage(), 404); // 404 for Not Found or appropriate status code
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(404); // Not Found
-        } catch (ServerUnavilableException exception) {
-            logger.error("Server is unavailable while updating employee", exception);
-            ErrorResponse errorResponse = new ErrorResponse("Server is unavailable", 503); // 503 for Service Unavailable
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(503);
-        } catch (IOException e) {
-            logger.error("Error parsing request body", e);
-            ErrorResponse errorResponse = new ErrorResponse("Invalid input format", 400);
+                logger.info("Successfully updated employee: {}", updatedEmployee);
+            } catch (EmployeeFileUpdateException | EmployeeNotFoundException exception) {
+                logger.error("Error updating employee", exception);
+                ErrorResponse errorResponse = new ErrorResponse(exception.getMessage(), 404); // 404 for Not Found or appropriate status code
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(404); // Not Found
+            } catch (ServerUnavilableException exception) {
+                logger.error("Server is unavailable while updating employee", exception);
+                ErrorResponse errorResponse = new ErrorResponse("Server is unavailable", 503); // 503 for Service Unavailable
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(503);
+            } catch (IOException e) {
+                logger.error("Error parsing request body", e);
+                ErrorResponse errorResponse = new ErrorResponse("Invalid input format", 400);
+                jsonResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(400);
+            } finally {
+                sendResponse(httpServletResponse, jsonResponse);
+                try {
+                    closeBufferReader(employeeBufferReader);
+                } catch (IOException e) {
+                    logger.error("Error While closing the BufferReader");
+                    ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+                    jsonResponse = gson.toJson(errorResponse);
+                    httpServletResponse.setStatus(500);
+                    sendResponse(httpServletResponse, jsonResponse);
+                }
+            }
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
             jsonResponse = gson.toJson(errorResponse);
             httpServletResponse.setStatus(400);
-        } finally {
             sendResponse(httpServletResponse, jsonResponse);
-            try {
-                closeBufferReader(employeeBufferReader);
-            } catch (IOException e) {
-                logger.error("Error While closing the BufferReader");
-                ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
-                jsonResponse = gson.toJson(errorResponse);
-                httpServletResponse.setStatus(500);
-                sendResponse(httpServletResponse, jsonResponse);
-            }
         }
     }
 
@@ -172,46 +194,55 @@ public class EmployeeServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonEmployeeResponse = null;
-        Employee deletedEmployee = null;
-        String empId = httpServletRequest.getParameter("empId");
-        logger.info("Received DELETE request with empId: {}", empId);
+        HttpSession userSession = httpServletRequest.getSession(true);
+        String cookieValue = HttpUtil.getCookieByName("my_auth_cookie", httpServletRequest);
+        if (userSession.getAttribute(cookieValue) != null) {
+            Employee deletedEmployee = null;
+            String empId = httpServletRequest.getParameter("empId");
+            logger.info("Received DELETE request with empId: {}", empId);
 
-        try {
-            if (empId == null || empId.isEmpty()) {
-                logger.warn("No empId provided in DELETE request");
-                ErrorResponse errorResponse = new ErrorResponse("empId parameter is required", 400);
-                jsonEmployeeResponse = gson.toJson(errorResponse);
-                httpServletResponse.setStatus(400); // Bad Request
-            } else {
-                try {
-                    int id = Integer.parseInt(empId);
-                    deletedEmployee = employeeService.deleteEmployee(id);
-                    logger.info("Successfully deleted employee: {}", deletedEmployee);
-                    jsonEmployeeResponse = gson.toJson(deletedEmployee);
-                } catch (NumberFormatException e) {
-                    logger.error("Invalid empId format: {}", empId, e);
-                    ErrorResponse errorResponse = new ErrorResponse("Invalid empId format", 400);
+            try {
+                if (empId == null || empId.isEmpty()) {
+                    logger.warn("No empId provided in DELETE request");
+                    ErrorResponse errorResponse = new ErrorResponse("empId parameter is required", 400);
                     jsonEmployeeResponse = gson.toJson(errorResponse);
                     httpServletResponse.setStatus(400); // Bad Request
-                } catch (EmployeeFileDeletionException | EmployeeNotFoundException e) {
-                    logger.error("Error deleting employee with empId: {}", empId, e);
-                    ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 404); // Not Found
-                    jsonEmployeeResponse = gson.toJson(errorResponse);
-                    httpServletResponse.setStatus(404); // Not Found
-                } catch (ServerUnavilableException | EmployeeFileUpdateException | EmployeeFileReadException e) {
-                    logger.error("Server error while deleting employee with empId: {}", empId, e);
-                    ErrorResponse errorResponse = new ErrorResponse("Server error", 503); // Service Unavailable
-                    jsonEmployeeResponse = gson.toJson(errorResponse);
-                    httpServletResponse.setStatus(503); // Service Unavailable
+                } else {
+                    try {
+                        int id = Integer.parseInt(empId);
+                        deletedEmployee = employeeService.deleteEmployee(id);
+                        logger.info("Successfully deleted employee: {}", deletedEmployee);
+                        jsonEmployeeResponse = gson.toJson(deletedEmployee);
+                    } catch (NumberFormatException e) {
+                        logger.error("Invalid empId format: {}", empId, e);
+                        ErrorResponse errorResponse = new ErrorResponse("Invalid empId format", 400);
+                        jsonEmployeeResponse = gson.toJson(errorResponse);
+                        httpServletResponse.setStatus(400); // Bad Request
+                    } catch (EmployeeFileDeletionException | EmployeeNotFoundException e) {
+                        logger.error("Error deleting employee with empId: {}", empId, e);
+                        ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 404); // Not Found
+                        jsonEmployeeResponse = gson.toJson(errorResponse);
+                        httpServletResponse.setStatus(404); // Not Found
+                    } catch (ServerUnavilableException | EmployeeFileUpdateException | EmployeeFileReadException e) {
+                        logger.error("Server error while deleting employee with empId: {}", empId, e);
+                        ErrorResponse errorResponse = new ErrorResponse("Server error", 503); // Service Unavailable
+                        jsonEmployeeResponse = gson.toJson(errorResponse);
+                        httpServletResponse.setStatus(503); // Service Unavailable
+                    }
                 }
+            } catch (Exception e) {
+                logger.error("Unexpected error during DELETE operation", e);
+                ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500); // Internal Server Error
+                jsonEmployeeResponse = gson.toJson(errorResponse);
+                httpServletResponse.setStatus(500); // Internal Server Error
+                sendResponse(httpServletResponse, jsonEmployeeResponse);
+            } finally {
+                sendResponse(httpServletResponse, jsonEmployeeResponse);
             }
-        } catch (Exception e) {
-            logger.error("Unexpected error during DELETE operation", e);
-            ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500); // Internal Server Error
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
             jsonEmployeeResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500); // Internal Server Error
-            sendResponse(httpServletResponse, jsonEmployeeResponse);
-        } finally {
+            httpServletResponse.setStatus(400);
             sendResponse(httpServletResponse, jsonEmployeeResponse);
         }
     }
