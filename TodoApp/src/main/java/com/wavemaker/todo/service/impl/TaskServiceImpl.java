@@ -38,4 +38,19 @@ public class TaskServiceImpl implements TaskService {
     public List<Task> getAllTasks(int userId) throws ServerUnavilableException {
         return taskRepository.getAllTasks(userId);
     }
+
+    @Override
+    public List<Task> getAllTasksByPriority(int userId, String priority) throws ServerUnavilableException {
+        return taskRepository.getAllTasksByPriority(userId, priority);
+    }
+
+    @Override
+    public List<Task> getAllTasksByDueDate(int userId, String order) throws ServerUnavilableException {
+        return taskRepository.getAllTasksByDueDate(userId,order);
+    }
+
+    @Override
+    public List<Task> getAllTasksByPriorityOrder(int userId, String order) throws ServerUnavilableException {
+        return taskRepository.getAllTasksByPriorityOrder(userId,order);
+    }
 }

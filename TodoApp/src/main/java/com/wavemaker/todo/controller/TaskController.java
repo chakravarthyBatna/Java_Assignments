@@ -51,6 +51,9 @@ public class TaskController extends HttpServlet {
         List<Task> taskList = null;
         Task task = null;
         String taskId = httpServletRequest.getParameter("taskId");
+        String priorityFilter = httpServletRequest.getParameter("priority");
+        String sortDueDate = httpServletRequest.getParameter("sortDueDate");
+        String sortPriority = httpServletRequest.getParameter("sortPriority");
         String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
         if (cookieValue != null) {
             try {
@@ -59,6 +62,15 @@ public class TaskController extends HttpServlet {
                     if (taskId != null) {
                         task = taskService.getTaskById(Integer.parseInt(taskId));
                         jsonResponse = gson.toJson(task);
+                    } else if (priorityFilter != null && !priorityFilter.equals("all")) {
+                        taskList = taskService.getAllTasksByPriority(userId, priorityFilter);
+                        jsonResponse = gson.toJson(taskList);
+                    } else if (sortPriority != null && !sortPriority.equals("none")) {
+                        taskList = taskService.getAllTasksByPriorityOrder(userId, sortPriority);
+                        jsonResponse = gson.toJson(taskList);
+                    } else if (sortDueDate != null && !sortDueDate.equals("none")) {
+                        taskList = taskService.getAllTasksByDueDate(userId, sortDueDate);
+                        jsonResponse = gson.toJson(taskList);
                     } else {
                         taskList = taskService.getAllTasks(userId);
                         jsonResponse = gson.toJson(taskList);

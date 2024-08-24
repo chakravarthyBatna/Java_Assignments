@@ -86,10 +86,32 @@ function checkDuplicate(taskName, dueDate, dueTime) {
 }
 
 function showAllTasks() {
+    // Get the values from select elements
+    const filterTasksValue = document.getElementById('filter-tasks').value;
+    const sortPriorityValue = document.getElementById('sort-priority').value;
+    const sortDueDateValue = document.getElementById('sort-due-date').value;
+
+    // Construct the URL with query parameters based on selected values
+    let url = 'http://localhost:8080/TodoApp/tasks?';
+
+    if (filterTasksValue !== 'all') {
+        url += `priority=${filterTasksValue}&`;
+    }
+
+    if (sortPriorityValue !== 'none') {
+        url += `sortPriority=${sortPriorityValue}&`;
+    }
+
+    if (sortDueDateValue !== 'none') {
+        url += `sortDueDate=${sortDueDateValue}&`;
+    }
+
+    // Remove the trailing '&' if there are any query parameters
+    url = url.endsWith('&') ? url.slice(0, -1) : url;
+
     // Fetch tasks from the server
-    fetch('http://localhost:8080/TodoApp/tasks')
+    fetch(url)
         .then(response => {
-            // Check if the response is OK (status code 200-299)
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -104,6 +126,7 @@ function showAllTasks() {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+
 
 function showCompletedTasks(tasks) {
     const completedListContainer = document.getElementById('completed-list-container');
