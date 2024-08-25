@@ -5,6 +5,7 @@ import com.wavemaker.todo.config.GsonConfig;
 import com.wavemaker.todo.exception.ErrorResponse;
 import com.wavemaker.todo.exception.ServerUnavilableException;
 import com.wavemaker.todo.pojo.Task;
+import com.wavemaker.todo.pojo.UserEntity;
 import com.wavemaker.todo.service.TaskService;
 import com.wavemaker.todo.service.UserCookieService;
 import com.wavemaker.todo.service.impl.TaskServiceImpl;
@@ -48,38 +49,33 @@ public class TaskController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonResponse = null;
+        UserEntity userEntity = null;
         List<Task> taskList = null;
         Task task = null;
         String taskId = httpServletRequest.getParameter("taskId");
+        String searchTerm = httpServletRequest.getParameter("searchTerm");
         String priorityFilter = httpServletRequest.getParameter("priority");
-        String sortDueDate = httpServletRequest.getParameter("sortDueDate");
-        String sortPriority = httpServletRequest.getParameter("sortPriority");
+        String sortBy = httpServletRequest.getParameter("sortBy");
+        String sortOrder = httpServletRequest.getParameter("sortOrder");
         String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
         if (cookieValue != null) {
             try {
-                int userId = userCookieService.getUserIdByCookieValue(cookieValue);
-                if (userId != -1) {
-                    if (taskId != null) {
-                        task = taskService.getTaskById(Integer.parseInt(taskId));
-                        jsonResponse = gson.toJson(task);
-                    } else if (priorityFilter != null && !priorityFilter.equals("all")) {
-                        taskList = taskService.getAllTasksByPriority(userId, priorityFilter);
-                        jsonResponse = gson.toJson(taskList);
-                    } else if (sortPriority != null && !sortPriority.equals("none")) {
-                        taskList = taskService.getAllTasksByPriorityOrder(userId, sortPriority);
-                        jsonResponse = gson.toJson(taskList);
-                    } else if (sortDueDate != null && !sortDueDate.equals("none")) {
-                        taskList = taskService.getAllTasksByDueDate(userId, sortDueDate);
-                        jsonResponse = gson.toJson(taskList);
-                    } else {
-                        taskList = taskService.getAllTasks(userId);
-                        jsonResponse = gson.toJson(taskList);
-                    }
-                } else {
+                userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
+                if (userEntity == null) {
                     ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                     jsonResponse = gson.toJson(errorResponse);
                     httpServletResponse.setStatus(400);
                     sendResponse(httpServletResponse, jsonResponse);
+                }
+
+                if (taskId != null) {
+                    task = taskService.getTaskById(Integer.parseInt(taskId));
+                    jsonResponse = gson.toJson(task);
+                } else {
+                    if (userEntity != null) {
+                        taskList = taskService.getAllTasks(userEntity.getUserId(), searchTerm, priorityFilter, sortBy, sortOrder);
+                        jsonResponse = gson.toJson(taskList);
+                    }
                 }
             } catch (ServerUnavilableException e) {
                 logger.error("Error fetching Task details ", e);
@@ -98,6 +94,8 @@ public class TaskController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonResponse = null;
+        String taskId = httpServletRequest.getParameter("taskId");
+        String markAsCompleted = httpServletRequest.getParameter("markAsCompleted");
         Task task = null;
         int userId = -1;
         Task addedTask = null;
@@ -105,19 +103,26 @@ public class TaskController extends HttpServlet {
         String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
         if (cookieValue != null) {
             try {
-                userId = userCookieService.getUserIdByCookieValue(cookieValue);
-                if (userId != -1) {
-                    bufferedReader = httpServletRequest.getReader();
-                    task = gson.fromJson(bufferedReader, Task.class);
-                    task.setUserId(userId);
-                    addedTask = taskService.addTask(task);
-                    jsonResponse = gson.toJson(addedTask);
-                } else {
+                UserEntity userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
+                if (userEntity == null) {
                     ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                     jsonResponse = gson.toJson(errorResponse);
                     httpServletResponse.setStatus(400);
                     sendResponse(httpServletResponse, jsonResponse);
                 }
+
+                if (taskId != null && markAsCompleted != null) {
+                    task = taskService.markTaskAsCompleted(userId, Integer.parseInt(taskId), Boolean.parseBoolean(markAsCompleted));
+                    jsonResponse = gson.toJson(task);
+                } else {
+                    bufferedReader = httpServletRequest.getReader();
+                    task = gson.fromJson(bufferedReader, Task.class);
+                    task.setUserId(userId);
+                    addedTask = taskService.addTask(task);
+                    jsonResponse = gson.toJson(addedTask);
+                }
+                httpServletResponse.setStatus(201);
+
             } catch (ServerUnavilableException | IOException e) {
                 logger.error("Error fetching Task details ", e);
                 ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
@@ -143,20 +148,21 @@ public class TaskController extends HttpServlet {
         String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
         if (cookieValue != null) {
             try {
-                int userId = userCookieService.getUserIdByCookieValue(cookieValue);
-                if (userId != -1) {
-                    bufferedReader = httpServletRequest.getReader();
-                    task = gson.fromJson(bufferedReader, Task.class);
-                    task.setTaskId(taskId);
-                    updatedTask = taskService.updateTask(task);
-                    task = null;
-                    jsonResponse = gson.toJson(updatedTask);
-                } else {
+                UserEntity userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
+                if (userEntity == null) {
                     ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                     jsonResponse = gson.toJson(errorResponse);
                     httpServletResponse.setStatus(400);
                     sendResponse(httpServletResponse, jsonResponse);
                 }
+                bufferedReader = httpServletRequest.getReader();
+                task = gson.fromJson(bufferedReader, Task.class);
+                task.setTaskId(taskId);
+                updatedTask = taskService.updateTask(task);
+                task = null;
+                jsonResponse = gson.toJson(updatedTask);
+
+
             } catch (ServerUnavilableException | IOException e) {
                 logger.error("Error fetching Task details ", e);
                 ErrorResponse errorResponse = new ErrorResponse("Unable to Update Task", HttpServletResponse.SC_BAD_REQUEST);
@@ -179,16 +185,15 @@ public class TaskController extends HttpServlet {
         String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
         if (cookieValue != null) {
             try {
-                int userId = userCookieService.getUserIdByCookieValue(cookieValue);
-                if (userId != -1) {
-                    task = taskService.deleteTaskById(taskId);
-                    jsonResponse = gson.toJson(task);
-                } else {
+                UserEntity userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
+                if (userEntity == null) {
                     ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                     jsonResponse = gson.toJson(errorResponse);
                     httpServletResponse.setStatus(400);
                     sendResponse(httpServletResponse, jsonResponse);
                 }
+                task = taskService.deleteTaskById(taskId);
+                jsonResponse = gson.toJson(task);
             } catch (ServerUnavilableException e) {
                 logger.error("Error fetching Task details ", e);
                 ErrorResponse errorResponse = new ErrorResponse("Unable to Delete Task", HttpServletResponse.SC_BAD_REQUEST);

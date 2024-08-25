@@ -1,6 +1,7 @@
 package com.wavemaker.todo.service.impl;
 
 import com.wavemaker.todo.exception.ServerUnavilableException;
+import com.wavemaker.todo.exception.TaskNotFoundException;
 import com.wavemaker.todo.factory.TaskRepositorySingleInstanceHandler;
 import com.wavemaker.todo.pojo.Task;
 import com.wavemaker.todo.repository.TaskRepository;
@@ -11,9 +12,16 @@ import java.util.List;
 
 public class TaskServiceImpl implements TaskService {
     private static TaskRepository taskRepository = null;
+
     public TaskServiceImpl() throws SQLException {
         taskRepository = TaskRepositorySingleInstanceHandler.getInDbTaskRepositoryInstance();
     }
+
+    @Override
+    public Task markTaskAsCompleted(int userId, int taskId, boolean markAsComplete) throws ServerUnavilableException, TaskNotFoundException {
+        return taskRepository.markTaskAsCompleted(userId, taskId, markAsComplete);
+    }
+
     @Override
     public Task addTask(Task task) throws ServerUnavilableException {
         return taskRepository.addTask(task);
@@ -35,22 +43,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> getAllTasks(int userId) throws ServerUnavilableException {
-        return taskRepository.getAllTasks(userId);
+    public List<Task> getAllTasks(int userId, String searchTerm, String priority, String sortBy, String sortOrder) throws ServerUnavilableException, TaskNotFoundException {
+        return taskRepository.getAllTasks(userId, searchTerm, priority, sortBy, sortOrder);
     }
 
-    @Override
-    public List<Task> getAllTasksByPriority(int userId, String priority) throws ServerUnavilableException {
-        return taskRepository.getAllTasksByPriority(userId, priority);
-    }
-
-    @Override
-    public List<Task> getAllTasksByDueDate(int userId, String order) throws ServerUnavilableException {
-        return taskRepository.getAllTasksByDueDate(userId,order);
-    }
-
-    @Override
-    public List<Task> getAllTasksByPriorityOrder(int userId, String order) throws ServerUnavilableException {
-        return taskRepository.getAllTasksByPriorityOrder(userId,order);
-    }
 }

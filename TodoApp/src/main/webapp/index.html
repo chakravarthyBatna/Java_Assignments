@@ -53,8 +53,13 @@
         <main class="col-md-9 col-lg-10">
             <div class="todo-app">
                 <div class="row">
-                    <div class="col-11">
+                    <div class="col-10">
                         <h2 class="text-center">My Day</h2>
+                    </div>
+                    <div class="col-1">
+                        <form action="/TodoApp/logout" method="POST">
+                            <button id="logout-button" class="btn btn-danger" type="submit">Logout</button>
+                        </form>
                     </div>
                     <div class="col-1">
                         <button id="dark-mode-toggle" class="btn btn-dark">🌙</button>

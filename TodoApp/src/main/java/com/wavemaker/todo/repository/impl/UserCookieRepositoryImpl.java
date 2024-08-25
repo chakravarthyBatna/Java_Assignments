@@ -1,6 +1,7 @@
 package com.wavemaker.todo.repository.impl;
 
 import com.wavemaker.todo.exception.ServerUnavilableException;
+import com.wavemaker.todo.pojo.UserEntity;
 import com.wavemaker.todo.repository.UserCookieRepository;
 import com.wavemaker.todo.util.DBConnector;
 import jakarta.servlet.http.HttpServletResponse;

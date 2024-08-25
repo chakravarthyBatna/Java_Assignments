@@ -300,3 +300,137 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to Authentica
 2024-08-23 14:51:48 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Successfully added employee: Employee{empId=16, name='vinay kumar', gender='MALE', age=30, email='chakri.batna@example.com', address=Address{addressId=24, state='ap', country='india', pincode=90001, empId=16}}
 2024-08-23 14:51:48 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Preparing response to send back to client
 2024-08-23 14:51:48 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.EmployeeServlet - Response successfully sent back to client
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : c0f76e37-cc66-4f84-9e09-bfe8d09fa03d
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : c0f76e37-cc66-4f84-9e09-bfe8d09fa03d
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@7118f551
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 15:48:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 15:48:52 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 15:48:52 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 15:48:52 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 15:48:52 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 15:48:52 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 15:48:52 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 15:50:09 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 15:50:09 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 15:50:09 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 15:50:09 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 15:50:09 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 15:50:24 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 15:50:24 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 15:50:24 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 15:50:24 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 15:50:24 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 05b5bfb7-7c02-4051-8985-cb500533c4b0
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 05b5bfb7-7c02-4051-8985-cb500533c4b0
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@a3cb76b2
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:23:39 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:23:39 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:23:39 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:23:39 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:23:39 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:23:39 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:23:39 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : cec124c1-8742-4965-aed4-09e4253976ab
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : cec124c1-8742-4965-aed4-09e4253976ab
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@1b6b256b
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:25:31 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:25:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:25:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:25:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:25:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:25:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:25:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 5e99b0c4-3e8f-4501-9a7f-b35bf29de647
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 5e99b0c4-3e8f-4501-9a7f-b35bf29de647
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@425693a
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:27:57 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:27:58 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:27:58 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:27:58 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:27:58 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:27:58 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:27:58 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:29:35 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:29:35 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:29:35 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:29:35 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:29:35 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:29:35 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:29:56 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:29:56 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:29:56 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:29:56 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:29:56 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:29:56 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 85cc1280-4b84-45c0-abbe-384a175af00f
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 85cc1280-4b84-45c0-abbe-384a175af00f
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@968308b1
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:31:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:31:12 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:31:32 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:31:32 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:31:36 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:31:36 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:31:36 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 32ba844e-6413-46be-8be4-321d8a4da76d
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 32ba844e-6413-46be-8be4-321d8a4da76d
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@5c475f7d
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:32:06 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:32:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:34:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:34:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:34:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:34:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:34:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:34:39 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:34:39 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:34:40 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 9b96025a-5b5b-412f-96b2-811d6c6ed5de
+2024-08-25 17:34:40 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:34:40 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 9b96025a-5b5b-412f-96b2-811d6c6ed5de
+2024-08-25 17:34:40 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@dba9978f
+2024-08-25 17:34:40 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:34:40 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:34:40 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client

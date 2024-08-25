@@ -84,36 +84,49 @@ function checkDuplicate(taskName, dueDate, dueTime) {
         task.taskName === taskName
     );
 }
-
 function showAllTasks() {
     // Get the values from select elements
     const filterTasksValue = document.getElementById('filter-tasks').value;
     const sortPriorityValue = document.getElementById('sort-priority').value;
     const sortDueDateValue = document.getElementById('sort-due-date').value;
 
-    // Construct the URL with query parameters based on selected values
-    let url = 'http://localhost:8080/TodoApp/tasks?';
+    // Convert priority filter to a number
+    let priorityNumber = '';
+    if (filterTasksValue === 'high') {
+        priorityNumber = 1;
+    } else if (filterTasksValue === 'medium') {
+        priorityNumber = 2;
+    } else if (filterTasksValue === 'low') {
+        priorityNumber = 3;
+    }
 
-    if (filterTasksValue !== 'all') {
-        url += `priority=${filterTasksValue}&`;
+    // Construct the URL with query parameters based on selected values
+    let url = 'http://localhost:8080/TodoApp/tasks';
+
+    let params = [];
+    if (priorityNumber) {
+        params.push(`priority=${priorityNumber}`);
     }
 
     if (sortPriorityValue !== 'none') {
-        url += `sortPriority=${sortPriorityValue}&`;
+        params.push(`sortBy=PRIORITY&sortOrder=${sortPriorityValue}`);
     }
 
     if (sortDueDateValue !== 'none') {
-        url += `sortDueDate=${sortDueDateValue}&`;
+        params.push(`sortBy=DUE_DATE&sortOrder=${sortDueDateValue}`);
     }
 
-    // Remove the trailing '&' if there are any query parameters
-    url = url.endsWith('&') ? url.slice(0, -1) : url;
+    if (params.length > 0) {
+        url += '?' + params.join('&');
+    }
 
     // Fetch tasks from the server
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                return response.json().then(errorData => {
+                    throw new Error(errorData.message || 'Network response was not ok');
+                });
             }
             return response.json(); // Parse JSON from the response
         })
@@ -124,6 +137,7 @@ function showAllTasks() {
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
+            alert('Error fetching tasks: ' + error.message);
         });
 }
 
@@ -133,6 +147,10 @@ function showCompletedTasks(tasks) {
     completedListContainer.innerHTML = ''; // Clear any existing content
     const listItems = buildHtmlForEachCompletedTask(tasks);
     listItems.forEach(item => completedListContainer.appendChild(item));
+      initializeSortable();  // Drag and drop
+        initializeEllipsisMenu();  // Ellipsis menu (three dots)
+        initializeEditDeleteEvents(); // Edit and delete buttons
+        initializeDetailsEvent();
 }
 
 function buildHtmlForEachCompletedTask(tasks) {
@@ -704,39 +722,40 @@ async function deleteTask(listItem) {
 }
 
 function markAsComplete(listItem) {
-    const taskName = listItem.querySelector('.task-name').innerText;
-    const dueDate = listItem.querySelector('.due-info:nth-child(1)').innerText;
-    const dueTime = listItem.querySelector('.due-info:nth-child(2)').innerText;
-    const priorityClass = listItem.className.split(' ').find(className => className.startsWith('task-priority-'));
-    const priority = priorityClass ? priorityClass.replace('task-priority-', '') : 'low';
+    // Retrieve the task ID from the hidden div
+    const taskIdElement = listItem.querySelector('div[style="display: none;"]');
+    const taskId = taskIdElement ? taskIdElement.textContent.trim() : null;
 
-    // Save the completed task and remove it from pending tasks
-    saveCompletedTaskToLocalStorage(taskName, dueDate, dueTime);
-    deleteTaskFromLocalStorage(taskName, dueDate, dueTime);
-
-    // Refresh the UI
-    showAllTasks();
-}
-
-function saveCompletedTaskToLocalStorage(taskName, dueDate, dueTime) {
-    // Retrieve the existing completed tasks from localStorage
-    let completedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
-    let pendingTasks = JSON.parse(localStorage.getItem('tasks'));
-
-    // Find the matching task
-    const task = pendingTasks.find(task =>
-        task.taskName === taskName && task.dueDate === dueDate && task.dueTime === dueTime
-    );
-
-    if (task) {
-        // Add the task to the completedTasks array
-        completedTasks.push(task);
-
-        // Save the updated completedTasks array back to localStorage
-        localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+    if (taskId) {
+        // Call the API to mark the task as completed
+        fetch('http://localhost:8080/TodoApp/tasks', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                taskId: taskId,
+                markAsCompleted: true
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to mark task as completed');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Task marked as completed:', data);
+            // Refresh the UI
+            showAllTasks();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        console.error('Task ID not found');
     }
 }
-
 
 function initializeSortable() {
     new Sortable(listContainer, {

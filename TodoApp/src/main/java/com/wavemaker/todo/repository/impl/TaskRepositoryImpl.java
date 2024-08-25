@@ -1,6 +1,7 @@
 package com.wavemaker.todo.repository.impl;
 
 import com.wavemaker.todo.exception.ServerUnavilableException;
+import com.wavemaker.todo.exception.TaskNotFoundException;
 import com.wavemaker.todo.pojo.Task;
 import com.wavemaker.todo.repository.TaskRepository;
 import com.wavemaker.todo.util.DBConnector;
@@ -13,21 +14,17 @@ import java.util.List;
 public class TaskRepositoryImpl implements TaskRepository {
 
     private static Connection connection = null;
-    private static final String LIST_QUERY = "SELECT TASK_ID, TASK_NAME, DUE_DATE," +
-            " DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE USER_ID = ? ORDER BY CASE PRIORITY" +
-            " WHEN 'High' THEN 1 WHEN 'Medium' THEN 2 WHEN 'Low' THEN 3 ELSE 4 END";
 
-    private static final String LIST_QUERY_BY_PRIORITY = "SELECT TASK_ID, TASK_NAME, DUE_DATE, " +
-            "DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE USER_ID = ? AND PRIORITY = ? " +
-            "AND COMPLETED = false ORDER BY DUE_DATE, DUE_TIME";
-    private static final String LIST_QUERY_BY_DUE_DATE = "SELECT TASK_ID, USER_ID, TASK_NAME, DUE_DATE, DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE USER_ID = ? ORDER BY DUE_DATE ";
-    private static final String LIST_QUERY_BY_PRIORITY_ORDER = "SELECT TASK_ID, TASK_NAME, DUE_DATE, DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE USER_ID = ? ORDER BY CASE PRIORITY WHEN 'low' THEN 1 WHEN 'medium' THEN 2 WHEN 'high' THEN 3 END ";
     private static final String INSERT_QUERY = "INSERT INTO TASKS (USER_ID, TASK_NAME, DUE_DATE," +
             " DUE_TIME, PRIORITY, COMPLETED) VALUES (?, ?, ?, ?, ?, ?)";
+
     private static final String GET_QUERY = "SELECT TASK_ID, USER_ID, TASK_NAME, DUE_DATE," +
             " DUE_TIME, PRIORITY, COMPLETED FROM TASKS WHERE TASK_ID = ?";
+
+
     private static final String UPDATE_QUERY = "UPDATE TASKS SET TASK_NAME = ?, " +
             "DUE_DATE = ?, DUE_TIME = ?, PRIORITY = ?, COMPLETED = ? WHERE TASK_ID = ?";
+
     private static final String DELETE_QUERY = "DELETE FROM TASKS WHERE TASK_ID = ?";
 
 
@@ -35,129 +32,42 @@ public class TaskRepositoryImpl implements TaskRepository {
         connection = DBConnector.getConnectionInstance();
     }
 
+
     @Override
-    public List<Task> getAllTasks(int userId) throws ServerUnavilableException {
-        List<Task> tasks = new ArrayList<>();
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(LIST_QUERY);
-            preparedStatement.setInt(1, userId);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                while (resultSet.next()) {
-                    Task task = new Task();
-                    task.setTaskId(resultSet.getInt("TASK_ID"));
-                    task.setTaskName(resultSet.getString("TASK_NAME"));
-                    task.setDueDate(resultSet.getDate("DUE_DATE").toLocalDate());
-                    task.setDueTime(resultSet.getTime("DUE_TIME").toLocalTime());
-                    task.setPriority(resultSet.getString("PRIORITY"));
-                    task.setCompleted(resultSet.getBoolean("COMPLETED"));
-                    tasks.add(task);
-                }
+    public Task markTaskAsCompleted(int userId, int taskId, boolean markAsComplete) throws ServerUnavilableException, TaskNotFoundException {
+        Task task = null;
+        String query = "UPDATE TASKS SET COMPLETED = ? WHERE USER_ID = ? AND TASK_ID = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setBoolean(1, markAsComplete);
+            preparedStatement.setInt(2, userId);
+            preparedStatement.setInt(3, taskId);
+
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            if (rowsUpdated == 0) {
+                throw new TaskNotFoundException("Task not found for the given userId and taskId.", HttpServletResponse.SC_NOT_FOUND);
             }
+
+            task = getTaskById(taskId);
+
         } catch (SQLException e) {
-            throw new ServerUnavilableException("Unable to Retrieve tasks", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        }
-        return tasks;
-    }
-
-    @Override
-    public List<Task> getAllTasksByPriority(int userId, String priority) throws ServerUnavilableException {
-        List<Task> taskList = new ArrayList<>();
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(LIST_QUERY_BY_PRIORITY);
-            preparedStatement.setInt(1, userId);
-            preparedStatement.setString(2, priority.toLowerCase());
-
-            try {
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    Task task = new Task();
-                    task.setTaskId(resultSet.getInt("TASK_ID"));
-                    task.setTaskName(resultSet.getString("TASK_NAME"));
-                    task.setDueDate(resultSet.getDate("DUE_DATE").toLocalDate());
-                    task.setDueTime(resultSet.getTime("DUE_TIME").toLocalTime());
-                    task.setPriority(resultSet.getString("PRIORITY"));
-                    task.setCompleted(resultSet.getBoolean("COMPLETED")); // Add this line to set the completed status
-                    taskList.add(task);
-                }
-            } catch (SQLException e) {
-                throw new ServerUnavilableException("Unable to fetch tasks from database", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            }
-        } catch (Exception e) {
-            throw new ServerUnavilableException("Error retrieving tasks by priority: " + e.getMessage(), 500);
+            throw new ServerUnavilableException("Error updating task completion status", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 
-        return taskList;
-    }
-
-    @Override
-    public List<Task> getAllTasksByDueDate(int userId, String order) throws ServerUnavilableException {
-        List<Task> tasks = new ArrayList<>();
-        try {
-            String query = LIST_QUERY_BY_DUE_DATE + (order.equals("asc") ? "ASC, DUE_TIME ASC" : "DESC, DUE_TIME DESC");
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, userId);
-            try {
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    Task task = new Task();
-                    task.setTaskId(resultSet.getInt("TASK_ID"));
-                    task.setTaskName(resultSet.getString("TASK_NAME"));
-                    task.setDueDate(resultSet.getDate("DUE_DATE").toLocalDate());
-                    task.setDueTime(resultSet.getTime("DUE_TIME").toLocalTime());
-                    task.setPriority(resultSet.getString("PRIORITY"));
-                    task.setCompleted(resultSet.getBoolean("COMPLETED"));
-
-                    tasks.add(task);
-                }
-            } catch (Exception e) {
-                throw new ServerUnavilableException("Error fetching tasks by due date", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            }
-        } catch (SQLException e) {
-            throw new ServerUnavilableException("Error fetching tasks by due date", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        }
-        return tasks;
-    }
-
-    @Override
-    public List<Task> getAllTasksByPriorityOrder(int userId, String order) throws ServerUnavilableException {
-        List<Task> taskList = new ArrayList<Task>();
-        String query = LIST_QUERY_BY_PRIORITY_ORDER + (order.equals("asc") ? "ASC" : "DESC");
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, userId);
-            try {
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    Task task = new Task();
-                    task.setTaskId(resultSet.getInt("TASK_ID"));
-                    task.setTaskName(resultSet.getString("TASK_NAME"));
-                    task.setDueDate(resultSet.getDate("DUE_DATE").toLocalDate());
-                    task.setDueTime(resultSet.getTime("DUE_TIME").toLocalTime());
-                    task.setPriority(resultSet.getString("PRIORITY"));
-                    task.setCompleted(resultSet.getBoolean("COMPLETED"));
-                    if (!task.isCompleted()) {
-                        taskList.add(task);
-                    }
-                }
-            } catch (Exception e) {
-                throw new ServerUnavilableException("Error fetching tasks by priority order", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            }
-        } catch (SQLException e) {
-            throw new ServerUnavilableException("Error fetching tasks by priority order", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        }
-        return taskList;
+        return task;
     }
 
 
     @Override
     public Task addTask(Task task) throws ServerUnavilableException {
+        int taskPriority = convertPriorityToNumber(task.getPriority());
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, task.getUserId());
             preparedStatement.setString(2, task.getTaskName());
             preparedStatement.setDate(3, Date.valueOf(task.getDueDate()));
             preparedStatement.setTime(4, Time.valueOf(task.getDueTime()));
-            preparedStatement.setString(5, task.getPriority());
+            preparedStatement.setInt(5, taskPriority);
             preparedStatement.setBoolean(6, task.isCompleted());
 
             int affectedRows = preparedStatement.executeUpdate();
@@ -188,13 +98,14 @@ public class TaskRepositoryImpl implements TaskRepository {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Task task = new Task();
+                    int taskPriority = resultSet.getInt("PRIORITY");
                     task.setTaskId(resultSet.getInt("TASK_ID"));
                     task.setUserId(resultSet.getInt("USER_ID"));
                     task.setTaskName(resultSet.getString("TASK_NAME"));
                     task.setDueDate(resultSet.getDate("DUE_DATE").toLocalDate());
                     task.setDueTime(resultSet.getTime("DUE_TIME").toLocalTime());
-                    task.setPriority(resultSet.getString("PRIORITY"));
                     task.setCompleted(resultSet.getBoolean("COMPLETED"));
+                    task.setPriority(convertNumberToPriority(taskPriority));
                     return task;
                 } else {
                     throw new ServerUnavilableException("Task not found with ID: " + taskId, HttpServletResponse.SC_NOT_FOUND);
@@ -229,7 +140,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             preparedStatement.setString(1, task.getTaskName());
             preparedStatement.setDate(2, Date.valueOf(task.getDueDate()));
             preparedStatement.setTime(3, Time.valueOf(task.getDueTime()));
-            preparedStatement.setString(4, task.getPriority());
+            preparedStatement.setInt(4, convertPriorityToNumber(task.getPriority()));
             preparedStatement.setBoolean(5, task.isCompleted());
             preparedStatement.setInt(6, task.getTaskId());
 
@@ -241,6 +152,100 @@ public class TaskRepositoryImpl implements TaskRepository {
             }
         } catch (SQLException e) {
             throw new ServerUnavilableException("Error updating task: " + e.getMessage(), HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Override
+    public List<Task> getAllTasks(int userId, String searchTerm, String priority, String sortBy, String sortOrder) throws ServerUnavilableException, TaskNotFoundException {
+        List<Task> tasks = new ArrayList<>();
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM TASKS");
+        boolean whereAdded = false;
+
+        if (userId > 0) {
+            queryBuilder.append(" WHERE USER_ID = ?");
+            whereAdded = true;
+        }
+
+        if (priority != null && !priority.isEmpty()) {
+            queryBuilder.append(whereAdded ? " AND" : " WHERE").append(" PRIORITY = ?");
+            whereAdded = true;
+        }
+
+        if (searchTerm != null && !searchTerm.isEmpty()) {
+            queryBuilder.append(whereAdded ? " AND" : " WHERE").append(" TASK_NAME LIKE ?");
+            whereAdded = true;
+        }
+
+        if (sortBy != null && !sortBy.isEmpty()) {
+            queryBuilder.append(" ORDER BY ").append(sortBy).append(" ").append(sortOrder != null ? sortOrder : "ASC");
+        }
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryBuilder.toString());
+
+            int paramIndex = 1;
+            if (userId > 0) {
+                preparedStatement.setInt(paramIndex++, userId);
+            }
+
+            if (priority != null && !priority.isEmpty()) {
+                int priorityValue = convertPriorityToNumber(priority);
+                preparedStatement.setInt(paramIndex++, priorityValue);
+            }
+
+            if (searchTerm != null && !searchTerm.isEmpty()) {
+                preparedStatement.setString(paramIndex++, "%" + searchTerm + "%");
+            }
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    Task task = new Task();
+                    task.setTaskId(resultSet.getInt("TASK_ID"));
+                    task.setUserId(resultSet.getInt("USER_ID"));
+                    task.setTaskName(resultSet.getString("TASK_NAME"));
+                    task.setDueDate(resultSet.getDate("DUE_DATE").toLocalDate());
+                    task.setDueTime(resultSet.getTime("DUE_TIME").toLocalTime());
+                    task.setCompleted(resultSet.getBoolean("COMPLETED"));
+                    int taskPriority = resultSet.getInt("PRIORITY");
+                    task.setPriority(convertNumberToPriority(taskPriority));
+                    tasks.add(task);
+                }
+            }
+
+            if (tasks.isEmpty()) {
+                throw new TaskNotFoundException("No tasks found for the given criteria.", HttpServletResponse.SC_NOT_FOUND);
+            }
+        } catch (SQLException e) {
+            throw new ServerUnavilableException("Error retrieving tasks: " + e.getMessage(), HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }
+
+        return tasks;
+    }
+
+
+    private int convertPriorityToNumber(String priority) {
+        switch (priority.toLowerCase()) {
+            case "high":
+                return 1;
+            case "medium":
+                return 2;
+            case "low":
+                return 3;
+            default:
+                return 3;
+        }
+    }
+
+    private String convertNumberToPriority(int priority) {
+        switch (priority) {
+            case 1:
+                return "high";
+            case 2:
+                return "medium";
+            case 3:
+                return "low";
+            default:
+                return "low";
         }
     }
 }

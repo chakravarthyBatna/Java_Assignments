@@ -2,11 +2,11 @@ package com.wavemaker.todo.login;
 
 import com.google.gson.Gson;
 import com.wavemaker.todo.exception.ErrorResponse;
-import com.wavemaker.todo.pojo.UsernameAndPassword;
+import com.wavemaker.todo.pojo.UserEntity;
 import com.wavemaker.todo.service.UserCookieService;
-import com.wavemaker.todo.service.UserService;
+import com.wavemaker.todo.service.UserEntityService;
 import com.wavemaker.todo.service.impl.UserCookieServiceImpl;
-import com.wavemaker.todo.service.impl.UserServiceImpl;
+import com.wavemaker.todo.service.impl.UserEntityServiceImpl;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.http.*;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import java.util.UUID;
 
 public class LoginServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(LoginServlet.class);
-    private static UserService userService = null;
+    private static UserEntityService userEntityService = null;
     private static Gson gson = null;
     private static UserCookieService userCookieService = null;
 
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
     public void init(ServletConfig config) {
         try {
             gson = new Gson();
-            userService = new UserServiceImpl();
+            userEntityService = new UserEntityServiceImpl();
             userCookieService = new UserCookieServiceImpl();
         } catch (SQLException e) {
             logger.error("Exception : ", e);
@@ -41,24 +41,24 @@ public class LoginServlet extends HttpServlet {
         String jsonResponse = null;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        UsernameAndPassword usernameAndPassword = new UsernameAndPassword();
-        usernameAndPassword.setUsername(username);
-        usernameAndPassword.setPassword(password);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUsername(username);
+        userEntity.setPassword(password);
         try {
-            logger.info(" UserName : {}", usernameAndPassword.getUsername());
-            int userId = userService.authenticateUser(usernameAndPassword);
-            if (userId != -1) {
+            logger.info(" UserName : {}", userEntity.getUsername());
+            UserEntity authenticatedUser = userEntityService.authenticateUser(userEntity);
+            if (authenticatedUser != null) {
                 String cookieValue = UUID.randomUUID().toString(); //generating random cookie
                 String cookieName = "my_auth_cookie";  //set default cookie value
                 Cookie cookie = new Cookie(cookieName, cookieValue); //creating a cookie with name,value;
 
-                userCookieService.addCookie(cookieValue, userId);
+                userCookieService.addCookie(cookieValue, authenticatedUser.getUserId());
 
                 logger.info("random cookie generated for new user : {}", cookieValue);
                 HttpSession userSession = request.getSession(true); //userSession created
-                userSession.setAttribute(cookieValue, userId); //added user to userSession
+                userSession.setAttribute(cookieValue, authenticatedUser); //added user to userSession
                 logger.info("User Session is set to new user");
-                logger.info("user cookie added successfully username : {} and cookie : {}", usernameAndPassword.getUsername(), cookieValue);
+                logger.info("user cookie added successfully username : {} and cookie : {}", authenticatedUser.getUsername(), cookieValue);
                 response.addCookie(cookie); //added cookie to response
 
                 logger.info("User Cookie added Successfully to browser : {}", cookie);
@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 errorResponse = new ErrorResponse("Invalid UserName and Password", 401);
                 jsonResponse = gson.toJson(errorResponse);
-                logger.error("Invalid User Found : Username : {} and User Password : {}", usernameAndPassword.getUsername(), usernameAndPassword);
+                logger.error("Invalid User Found : Username : {} and User Password : {}", authenticatedUser.getUsername(), authenticatedUser);
             }
         } catch (Exception e) {
             errorResponse = new ErrorResponse("Error - While logging : " + e.getMessage(), 500);
