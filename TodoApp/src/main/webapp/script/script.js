@@ -782,14 +782,29 @@ function initializeEllipsisMenu() {
 }
 
 searchBar.addEventListener('input', function () {
-    const filter = searchBar.value.toLowerCase();
-    const tasks = listContainer.getElementsByClassName('task-item');
+    const searchTerm = searchBar.value.toLowerCase();
 
-    Array.from(tasks).forEach(task => {
-        const taskText = task.textContent || task.innerText;
-        task.style.display = taskText.toLowerCase().includes(filter) ? '' : 'none';
-    });
+    // Construct the URL with the search term
+    let url = `http://localhost:8080/TodoApp/tasks?searchTerm=${searchTerm}`;
+
+    // Fetch tasks from the server
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse JSON from the response
+        })
+        .then(tasks => {
+            // Assuming tasks is an array of task objects
+            showPendingTasks(tasks.filter(task => !task.completed));
+            showCompletedTasks(tasks.filter(task => task.completed));
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 });
+
 
 filterTasks.addEventListener('change', function () {
     const filter = filterTasks.value; //low or medium or hard

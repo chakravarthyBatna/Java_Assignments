@@ -17,13 +17,21 @@ public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         HttpSession session = httpServletRequest.getSession(false);
         String cookieName = "my_auth_cookie";
+
         try {
-            Cookie cookie = CookieHandler.invalidateCookie(cookieName, httpServletRequest);
-            httpServletResponse.addCookie(cookie);
+            // Invalidate the session if it exists
             if (session != null) {
                 session.invalidate();
                 logger.info("User session invalidated successfully");
             }
+
+            // Invalidate the authentication cookie
+            Cookie cookie = CookieHandler.invalidateCookie(cookieName, httpServletRequest);
+            httpServletResponse.addCookie(cookie);
+
+            // Redirect to login page or home page after logout
+            httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/login");
+
         } catch (Exception e) {
             logger.error("Error invalidating user session", e);
             httpServletResponse.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal Server Error");

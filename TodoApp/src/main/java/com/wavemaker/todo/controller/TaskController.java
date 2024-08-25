@@ -10,12 +10,12 @@ import com.wavemaker.todo.service.TaskService;
 import com.wavemaker.todo.service.UserCookieService;
 import com.wavemaker.todo.service.impl.TaskServiceImpl;
 import com.wavemaker.todo.service.impl.UserCookieServiceImpl;
-import com.wavemaker.todo.util.CookieHandler;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,9 +28,9 @@ import java.util.List;
 @WebServlet("/tasks")
 public class TaskController extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
-    private static TaskService taskService = null;
-    private static UserCookieService userCookieService = null;
-    private static Gson gson = null;
+    private TaskService taskService = null;
+    private UserCookieService userCookieService = null;
+    private Gson gson = null;
 
     public TaskController() {
     }
@@ -52,44 +52,54 @@ public class TaskController extends HttpServlet {
         UserEntity userEntity = null;
         List<Task> taskList = null;
         Task task = null;
+        HttpSession session = null;
         String taskId = httpServletRequest.getParameter("taskId");
         String searchTerm = httpServletRequest.getParameter("searchTerm");
         String priorityFilter = httpServletRequest.getParameter("priority");
         String sortBy = httpServletRequest.getParameter("sortBy");
         String sortOrder = httpServletRequest.getParameter("sortOrder");
-        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
-        if (cookieValue != null) {
-            try {
-                userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
-                if (userEntity == null) {
-                    ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
-                    jsonResponse = gson.toJson(errorResponse);
-                    httpServletResponse.setStatus(400);
-                    sendResponse(httpServletResponse, jsonResponse);
-                }
 
-                if (taskId != null) {
-                    task = taskService.getTaskById(Integer.parseInt(taskId));
-                    jsonResponse = gson.toJson(task);
-                } else {
-                    if (userEntity != null) {
-                        taskList = taskService.getAllTasks(userEntity.getUserId(), searchTerm, priorityFilter, sortBy, sortOrder);
-                        jsonResponse = gson.toJson(taskList);
-                    }
-                }
-            } catch (ServerUnavilableException e) {
-                logger.error("Error fetching Task details ", e);
-                ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+        logger.info("Received GET request with parameters: taskId={}, searchTerm={}, priority={}, sortBy={}, sortOrder={}",
+                taskId, searchTerm, priorityFilter, sortBy, sortOrder);
+
+        try {
+            session = httpServletRequest.getSession(true);
+            logger.info("Session retrieved: sessionId={}", session.getId());
+
+            userEntity = (UserEntity) session.getAttribute("my_user");
+            if (userEntity == null) {
+                logger.warn("Invalid user found in session: sessionId={}", session.getId());
+                ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                 jsonResponse = gson.toJson(errorResponse);
-            } catch (Exception e) {
-                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                httpServletResponse.setStatus(500);
-                jsonResponse = gson.toJson(errorResponse);
-            } finally {
+                httpServletResponse.setStatus(400);
                 sendResponse(httpServletResponse, jsonResponse);
+                return;
             }
+
+            if (taskId != null) {
+                logger.info("Fetching task with ID: {}", taskId);
+                task = taskService.getTaskById(Integer.parseInt(taskId));
+                jsonResponse = gson.toJson(task);
+            } else {
+                logger.info("Fetching all tasks for user ID: {}", userEntity.getUserId());
+                taskList = taskService.getAllTasks(userEntity.getUserId(), searchTerm, priorityFilter, sortBy, sortOrder);
+                jsonResponse = gson.toJson(taskList);
+            }
+        } catch (ServerUnavilableException e) {
+            logger.error("Error fetching Task details for user ID: {}", userEntity != null ? userEntity.getUserId() : "Unknown", e);
+            ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+            jsonResponse = gson.toJson(errorResponse);
+        } catch (Exception e) {
+            logger.error("Server error occurred while processing GET request", e);
+            ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setStatus(500);
+            jsonResponse = gson.toJson(errorResponse);
+        } finally {
+            sendResponse(httpServletResponse, jsonResponse);
+            logger.info("Response sent with status: {}", httpServletResponse.getStatus());
         }
     }
+
 
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
@@ -97,43 +107,59 @@ public class TaskController extends HttpServlet {
         String taskId = httpServletRequest.getParameter("taskId");
         String markAsCompleted = httpServletRequest.getParameter("markAsCompleted");
         Task task = null;
+        HttpSession session = null;
+        UserEntity userEntity = null;
         int userId = -1;
         Task addedTask = null;
         BufferedReader bufferedReader = null;
-        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
-        if (cookieValue != null) {
-            try {
-                UserEntity userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
-                if (userEntity == null) {
-                    ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
-                    jsonResponse = gson.toJson(errorResponse);
-                    httpServletResponse.setStatus(400);
-                    sendResponse(httpServletResponse, jsonResponse);
-                }
 
-                if (taskId != null && markAsCompleted != null) {
-                    task = taskService.markTaskAsCompleted(userId, Integer.parseInt(taskId), Boolean.parseBoolean(markAsCompleted));
-                    jsonResponse = gson.toJson(task);
-                } else {
-                    bufferedReader = httpServletRequest.getReader();
-                    task = gson.fromJson(bufferedReader, Task.class);
-                    task.setUserId(userId);
-                    addedTask = taskService.addTask(task);
-                    jsonResponse = gson.toJson(addedTask);
-                }
-                httpServletResponse.setStatus(201);
+        logger.info("Received POST request with parameters: taskId={}, markAsCompleted={}", taskId, markAsCompleted);
 
-            } catch (ServerUnavilableException | IOException e) {
-                logger.error("Error fetching Task details ", e);
-                ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+        try {
+            session = httpServletRequest.getSession(true);
+            logger.info("Session retrieved: sessionId={}", session.getId());
+
+            userEntity = (UserEntity) session.getAttribute("my_user");
+            if (userEntity == null) {
+                logger.warn("Invalid user found in session: sessionId={}", session.getId());
+                ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                 jsonResponse = gson.toJson(errorResponse);
-            } catch (Exception e) {
-                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                httpServletResponse.setStatus(500);
-                jsonResponse = gson.toJson(errorResponse);
-            } finally {
+                httpServletResponse.setStatus(400);
                 sendResponse(httpServletResponse, jsonResponse);
+                return;
             }
+
+            userId = userEntity.getUserId();
+            logger.info("Processing request for userId={}", userId);
+
+            if (taskId != null && markAsCompleted != null) {
+                logger.info("Marking task as completed: taskId={}, markAsCompleted={}", taskId, markAsCompleted);
+                task = taskService.markTaskAsCompleted(userId, Integer.parseInt(taskId), Boolean.parseBoolean(markAsCompleted));
+                jsonResponse = gson.toJson(task);
+            } else {
+                logger.info("Adding new task for userId={}", userId);
+                bufferedReader = httpServletRequest.getReader();
+                task = gson.fromJson(bufferedReader, Task.class);
+                task.setUserId(userId);
+                addedTask = taskService.addTask(task);
+                jsonResponse = gson.toJson(addedTask);
+            }
+
+            httpServletResponse.setStatus(201);
+            logger.info("POST request processed successfully with status 201");
+
+        } catch (ServerUnavilableException | IOException e) {
+            logger.error("Error processing POST request for userId={}", userId, e);
+            ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+            jsonResponse = gson.toJson(errorResponse);
+        } catch (Exception e) {
+            logger.error("Server error occurred while processing POST request for userId={}", userId, e);
+            ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setStatus(500);
+            jsonResponse = gson.toJson(errorResponse);
+        } finally {
+            sendResponse(httpServletResponse, jsonResponse);
+            logger.info("Response sent with status: {}", httpServletResponse.getStatus());
         }
     }
 
@@ -141,70 +167,97 @@ public class TaskController extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonResponse = null;
+        HttpSession session = null;
+        UserEntity userEntity = null;
         Task updatedTask = null;
         Task task = null;
         int taskId = Integer.parseInt(httpServletRequest.getParameter("taskId"));
         BufferedReader bufferedReader = null;
-        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
-        if (cookieValue != null) {
-            try {
-                UserEntity userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
-                if (userEntity == null) {
-                    ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
-                    jsonResponse = gson.toJson(errorResponse);
-                    httpServletResponse.setStatus(400);
-                    sendResponse(httpServletResponse, jsonResponse);
-                }
-                bufferedReader = httpServletRequest.getReader();
-                task = gson.fromJson(bufferedReader, Task.class);
-                task.setTaskId(taskId);
-                updatedTask = taskService.updateTask(task);
-                task = null;
-                jsonResponse = gson.toJson(updatedTask);
 
+        logger.info("Received PUT request to update task with taskId={}", taskId);
 
-            } catch (ServerUnavilableException | IOException e) {
-                logger.error("Error fetching Task details ", e);
-                ErrorResponse errorResponse = new ErrorResponse("Unable to Update Task", HttpServletResponse.SC_BAD_REQUEST);
+        try {
+            session = httpServletRequest.getSession(true);
+            logger.info("Session retrieved: sessionId={}", session.getId());
+
+            userEntity = (UserEntity) session.getAttribute("my_user");
+            if (userEntity == null) {
+                logger.warn("Invalid user found in session: sessionId={}", session.getId());
+                ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                 jsonResponse = gson.toJson(errorResponse);
-            } catch (Exception e) {
-                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                httpServletResponse.setStatus(500);
-                jsonResponse = gson.toJson(errorResponse);
-            } finally {
+                httpServletResponse.setStatus(400);
                 sendResponse(httpServletResponse, jsonResponse);
+                return;
             }
+
+            logger.info("Reading task data from request body for userId={}", userEntity.getUserId());
+            bufferedReader = httpServletRequest.getReader();
+            task = gson.fromJson(bufferedReader, Task.class);
+            task.setTaskId(taskId);
+
+            logger.info("Updating task with taskId={} for userId={}", taskId, userEntity.getUserId());
+            updatedTask = taskService.updateTask(userEntity.getUserId(), task);
+            task = null;
+            jsonResponse = gson.toJson(updatedTask);
+            logger.info("Task updated successfully with taskId={}", taskId);
+
+        } catch (ServerUnavilableException | IOException e) {
+            logger.error("Error updating task with taskId={} for userId={}", taskId, userEntity != null ? userEntity.getUserId() : "unknown", e);
+            ErrorResponse errorResponse = new ErrorResponse("Unable to Update Task", HttpServletResponse.SC_BAD_REQUEST);
+            jsonResponse = gson.toJson(errorResponse);
+        } catch (Exception e) {
+            logger.error("Server error occurred while updating task with taskId={} for userId={}", taskId, userEntity != null ? userEntity.getUserId() : "unknown", e);
+            ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setStatus(500);
+            jsonResponse = gson.toJson(errorResponse);
+        } finally {
+            sendResponse(httpServletResponse, jsonResponse);
+            logger.info("Response sent for taskId={} with status: {}", taskId, httpServletResponse.getStatus());
         }
     }
+
 
     @Override
     protected void doDelete(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         String jsonResponse = null;
+        HttpSession session = null;
+        UserEntity userEntity = null;
         Task task = null;
         int taskId = Integer.parseInt(httpServletRequest.getParameter("taskId"));
-        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
-        if (cookieValue != null) {
-            try {
-                UserEntity userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
-                if (userEntity == null) {
-                    ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
-                    jsonResponse = gson.toJson(errorResponse);
-                    httpServletResponse.setStatus(400);
-                    sendResponse(httpServletResponse, jsonResponse);
-                }
-                task = taskService.deleteTaskById(taskId);
-                jsonResponse = gson.toJson(task);
-            } catch (ServerUnavilableException e) {
-                logger.error("Error fetching Task details ", e);
-                ErrorResponse errorResponse = new ErrorResponse("Unable to Delete Task", HttpServletResponse.SC_BAD_REQUEST);
+
+        logger.info("Received DELETE request to delete task with taskId={}", taskId);
+
+        try {
+            session = httpServletRequest.getSession(true);
+            logger.info("Session retrieved: sessionId={}", session.getId());
+
+            userEntity = (UserEntity) session.getAttribute("my_user");
+            if (userEntity == null) {
+                logger.warn("Invalid user found in session: sessionId={}", session.getId());
+                ErrorResponse errorResponse = new ErrorResponse("Invalid User Found, Access Denied", HttpServletResponse.SC_BAD_REQUEST);
                 jsonResponse = gson.toJson(errorResponse);
-            } catch (Exception e) {
-                ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                httpServletResponse.setStatus(500);
-                jsonResponse = gson.toJson(errorResponse);
-            } finally {
+                httpServletResponse.setStatus(400);
                 sendResponse(httpServletResponse, jsonResponse);
+                return;
             }
+
+            logger.info("Attempting to delete task with taskId={} for userId={}", taskId, userEntity.getUserId());
+            task = taskService.deleteTaskById(userEntity.getUserId(), taskId);
+            jsonResponse = gson.toJson(task);
+            logger.info("Task with taskId={} deleted successfully for userId={}", taskId, userEntity.getUserId());
+
+        } catch (ServerUnavilableException e) {
+            logger.error("Error deleting task with taskId={} for userId={}", taskId, userEntity != null ? userEntity.getUserId() : "unknown", e);
+            ErrorResponse errorResponse = new ErrorResponse("Unable to Delete Task", HttpServletResponse.SC_BAD_REQUEST);
+            jsonResponse = gson.toJson(errorResponse);
+        } catch (Exception e) {
+            logger.error("Server error occurred while deleting task with taskId={} for userId={}", taskId, userEntity != null ? userEntity.getUserId() : "unknown", e);
+            ErrorResponse errorResponse = new ErrorResponse("Server Error", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setStatus(500);
+            jsonResponse = gson.toJson(errorResponse);
+        } finally {
+            sendResponse(httpServletResponse, jsonResponse);
+            logger.info("Response sent for DELETE request on taskId={} with status: {}", taskId, httpServletResponse.getStatus());
         }
     }
 

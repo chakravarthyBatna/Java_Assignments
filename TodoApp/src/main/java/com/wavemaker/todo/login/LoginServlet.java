@@ -54,10 +54,6 @@ public class LoginServlet extends HttpServlet {
 
                 userCookieService.addCookie(cookieValue, authenticatedUser.getUserId());
 
-                logger.info("random cookie generated for new user : {}", cookieValue);
-                HttpSession userSession = request.getSession(true); //userSession created
-                userSession.setAttribute(cookieValue, authenticatedUser); //added user to userSession
-                logger.info("User Session is set to new user");
                 logger.info("user cookie added successfully username : {} and cookie : {}", authenticatedUser.getUsername(), cookieValue);
                 response.addCookie(cookie); //added cookie to response
 

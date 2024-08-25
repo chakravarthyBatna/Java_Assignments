@@ -2,7 +2,7 @@ package com.wavemaker.todo.service.impl;
 
 import com.wavemaker.todo.exception.ServerUnavilableException;
 import com.wavemaker.todo.exception.TaskNotFoundException;
-import com.wavemaker.todo.factory.TaskRepositorySingleInstanceHandler;
+import com.wavemaker.todo.factory.TaskRepositoryInstanceHandler;
 import com.wavemaker.todo.pojo.Task;
 import com.wavemaker.todo.repository.TaskRepository;
 import com.wavemaker.todo.service.TaskService;
@@ -11,10 +11,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class TaskServiceImpl implements TaskService {
-    private static TaskRepository taskRepository = null;
+    private TaskRepository taskRepository = null;
 
     public TaskServiceImpl() throws SQLException {
-        taskRepository = TaskRepositorySingleInstanceHandler.getInDbTaskRepositoryInstance();
+        taskRepository = TaskRepositoryInstanceHandler.getInDbTaskRepositoryInstance();
     }
 
     @Override
@@ -33,13 +33,13 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task deleteTaskById(int taskId) throws ServerUnavilableException {
-        return taskRepository.deleteTaskById(taskId);
+    public Task deleteTaskById(int userId, int taskId) throws ServerUnavilableException {
+        return taskRepository.deleteTaskById(userId, taskId);
     }
 
     @Override
-    public Task updateTask(Task task) throws ServerUnavilableException {
-        return taskRepository.updateTask(task);
+    public Task updateTask(int userId, Task task) throws ServerUnavilableException {
+        return taskRepository.updateTask(userId, task);
     }
 
     @Override

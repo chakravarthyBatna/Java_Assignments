@@ -7,4 +7,6 @@ public interface UserEntityService {
     public UserEntity authenticateUser(UserEntity userEntity) throws ServerUnavilableException;
 
     public UserEntity getUserEntityById(int userId) throws ServerUnavilableException;
+
+    public UserEntity addUserEntity(UserEntity userEntity) throws ServerUnavilableException;
 }

@@ -13,9 +13,9 @@ public interface TaskRepository {
 
     public Task getTaskById(int taskId) throws ServerUnavilableException;
 
-    public Task deleteTaskById(int taskId) throws ServerUnavilableException;
+    public Task deleteTaskById(int userId,int taskId) throws ServerUnavilableException;
 
-    public Task updateTask(Task task) throws ServerUnavilableException;
+    public Task updateTask(int userId,Task task) throws ServerUnavilableException;
 
     public List<Task> getAllTasks(int userId,  String searchTerm, String priority, String sortBy, String sortOrder) throws ServerUnavilableException, TaskNotFoundException;
 }

@@ -23,9 +23,9 @@ public class TaskRepositoryImpl implements TaskRepository {
 
 
     private static final String UPDATE_QUERY = "UPDATE TASKS SET TASK_NAME = ?, " +
-            "DUE_DATE = ?, DUE_TIME = ?, PRIORITY = ?, COMPLETED = ? WHERE TASK_ID = ?";
+            "DUE_DATE = ?, DUE_TIME = ?, PRIORITY = ?, COMPLETED = ? WHERE TASK_ID = ? AND USER_ID = ?";
 
-    private static final String DELETE_QUERY = "DELETE FROM TASKS WHERE TASK_ID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM TASKS WHERE TASK_ID = ? AND USER_ID = ?";
 
 
     public TaskRepositoryImpl() throws SQLException {
@@ -117,11 +117,12 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public Task deleteTaskById(int taskId) throws ServerUnavilableException {
+    public Task deleteTaskById(int userId, int taskId) throws ServerUnavilableException {
         try {
             Task taskToDelete = getTaskById(taskId); // Retrieve the task before deletion
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_QUERY);
             preparedStatement.setInt(1, taskId);
+            preparedStatement.setInt(2, userId);
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {
                 return taskToDelete; // Return the deleted task details
@@ -134,7 +135,7 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public Task updateTask(Task task) throws ServerUnavilableException {
+    public Task updateTask(int userId, Task task) throws ServerUnavilableException {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
             preparedStatement.setString(1, task.getTaskName());
@@ -143,7 +144,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             preparedStatement.setInt(4, convertPriorityToNumber(task.getPriority()));
             preparedStatement.setBoolean(5, task.isCompleted());
             preparedStatement.setInt(6, task.getTaskId());
-
+            preparedStatement.setInt(7, userId);
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {
                 return task;

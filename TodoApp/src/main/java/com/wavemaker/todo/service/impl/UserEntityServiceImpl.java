@@ -25,5 +25,10 @@ public class UserEntityServiceImpl implements UserEntityService {
         return userEntityRepository.getUserEntityById(userId);
     }
 
+    @Override
+    public UserEntity addUserEntity(UserEntity userEntity) throws ServerUnavilableException {
+        return userEntityRepository.addUserEntity(userEntity);
+    }
+
 
 }

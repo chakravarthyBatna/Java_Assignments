@@ -434,3 +434,478 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to Authentica
 2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
 2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
 2024-08-25 17:35:18 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 57501f96-fd4f-409a-9b13-7dd4af8bd558
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 57501f96-fd4f-409a-9b13-7dd4af8bd558
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@6b63efaf
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 17:37:12 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 17:37:13 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:37:13 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:37:13 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:37:13 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:37:13 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:37:13 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:37:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:37:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:37:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:37:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:37:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:37:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:37:36 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:37:36 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:37:36 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:37:36 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:37:36 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:37:36 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:37:38 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:37:38 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:37:38 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:37:38 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:37:38 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:37:38 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:37:41 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:37:41 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:37:41 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:37:41 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:37:41 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:37:41 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 17:37:56 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 17:37:56 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 17:37:56 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 17:37:56 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 17:37:56 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 17:37:56 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : 3e6e1a32-4301-4dc7-ad83-24569389841f
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 3e6e1a32-4301-4dc7-ad83-24569389841f
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@87f2415c
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 18:55:46 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 18:55:46 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:55:46 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:55:46 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:55:46 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:55:46 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:55:46 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:55:54 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:55:54 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:55:54 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:55:54 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:55:54 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:55:54 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:55:59 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:55:59 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:55:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:55:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:55:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:55:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:55:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:05 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:05 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:05 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:05 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:05 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:07 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:17 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:17 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:17 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:17 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:17 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:17 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:22 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:22 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:23 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:23 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:23 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:23 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:23 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:23 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:31 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:31 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:31 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:31 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:31 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:32 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:32 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:32 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:32 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:32 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:33 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:33 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:33 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:33 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:33 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:34 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:34 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:34 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:34 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:34 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:34 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:35 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:35 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:35 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:35 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:35 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:35 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 18:56:47 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 18:56:47 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 18:56:47 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 18:56:47 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 18:56:47 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 18:56:47 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - random cookie generated for new user : c254544c-a405-49c8-9679-b5dfb7e7845c
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Session is set to new user
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : c254544c-a405-49c8-9679-b5dfb7e7845c
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@d38bc63c
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 19:03:25 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 19:03:25 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:25 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:25 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:25 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:25 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:25 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:29 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:29 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:29 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:29 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:29 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:29 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:29 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:34 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:34 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:34 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:34 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:34 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:34 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:36 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:36 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:36 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:36 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:36 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:36 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:37 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:37 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:37 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:40 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:40 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:40 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:40 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:40 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:45 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:45 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:45 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:45 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:45 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:45 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:48 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:48 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:48 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:48 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:48 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:50 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:50 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:50 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:50 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:50 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:50 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:51 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:51 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:51 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:51 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:51 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:51 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:03:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:03:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:03:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:03:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:03:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:03:59 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:04:01 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:04:01 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:04:01 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:04:01 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:04:01 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:04:02 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:04:02 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:04:02 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:04:02 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:04:02 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:04:02 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:04:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:04:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:04:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:04:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:04:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:04:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 19:04:23 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 19:04:23 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 19:04:23 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 19:04:23 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter()
+2024-08-25 19:04:23 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 19:04:23 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 22:06:06 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 22:06:06 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:13 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-25 23:04:13 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-25 23:04:13 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 147a2085-61f9-41f4-8c13-7777fff31721
+2024-08-25 23:04:13 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@7413c741
+2024-08-25 23:04:13 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-25 23:04:13 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:14 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=PRIORITY, sortOrder=asc
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:23 [http-nio-8080-exec-8] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=PRIORITY, sortOrder=desc
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:26 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=PRIORITY, sortOrder=desc
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:28 [http-nio-8080-exec-10] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=DUE_DATE, sortOrder=asc
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:30 [http-nio-8080-exec-1] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=DUE_DATE, sortOrder=desc
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:32 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=u, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=up, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=u, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:45 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:48 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=E58483E417B0B306037D9F15CA230E43
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:04:52 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-25 23:04:56 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.logout.LogoutServlet - User session invalidated successfully
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=null, sortOrder=null
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=1D984F4EADBC27AD06AEA26F8FA98C90
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-25 23:05:04 [http-nio-8080-exec-9] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=null, sortOrder=null
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=8ACEC3A004E63E73B8F6B787A9AB5A5D
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-26 01:40:37 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client

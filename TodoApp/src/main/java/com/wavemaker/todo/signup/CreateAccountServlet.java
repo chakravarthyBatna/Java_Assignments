@@ -1,61 +1,61 @@
-package com.wavemaker.todo.login;
+package com.wavemaker.todo.signup;
 
 import com.google.gson.Gson;
+import com.google.protobuf.ServiceException;
+import com.wavemaker.todo.config.GsonConfig;
 import com.wavemaker.todo.exception.ErrorResponse;
 import com.wavemaker.todo.exception.ServerUnavilableException;
 import com.wavemaker.todo.pojo.UserEntity;
-import com.wavemaker.todo.service.UserCookieService;
-import com.wavemaker.todo.service.impl.UserCookieServiceImpl;
-import com.wavemaker.todo.util.CookieHandler;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebFilter;
+import com.wavemaker.todo.service.UserEntityService;
+import com.wavemaker.todo.service.impl.UserEntityServiceImpl;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-@WebFilter("/tasks")
-public class AuthenticationFilter implements Filter {
-    private static final Logger logger = LoggerFactory.getLogger(AuthenticationFilter.class);
-    private static UserCookieService userCookieService;
-    private static Gson gson = null;
+@WebServlet("/signup")
+public class CreateAccountServlet extends HttpServlet {
+    private static final Logger logger = LoggerFactory.getLogger(CreateAccountServlet.class);
+    private Gson gson = null;
+    private UserEntityService userEntityService = null;
 
     @Override
-    public void init(FilterConfig filterConfig) {
+    public void init(ServletConfig config) {
+        gson = GsonConfig.createGson();
         try {
-            userCookieService = new UserCookieServiceImpl();
-            gson = new Gson();
+            userEntityService = new UserEntityServiceImpl();
         } catch (SQLException e) {
-            logger.error("Exception", e);
+            throw new RuntimeException(e);
         }
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        String userName = httpServletRequest.getParameter("userName");
+        String userPassword = httpServletRequest.getParameter("userPassword");
+        String email = httpServletRequest.getParameter("email");
         String jsonResponse = null;
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-        String cookieValue = CookieHandler.getCookieValueByCookieName("my_auth_cookie", httpServletRequest);
-        UserEntity userEntity = null;
-        HttpSession session = httpServletRequest.getSession(true);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUsername(userName);
+        userEntity.setPassword(userPassword);
+        userEntity.setEmail(email);
         try {
-            userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
-            if (cookieValue != null && userEntity != null) {
-                session.setAttribute("my_user", userEntity);
-                logger.info("Authentication Successfully before proceeding chain.doFilter()");
-                chain.doFilter(request, response);
-                logger.info("After chain.doFilter(), Code for Post Processing");
-            } else {
-                logger.error("Exception Occurred while Authenticating ");
-                ErrorResponse errorResponse = new ErrorResponse("Exception Occurred and Authentication Failed", HttpServletResponse.SC_UNAUTHORIZED);
+            UserEntity addUserEntity = userEntityService.addUserEntity(userEntity);
+            if (addUserEntity == null) {
+                ErrorResponse errorResponse = new ErrorResponse("Error While Adding the User", HttpServletResponse.SC_CONFLICT);
                 jsonResponse = gson.toJson(errorResponse);
+                sendResponse(httpServletResponse, jsonResponse);
             }
-        } catch (ServerUnavilableException | ServletException | IOException e) {
-            ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);
+            httpServletResponse.setStatus(201);
+            httpServletResponse.sendRedirect("Login.html");
+        } catch (ServerUnavilableException | IOException e) {
+            ErrorResponse errorResponse = new ErrorResponse("Could not add user",HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             jsonResponse = gson.toJson(errorResponse);
         } finally {
             sendResponse(httpServletResponse, jsonResponse);
