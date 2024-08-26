@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Success</title>
+    <script>
+        // Show the account creation success message
+        window.onload = function() {
+            alert("You have successfully created a new account. Please log in with your new credentials.");
+            // Redirect to the login page after showing the popup
+            window.location.href = "Login.html";
+        };
+    </script>
+</head>
+<body>
+<noscript>
+    <!-- Fallback for users with JavaScript disabled -->
+    <p>You have successfully created a new account.</p>
+    <p><a href="Login.html">Click here to login with your new credentials.</a></p>
+</noscript>
+</body>
+</html>

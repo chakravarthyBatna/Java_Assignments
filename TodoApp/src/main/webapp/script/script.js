@@ -147,7 +147,7 @@ function showCompletedTasks(tasks) {
     completedListContainer.innerHTML = ''; // Clear any existing content
     const listItems = buildHtmlForEachCompletedTask(tasks);
     listItems.forEach(item => completedListContainer.appendChild(item));
-      initializeSortable();  // Drag and drop
+        initializeSortable();  // Drag and drop
         initializeEllipsisMenu();  // Ellipsis menu (three dots)
         initializeEditDeleteEvents(); // Edit and delete buttons
         initializeDetailsEvent();

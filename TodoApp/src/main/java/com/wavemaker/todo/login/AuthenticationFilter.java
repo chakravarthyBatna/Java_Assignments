@@ -50,9 +50,11 @@ public class AuthenticationFilter implements Filter {
                 chain.doFilter(request, response);
                 logger.info("After chain.doFilter(), Code for Post Processing");
             } else {
-                logger.error("Exception Occurred while Authenticating ");
-                ErrorResponse errorResponse = new ErrorResponse("Exception Occurred and Authentication Failed", HttpServletResponse.SC_UNAUTHORIZED);
-                jsonResponse = gson.toJson(errorResponse);
+//                logger.error("Exception Occurred while Authenticating ");
+//                ErrorResponse errorResponse = new ErrorResponse("Exception Occurred and Authentication Failed", HttpServletResponse.SC_UNAUTHORIZED);
+//                jsonResponse = gson.toJson(errorResponse);
+                logger.error("Authentication failed, redirecting to login page.");
+                httpServletResponse.sendRedirect("Login.html");
             }
         } catch (ServerUnavilableException | ServletException | IOException e) {
             ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 500);

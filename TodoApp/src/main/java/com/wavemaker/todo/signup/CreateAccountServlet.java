@@ -1,7 +1,6 @@
 package com.wavemaker.todo.signup;
 
 import com.google.gson.Gson;
-import com.google.protobuf.ServiceException;
 import com.wavemaker.todo.config.GsonConfig;
 import com.wavemaker.todo.exception.ErrorResponse;
 import com.wavemaker.todo.exception.ServerUnavilableException;
@@ -19,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+
 @WebServlet("/signup")
 public class CreateAccountServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(CreateAccountServlet.class);
@@ -53,9 +53,9 @@ public class CreateAccountServlet extends HttpServlet {
                 sendResponse(httpServletResponse, jsonResponse);
             }
             httpServletResponse.setStatus(201);
-            httpServletResponse.sendRedirect("Login.html");
+            httpServletResponse.sendRedirect("signup-success.html");
         } catch (ServerUnavilableException | IOException e) {
-            ErrorResponse errorResponse = new ErrorResponse("Could not add user",HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            ErrorResponse errorResponse = new ErrorResponse("Could not add user", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             jsonResponse = gson.toJson(errorResponse);
         } finally {
             sendResponse(httpServletResponse, jsonResponse);

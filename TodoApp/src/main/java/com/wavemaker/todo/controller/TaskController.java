@@ -112,7 +112,6 @@ public class TaskController extends HttpServlet {
         int userId = -1;
         Task addedTask = null;
         BufferedReader bufferedReader = null;
-
         logger.info("Received POST request with parameters: taskId={}, markAsCompleted={}", taskId, markAsCompleted);
 
         try {

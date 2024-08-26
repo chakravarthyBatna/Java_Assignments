@@ -30,8 +30,7 @@ public class LogoutServlet extends HttpServlet {
             httpServletResponse.addCookie(cookie);
 
             // Redirect to login page or home page after logout
-            httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/login");
-
+            httpServletResponse.sendRedirect("logout-success.html");
         } catch (Exception e) {
             logger.error("Error invalidating user session", e);
             httpServletResponse.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal Server Error");

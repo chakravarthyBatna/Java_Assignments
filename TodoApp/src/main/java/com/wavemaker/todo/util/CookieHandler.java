@@ -21,7 +21,7 @@ public class CookieHandler {
                 if (cookie.getName().equals(cookieName)) {
                     cookie.setMaxAge(0);
                     cookie.setValue(null);
-                    cookie.setPath("/");
+                    cookie.setPath(request.getContextPath());
                     cookie.setMaxAge(0);
                     return cookie;
                 }
