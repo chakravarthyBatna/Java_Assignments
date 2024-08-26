@@ -121,24 +121,27 @@ function showAllTasks() {
     }
 
     // Fetch tasks from the server
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(errorData => {
-                    throw new Error(errorData.message || 'Network response was not ok');
-                });
-            }
-            return response.json(); // Parse JSON from the response
-        })
-        .then(tasks => {
-            // Assuming tasks is an array of task objects
-            showPendingTasks(tasks.filter(task => !task.completed));
-            showCompletedTasks(tasks.filter(task => task.completed));
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-            alert('Error fetching tasks: ' + error.message);
-        });
+   fetch(url)
+          .then(response => {
+              if (!response.ok) {
+                  return response.json().then(errorData => {
+                      if (response.status === 401) {
+                          alert('You have been logged out. Please log in again.');
+                          window.location.href = 'Login.html';
+                      }
+                      throw new Error(errorData.message || 'Network response was not ok');
+                  });
+              }
+              return response.json(); // Parse JSON from the response
+          })
+          .then(tasks => {
+              showPendingTasks(tasks.filter(task => !task.completed));
+              showCompletedTasks(tasks.filter(task => task.completed));
+          })
+          .catch(error => {
+              console.error('There was a problem with the fetch operation:', error);
+              alert('Error fetching tasks: ' + error.message);
+          });
 }
 
 

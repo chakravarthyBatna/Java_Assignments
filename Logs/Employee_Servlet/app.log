@@ -1772,3 +1772,26 @@ java.lang.NullPointerException: Cannot invoke "com.wavemaker.todo.pojo.UserEntit
 2024-08-26 20:17:44 [http-nio-8080-exec-6] INFO  com.wavemaker.todo.logout.LogoutServlet - User session invalidated successfully
 2024-08-26 20:22:40 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.signup.CreateAccountServlet - Preparing response to send back to client
 2024-08-26 20:22:40 [http-nio-8080-exec-2] INFO  com.wavemaker.todo.signup.CreateAccountServlet - Response successfully sent back to client
+2024-08-26 20:31:58 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Login Request Received
+2024-08-26 20:31:58 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet -  UserName : chakri
+2024-08-26 20:31:58 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - user cookie added successfully username : chakri and cookie : 5db82f8c-6b5e-4940-96c6-f15bb3f1cb59
+2024-08-26 20:31:58 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@6c535587
+2024-08-26 20:31:58 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Preparing response to send back to client
+2024-08-26 20:31:58 [http-nio-8080-exec-3] INFO  com.wavemaker.todo.login.LoginServlet - Response successfully sent back to client
+2024-08-26 20:31:58 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-08-26 20:31:58 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Received GET request with parameters: taskId=null, searchTerm=null, priority=null, sortBy=null, sortOrder=null
+2024-08-26 20:31:58 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Session retrieved: sessionId=FBEDF1F8E6F759856528959983A6448C
+2024-08-26 20:31:58 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Fetching all tasks for user ID: 1
+2024-08-26 20:31:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Preparing response to send back to client
+2024-08-26 20:31:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response successfully sent back to client
+2024-08-26 20:31:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.controller.TaskController - Response sent with status: 200
+2024-08-26 20:31:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-08-26 20:31:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-26 20:31:59 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-26 20:32:04 [http-nio-8080-exec-7] INFO  com.wavemaker.todo.logout.LogoutServlet - User session invalidated successfully
+2024-08-26 20:32:11 [http-nio-8080-exec-4] ERROR com.wavemaker.todo.login.AuthenticationFilter - Authentication failed, redirecting to login page.
+2024-08-26 20:32:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-26 20:32:11 [http-nio-8080-exec-4] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
+2024-08-26 20:32:42 [http-nio-8080-exec-5] ERROR com.wavemaker.todo.login.AuthenticationFilter - Authentication failed, redirecting to login page.
+2024-08-26 20:32:42 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Preparing response to send back to client
+2024-08-26 20:32:42 [http-nio-8080-exec-5] INFO  com.wavemaker.todo.login.AuthenticationFilter - Response successfully sent back to client
