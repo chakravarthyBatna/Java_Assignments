@@ -60,9 +60,9 @@ public class LoginServlet extends HttpServlet {
                 logger.info("User Cookie added Successfully to browser : {}", cookie);
                 response.sendRedirect("index.html");
             } else {
-                errorResponse = new ErrorResponse("Invalid UserName and Password", 401);
-                jsonResponse = gson.toJson(errorResponse);
-                logger.error("Invalid User Found : Username : {} and User Password : {}", authenticatedUser.getUsername(), authenticatedUser);
+                request.setAttribute("errorMessage", "Invalid Username or Password");
+                request.getRequestDispatcher("Login.html").forward(request, response);
+                logger.error("Invalid User Found: Username: {} and User Password: {}", username, password);
             }
         } catch (Exception e) {
             errorResponse = new ErrorResponse("Error - While logging : " + e.getMessage(), 500);

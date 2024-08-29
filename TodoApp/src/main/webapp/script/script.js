@@ -129,7 +129,7 @@ function showAllTasks() {
                           alert('You have been logged out. Please log in again.');
                           window.location.href = 'Login.html';
                       }
-                      throw new Error(errorData.message || 'Network response was not ok');
+//                      throw new Error(errorData.message || 'Network response was not ok');
                   });
               }
               return response.json(); // Parse JSON from the response
@@ -140,7 +140,7 @@ function showAllTasks() {
           })
           .catch(error => {
               console.error('There was a problem with the fetch operation:', error);
-              alert('Error fetching tasks: ' + error.message);
+//              alert('Error fetching tasks: ' + error.message);
           });
 }
 

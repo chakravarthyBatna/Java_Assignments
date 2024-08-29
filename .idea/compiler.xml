@@ -11,6 +11,7 @@
         <module name="Vehicle_Assignment" />
         <module name="WavemakerTraining" />
         <module name="Employee_Assignment_Servlet" />
+        <module name="Employee_Leave_Management_System" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

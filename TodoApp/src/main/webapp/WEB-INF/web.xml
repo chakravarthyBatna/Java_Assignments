@@ -6,7 +6,7 @@
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.wavemaker.todo.login.LoginServlet</servlet-class>
+        <servlet-class>com.wavemaker.login.com.wavemaker.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

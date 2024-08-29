@@ -1,0 +1,5 @@
+2024-08-27 10:55:07 [http-nio-8080-exec-8] INFO  com.wavemaker.login.com.wavemaker.LoginServlet - Login Request Received
+2024-08-27 10:55:07 [http-nio-8080-exec-8] INFO  com.wavemaker.login.com.wavemaker.LoginServlet -  UserName : sg
+2024-08-27 10:55:08 [http-nio-8080-exec-8] ERROR com.wavemaker.login.com.wavemaker.LoginServlet - Invalid User Found: Username: sg and User Password: aseg
+2024-08-27 10:55:08 [http-nio-8080-exec-8] INFO  com.wavemaker.login.com.wavemaker.LoginServlet - Preparing response to send back to client
+2024-08-27 10:55:08 [http-nio-8080-exec-8] INFO  com.wavemaker.login.com.wavemaker.LoginServlet - Response successfully sent back to client

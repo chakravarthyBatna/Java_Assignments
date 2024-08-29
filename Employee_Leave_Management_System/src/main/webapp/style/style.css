@@ -1,0 +1,172 @@
+body {
+    background-color: #caddeb;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color: #abc9e8;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.profile-section {
+    margin-left: -15px;
+    margin-top: -22px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.profile-section-info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.info-profile-pic {
+    width: 80px;
+    height: 80px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-right: 5px;
+    /* Space between profile picture and name */
+}
+
+.info-profile-name {
+    font-size: 1.5rem;
+    margin-left: 5px;
+    /* Optional: adjust if needed */
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+.details-card {
+    padding: 20px;
+
+    border-radius: 8px;
+
+    margin-top: 20px;
+    /* Ensure there's no unwanted space at the top */
+}
+
+.details-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.details-card .profile-pic {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+}
+
+.details-card .row {
+    margin-bottom: 15px;
+}
+
+.list-group-item:hover {
+    background-color: #9ec2e6;
+    /* Slightly darker color on hover */
+    color: #000;
+    /* Text color on hover */
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    /* Active item background color */
+    color: #fff;
+    /* Active item text color */
+}
+
+.sidebar .list-group-item {
+    font-size: 19px;
+    background-color: #abc9e8;
+    /* Sidebar background color */
+    color: #000;
+    /* Text color */
+    border: none;
+    /* Remove default border */
+}
+
+.sidebar .list-group-item:hover {
+    background-color: #9ec2e6;
+    /* Slightly darker color on hover */
+    color: #000;
+    /* Text color on hover */
+}
+
+.sidebar .list-group-item.active {
+    background-color: #007bff;
+    /* Active item background color */
+    color: #fff;
+    /* Active item text color */
+}
+
+.logout-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.logout-button {
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+    text-align: center;
+    border-radius: 0;
+}
+
+/* Ensure the logout button stays at the bottom */
+.sidebar .logout-btn {
+    margin-top: 419px;
+    width: 100%;
+    /* Full width of the sidebar */
+    border-radius: 0;
+    /* Remove rounded corners if desired */
+}
+
+/* Optionally, you can add additional styles for the button if needed */
+.logout-btn {
+    background-color: #dc3545;
+    /* Red background */
+    border-color: #dc3545;
+    /* Red border */
+    color: white;
+    /* White text */
+}
+.apply-btn {
+    margin-right: 27px;
+    width: 183px;
+}
+
+.reject-btn{
+margin-right: 8px;
+}
