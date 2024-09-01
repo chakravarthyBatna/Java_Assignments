@@ -3,6 +3,7 @@ package com.wavemaker.employee.pojo.dto;
 import com.wavemaker.employee.constants.LeaveRequestStatus;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class LeaveRequestVO {
     private int leaveRequestId;
@@ -14,6 +15,7 @@ public class LeaveRequestVO {
     private Date fromDate;
     private Date toDate;
     private Date dateOfApplication;
+    private int totalNoOfDays;
     private LeaveRequestStatus leaveRequestStatus;
     private Date dateOfApproved;
 
@@ -77,6 +79,10 @@ public class LeaveRequestVO {
         return dateOfApplication;
     }
 
+    public void setDateOfApplication(Date dateOfApplication) {
+        this.dateOfApplication = dateOfApplication;
+    }
+
     public String getLeaveType() {
         return leaveType;
     }
@@ -93,8 +99,12 @@ public class LeaveRequestVO {
         this.leaveRequestStatus = leaveRequestStatus;
     }
 
-    public void setDateOfApplication(Date dateOfApplication) {
-        this.dateOfApplication = dateOfApplication;
+    public int getTotalNoOfDays() {
+        return totalNoOfDays;
+    }
+
+    public void setTotalNoOfDays(int totalNoOfDays) {
+        this.totalNoOfDays = totalNoOfDays;
     }
 
     public LeaveRequestStatus getLeaveStatus() {
@@ -111,5 +121,36 @@ public class LeaveRequestVO {
 
     public void setDateOfApproved(Date dateOfApproved) {
         this.dateOfApproved = dateOfApproved;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        LeaveRequestVO that = (LeaveRequestVO) object;
+        return leaveRequestId == that.leaveRequestId && empId == that.empId && leaveTypeId == that.leaveTypeId && Objects.equals(empName, that.empName) && Objects.equals(leaveType, that.leaveType) && Objects.equals(leaveReason, that.leaveReason) && Objects.equals(fromDate, that.fromDate) && Objects.equals(toDate, that.toDate) && Objects.equals(dateOfApplication, that.dateOfApplication) && leaveRequestStatus == that.leaveRequestStatus && Objects.equals(dateOfApproved, that.dateOfApproved);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(leaveRequestId, empId, empName, leaveTypeId, leaveType, leaveReason, fromDate, toDate, dateOfApplication, leaveRequestStatus, dateOfApproved);
+    }
+
+    @Override
+    public String toString() {
+        return "LeaveRequestVO{" +
+                "leaveRequestId=" + leaveRequestId +
+                ", empId=" + empId +
+                ", empName='" + empName + '\'' +
+                ", leaveTypeId=" + leaveTypeId +
+                ", leaveType='" + leaveType + '\'' +
+                ", leaveReason='" + leaveReason + '\'' +
+                ", fromDate=" + fromDate +
+                ", toDate=" + toDate +
+                ", dateOfApplication=" + dateOfApplication +
+                ", totalNoOfDays=" + totalNoOfDays +
+                ", leaveRequestStatus=" + leaveRequestStatus +
+                ", dateOfApproved=" + dateOfApproved +
+                '}';
     }
 }

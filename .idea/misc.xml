@@ -4,20 +4,10 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Calculator_NumberGuessingGame/pom.xml" />
-        <option value="$PROJECT_DIR$/Vehicle_Assignment/pom.xml" />
-        <option value="$PROJECT_DIR$/EmployeeAssigment/pom.xml" />
-        <option value="$PROJECT_DIR$/TaskApplication/pom.xml" />
-        <option value="$PROJECT_DIR$/Employee_Assignment_Servlet/pom.xml" />
         <option value="$PROJECT_DIR$/TodoApp/pom.xml" />
+        <option value="$PROJECT_DIR$/Vehicle_Assignment/pom.xml" />
         <option value="$PROJECT_DIR$/Employee_Leave_Management_System/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/TaskApplication/pom.xml" />
-        <option value="$PROJECT_DIR$/TodoApp/Employee_Leave_Management_System/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">

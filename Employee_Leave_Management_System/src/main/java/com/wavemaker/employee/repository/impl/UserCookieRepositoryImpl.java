@@ -11,9 +11,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserCookieRepositoryImpl implements UserCookieRepository {
-    private static Connection connection;
     private static final String GET_EMPLOYEE_ID = "SELECT EMP_ID FROM EMPLOYEE_COOKIES WHERE COOKIE_VALUE = ?";
+
     private static final String INSERT_COOKIE_SQL = "INSERT INTO EMPLOYEE_COOKIES (COOKIE_NAME, COOKIE_VALUE, EMP_ID) VALUES (?, ?, ?)";
+
+    private static final String DELETE_USER_COOKIE = "DELETE FROM EMPLOYEE_COOKIES WHERE COOKIE_VALUE = ?";
+
+    private static Connection connection;
 
     public UserCookieRepositoryImpl() throws SQLException {
         connection = DBConnector.getConnectionInstance();
@@ -51,6 +55,17 @@ public class UserCookieRepositoryImpl implements UserCookieRepository {
             throw new ServerUnavilableException("Failed to retrieve user ID by cookie value.", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
         return -1;
+    }
+
+    @Override
+    public boolean deleteUserCookie(String cookieValue) throws ServerUnavilableException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER_COOKIE)) {
+            preparedStatement.setString(1, cookieValue);
+            int affectedRows = preparedStatement.executeUpdate();
+            return affectedRows > 0;
+        } catch (SQLException e) {
+            throw new ServerUnavilableException("Failed to delete user cookie.", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }
     }
 
 }

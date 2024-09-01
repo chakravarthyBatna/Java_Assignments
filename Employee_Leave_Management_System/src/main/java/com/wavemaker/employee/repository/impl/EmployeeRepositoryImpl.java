@@ -13,8 +13,6 @@ import java.util.List;
 
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-    private Connection connection = null;
-
     private static final String SELECT_EMPLOYEE_AND_MANAGER_QUERY =
             "SELECT e.EMP_ID, e.NAME, e.DOB, e.PHONE_NUMBER, e.EMAIL, e.MANAGER_ID, " +
                     "       e.GENDER, e.ROLE, " +
@@ -22,23 +20,19 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                     "FROM EMPLOYEE e " +
                     "LEFT JOIN EMPLOYEE m ON e.MANAGER_ID = m.EMP_ID " +
                     "WHERE e.EMP_ID = ?";
-
     private static final String ADD_EMPLOYEE_QUERY =
             "INSERT INTO EMPLOYEE (MANAGER_ID, NAME, DOB, PHONE_NUMBER, EMAIL) VALUES (?, ?, ?, ?, ?)";
-
     private static final String UPDATE_EMPLOYEE_QUERY =
             "UPDATE EMPLOYEE SET MANAGER_ID = ?, NAME = ?, DOB = ?, PHONE_NUMBER = ?, EMAIL = ? WHERE EMP_ID = ?";
-
     private static final String DELETE_EMPLOYEE_QUERY =
             "DELETE FROM EMPLOYEE WHERE EMP_ID = ?";
-
     private static final String GET_ALL_EMPLOYEES_QUERY =
             "SELECT EMP_ID, MANAGER_ID, NAME, DOB, PHONE_NUMBER, EMAIL FROM EMPLOYEE";
-
     private static final String GET_ALL_MANAGERS_QUERY =
             "SELECT DISTINCT e2.EMP_ID, e2.MANAGER_ID, e2.NAME, e2.DOB, e2.PHONE_NUMBER, e2.EMAIL " +
                     "FROM EMPLOYEE e1 " +
                     "JOIN EMPLOYEE e2 ON e1.MANAGER_ID = e2.EMP_ID";
+    private Connection connection = null;
 
     public EmployeeRepositoryImpl() throws SQLException {
         connection = DBConnector.getConnectionInstance();
@@ -69,7 +63,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 }
             }
         } catch (SQLException e) {
-           throw new ServerUnavilableException("Unable to get the Employee details", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            throw new ServerUnavilableException("Unable to get the Employee details", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 
         return employee;

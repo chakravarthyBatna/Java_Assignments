@@ -1,6 +1,7 @@
 package com.wavemaker.employee.pojo;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Employee {
     private int empId;
@@ -11,6 +12,7 @@ public class Employee {
     private String email;
     private String gender;
     private String role;
+
     public int getEmpId() {
         return empId;
     }
@@ -73,5 +75,32 @@ public class Employee {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Employee employee = (Employee) object;
+        return empId == employee.empId && managerId == employee.managerId && phoneNumber == employee.phoneNumber && Objects.equals(empName, employee.empName) && Objects.equals(empDateOfBirth, employee.empDateOfBirth) && Objects.equals(email, employee.email) && Objects.equals(gender, employee.gender) && Objects.equals(role, employee.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empId, managerId, empName, empDateOfBirth, phoneNumber, email, gender, role);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", managerId=" + managerId +
+                ", empName='" + empName + '\'' +
+                ", empDateOfBirth=" + empDateOfBirth +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }

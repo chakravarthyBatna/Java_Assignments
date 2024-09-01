@@ -19,9 +19,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebFilter("/employees/leave")
-public class MyLeavesServletAuthenticationFilter implements Filter {
-    private static final Logger logger = LoggerFactory.getLogger(MyLeavesServletAuthenticationFilter.class);
+@WebFilter("/employee/*")
+public class AuthenticationFilter implements Filter {
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationFilter.class);
     private static UserCookieService userCookieService;
     private static Gson gson = null;
 

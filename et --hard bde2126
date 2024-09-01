@@ -1,0 +1,29 @@
+[33m20c885d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: Branch: renamed refs/heads/main to refs/heads/main
+[33m20c885d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{2}: commit: first commit
+[33me9df764[m HEAD@{3}: commit: written Employee_Leave_Management_Servlet
+[33m79f41e0[m HEAD@{4}: commit: now if user access index.html homepage without login then he'll redirect to login page
+[33m2b96484[m HEAD@{5}: commit: added a pop up window feature when user created a account or logout then he will get a pop up message
+[33m2a30978[m HEAD@{6}: commit: added signup page
+[33mf75faf3[m HEAD@{7}: commit: removed unwanted methods in taskService and repository and made only one method getAllTasks which includes all the required parameters
+[33md930141[m HEAD@{8}: commit: implemented sortByDueDate and SortByPriority in both asc and desc
+[33md1332da[m HEAD@{9}: commit: implemented task deletion and task update and handled the exceptions
+[33m692320d[m HEAD@{10}: commit: implemented getAllTasks() and addTask()
+[33m6afa11a[m HEAD@{11}: commit: written ToDoApp and login form, and specific users have specific tasks
+[33m8348adf[m HEAD@{12}: commit: implemented the Employee_Assignment_Servlet , written all the doGet,doPut,doDelete,doPost methods in both EmployeeServlet and AddressServlet
+[33m11683e4[m HEAD@{13}: commit: now empId and addressId will auto generate at O(1) from 2nd time and implemented INDB employee and address repository
+[33m63e7a87[m HEAD@{14}: commit: modified the code now we don't need to enter empId while adding the employee for the first time, the empId will autogenerate and shown it to the user
+[33me701503[m HEAD@{15}: commit: handled exceptions, now program doesn't terminate if any exception occurs
+[33mcdaf7e7[m HEAD@{16}: commit: added options for address manuplulating
+[33m7f56712[m HEAD@{17}: commit: changed the code login, now address pojo have employee id (foreign key) and implemented InFile repository for both employee and address
+[33me1230d9[m HEAD@{18}: commit: written singleton pattern
+[33mc7d6052[m HEAD@{19}: commit: implemented addEmployee and isEmployeeExists methods in InFileRepository and also written some custom exceptions for those methods
+[33me1b13a7[m HEAD@{20}: commit: written EmployeeFactory class and handled excpetions
+[33mead9371[m HEAD@{21}: commit: implemented InMemoryRepository and all the CRUD Methods
+[33m4288526[m HEAD@{22}: commit: written service repository and main, written only souts
+[33m281efd8[m HEAD@{23}: commit: implemented ElectricBike and ElectricCar
+[33mcafdb60[m HEAD@{24}: commit: written vehicle interface and ElectricVehicle
+[33mb0f136a[m HEAD@{25}: commit: implemented bike and car
+[33m5304c02[m HEAD@{26}: commit: overrided the equals and hashcode in the emplyoee pojo
+[33m06e6139[m HEAD@{27}: commit: commit
+[33mbde2126[m HEAD@{28}: Branch: renamed refs/heads/master to refs/heads/main
+[33mbde2126[m HEAD@{30}: commit (initial): first commit

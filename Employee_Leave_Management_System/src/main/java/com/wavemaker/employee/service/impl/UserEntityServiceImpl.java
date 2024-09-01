@@ -2,9 +2,9 @@ package com.wavemaker.employee.service.impl;
 
 
 import com.wavemaker.employee.exception.ServerUnavilableException;
+import com.wavemaker.employee.factory.UserEntityRepositoryInstanceHandler;
 import com.wavemaker.employee.pojo.UserEntity;
 import com.wavemaker.employee.repository.UserEntityRepository;
-import com.wavemaker.employee.repository.impl.UserEntityRepositoryImpl;
 import com.wavemaker.employee.service.UserEntityService;
 
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ public class UserEntityServiceImpl implements UserEntityService {
     private static UserEntityRepository userEntityRepository = null;
 
     public UserEntityServiceImpl() throws SQLException {
-        userEntityRepository = new UserEntityRepositoryImpl();
+        userEntityRepository = UserEntityRepositoryInstanceHandler.getUserEntityRepositoryInstance();
     }
 
     @Override

@@ -5,11 +5,12 @@ import com.wavemaker.employee.repository.impl.MyLeaveRepositoryImpl;
 
 import java.sql.SQLException;
 
-public class EmployeeLeaveRepositoryInstanceHandler {
+public class MyLeaveRepositoryInstanceHandler {
     private static volatile MyLeaveRepository myLeaveRepository;
+
     public static MyLeaveRepository getEmployeeLeaveRepositoryInstance() throws SQLException {
         if (myLeaveRepository == null) {
-            synchronized (EmployeeLeaveRepositoryInstanceHandler.class) {
+            synchronized (MyLeaveRepositoryInstanceHandler.class) {
                 if (myLeaveRepository == null) {
                     myLeaveRepository = new MyLeaveRepositoryImpl();
                 }

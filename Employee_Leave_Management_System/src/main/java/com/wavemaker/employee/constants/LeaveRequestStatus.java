@@ -5,5 +5,6 @@ public enum LeaveRequestStatus {
     PENDING,
     REJECTED,
     CANCELLED,
+    ALL_EXCLUDE_PENDING,
     ALL
 }

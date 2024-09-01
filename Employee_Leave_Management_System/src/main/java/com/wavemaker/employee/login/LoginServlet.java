@@ -3,14 +3,15 @@ package com.wavemaker.employee.login;
 import com.google.gson.Gson;
 import com.wavemaker.employee.exception.ErrorResponse;
 import com.wavemaker.employee.exception.ServerUnavilableException;
-import com.wavemaker.employee.pojo.dto.EmployeeVO;
 import com.wavemaker.employee.pojo.UserEntity;
+import com.wavemaker.employee.pojo.dto.EmployeeVO;
 import com.wavemaker.employee.service.EmployeeService;
 import com.wavemaker.employee.service.UserCookieService;
 import com.wavemaker.employee.service.UserEntityService;
 import com.wavemaker.employee.service.impl.EmployeeServiceImpl;
 import com.wavemaker.employee.service.impl.UserCookieServiceImpl;
 import com.wavemaker.employee.service.impl.UserEntityServiceImpl;
+import com.wavemaker.employee.util.ClientResponseHandler;
 import com.wavemaker.employee.util.CookieHandler;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -26,13 +27,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.UUID;
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(LoginServlet.class);
     private static UserEntityService userEntityService = null;
-    private EmployeeService employeeService = null;
     private static Gson gson = null;
     private static UserCookieService userCookieService = null;
+    private EmployeeService employeeService = null;
 
     @Override
     public void init(ServletConfig config) {
@@ -73,7 +75,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("index.html");
             } else {
                 request.setAttribute("errorMessage", "Invalid Username or Password");
-                request.getRequestDispatcher("Login.html").forward(request, response);
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
                 logger.error("Invalid User Found: Username: {} and User Password: {}", email, password);
             }
         } catch (Exception e) {
@@ -81,13 +83,13 @@ public class LoginServlet extends HttpServlet {
             jsonResponse = gson.toJson(errorResponse);
             logger.error("Error Occurred while trying to Login ", e);
         } finally {
-            sendResponse(response, jsonResponse);
+            ClientResponseHandler.sendResponseToClient(response,jsonResponse,logger);
         }
 
     }
 
     @Override
-    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse response) throws ServletException, IOException {
         ErrorResponse errorResponse = null;
         EmployeeVO employeeVO = null;
         String jsonResponse = null;
@@ -95,6 +97,11 @@ public class LoginServlet extends HttpServlet {
         UserEntity userEntity = null;
         try {
             userEntity = userCookieService.getUserEntityByCookieValue(cookieValue);
+            if (userEntity == null) {
+                errorResponse = new ErrorResponse("Invalid User Found",HttpServletResponse.SC_UNAUTHORIZED);
+                jsonResponse = gson.toJson(errorResponse);
+                ClientResponseHandler.sendResponseToClient(response,jsonResponse,logger);
+            }
             employeeVO = employeeService.getEmployeeById(userEntity.getEmpId());
             jsonResponse = gson.toJson(employeeVO);
 
@@ -103,35 +110,8 @@ public class LoginServlet extends HttpServlet {
             jsonResponse = gson.toJson(errorResponse);
             logger.error("Error Occurred while trying to get User from cookie", e);
         } finally {
-            sendResponse(httpServletResponse, jsonResponse);
+            ClientResponseHandler.sendResponseToClient(response,jsonResponse,logger);
         }
     }
 
-    private void sendResponse(HttpServletResponse httpServletResponse, String jsonResponse) {
-        PrintWriter printWriter = null;
-        try {
-            logger.info("Preparing response to send back to client");
-            httpServletResponse.setContentType("application/json");
-            httpServletResponse.setCharacterEncoding("UTF-8");
-            printWriter = httpServletResponse.getWriter();
-            printWriter.print(jsonResponse);
-            printWriter.flush();
-            logger.info("Response successfully sent back to client");
-        } catch (IOException e) {
-            logger.error("Error writing response back to client", e);
-            ErrorResponse errorResponse = new ErrorResponse("Internal server error", 500);
-            jsonResponse = gson.toJson(errorResponse);
-            httpServletResponse.setStatus(500);
-            printWriter.print(jsonResponse);
-            printWriter.flush();
-        } finally {
-            closePrintWriter(printWriter);
-        }
-    }
-
-    private void closePrintWriter(PrintWriter printWriter) {
-        if (printWriter != null) {
-            printWriter.close();
-        }
-    }
 }

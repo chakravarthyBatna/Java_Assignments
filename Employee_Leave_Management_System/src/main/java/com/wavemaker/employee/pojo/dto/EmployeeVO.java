@@ -1,6 +1,7 @@
 package com.wavemaker.employee.pojo.dto;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class EmployeeVO {
     private int empId;
@@ -14,6 +15,7 @@ public class EmployeeVO {
     private String email;
     private String gender;
     private String role;
+
     public int getEmpId() {
         return empId;
     }
@@ -100,5 +102,35 @@ public class EmployeeVO {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        EmployeeVO that = (EmployeeVO) object;
+        return empId == that.empId && managerId == that.managerId && phoneNumber == that.phoneNumber && Objects.equals(managerName, that.managerName) && Objects.equals(managerPhoneNumber, that.managerPhoneNumber) && Objects.equals(managerEmailId, that.managerEmailId) && Objects.equals(empName, that.empName) && Objects.equals(empDateOfBirth, that.empDateOfBirth) && Objects.equals(email, that.email) && Objects.equals(gender, that.gender) && Objects.equals(role, that.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empId, managerId, managerName, managerPhoneNumber, managerEmailId, empName, empDateOfBirth, phoneNumber, email, gender, role);
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeVO{" +
+                "empId=" + empId +
+                ", managerId=" + managerId +
+                ", managerName='" + managerName + '\'' +
+                ", managerPhoneNumber='" + managerPhoneNumber + '\'' +
+                ", managerEmailId='" + managerEmailId + '\'' +
+                ", empName='" + empName + '\'' +
+                ", empDateOfBirth=" + empDateOfBirth +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }

@@ -11,8 +11,8 @@ import com.wavemaker.employee.service.UserEntityService;
 import java.sql.SQLException;
 
 public class UserCookieServiceImpl implements UserCookieService {
-    private UserCookieRepository userCookieRepository;
     private static UserEntityService userEntityService;
+    private UserCookieRepository userCookieRepository;
 
     public UserCookieServiceImpl() throws SQLException {
         userCookieRepository = UserCookieRepositoryInstanceHandler.getUserCookieRepositoryInstance();
@@ -31,5 +31,10 @@ public class UserCookieServiceImpl implements UserCookieService {
             return userEntityService.getUserEntityById(userId);
         }
         return null;
+    }
+
+    @Override
+    public boolean deleteUserCookie(String cookieValue) throws ServerUnavilableException {
+        return userCookieRepository.deleteUserCookie(cookieValue);
     }
 }

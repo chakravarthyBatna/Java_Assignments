@@ -1,188 +1,107 @@
-2024-08-29 20:05:44 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:05:44 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:05:59 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:05:59 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:06:01 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:07:13 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:07:13 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:07:20 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 20:07:23 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:07:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 20:24:19 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:24:21 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 20:24:22 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 20:24:23 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
-2024-08-29 20:24:23 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 20:24:41 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:24:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:26:11 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:26:11 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:26:13 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:27:07 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:27:07 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:27:10 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 20:27:14 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 20:30:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:30:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:31:14 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:31:14 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:31:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:39:00 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:39:00 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:39:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:42:14 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:42:14 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:42:26 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:42:26 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:42:39 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 20:42:57 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 20:42:57 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=0E7E3BF23FFC7229FD83A94DA99C03E2
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 20:42:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 21:18:29 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 21:18:29 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=820413A23FF0C6A0116F3E08D6FD6789
-2024-08-29 21:18:30 [http-nio-8080-exec-1] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 4
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:73) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
+2024-09-02 03:10:16 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:10:16 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:10:16 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:10:16 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:10:18 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:10:20 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:10:20 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:10:20 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:10:20 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:10:34 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:10:34 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:10:59 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:10:59 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:11:03 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Fetching leave summary for employee ID: 2
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:12:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:12:46 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:12:53 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:12:55 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:12:58 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:04 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:11 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:13:11 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:13:11 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:13:11 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:13:23 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:23 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:30 [http-nio-8080-exec-8] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error processing Leave request for user ID: 20
+com.wavemaker.employee.exception.LeaveDaysExceededException: Total days exceed the maximum allowed for this leave type.
+	at com.wavemaker.employee.service.impl.MyLeaveServiceImpl.applyForLeave(MyLeaveServiceImpl.java:33) ~[classes/:?]
+	at com.wavemaker.employee.controller.MyLeavesServlet.doPost(MyLeavesServlet.java:92) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
+	at com.wavemaker.employee.login.AuthenticationFilter.doFilter(AuthenticationFilter.java:51) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
@@ -202,37 +121,212 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve l
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 21:18:30 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 21:18:30 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 21:18:30 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 21:18:30 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 21:18:30 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 21:18:30 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 21:18:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 21:18:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=820413A23FF0C6A0116F3E08D6FD6789
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 21:18:47 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=820413A23FF0C6A0116F3E08D6FD6789
-2024-08-29 21:18:51 [http-nio-8080-exec-10] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 4
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:73) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
+2024-09-02 03:13:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:30 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:47 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:49 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:52 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:54 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:55 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:56 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:58 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:13:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:00 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:01 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:02 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:04 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:05 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:06 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:07 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=C6DC68617784007252E33DA2E9BE8076
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:08 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:09 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:14:09 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:14:09 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:14:09 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Fetching leave summary for employee ID: 2
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:47 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:49 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Fetching leave summary for employee ID: 2
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:50 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:14:51 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:14:52 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:14:52 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:14:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:14:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:15:02 [http-nio-8080-exec-8] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error processing Leave request for user ID: 20
+com.wavemaker.employee.exception.LeaveDaysExceededException: Total days exceed the maximum allowed for this leave type.
+	at com.wavemaker.employee.service.impl.MyLeaveServiceImpl.applyForLeave(MyLeaveServiceImpl.java:33) ~[classes/:?]
+	at com.wavemaker.employee.controller.MyLeavesServlet.doPost(MyLeavesServlet.java:92) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
+	at com.wavemaker.employee.login.AuthenticationFilter.doFilter(AuthenticationFilter.java:51) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
@@ -252,53 +346,57 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve l
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 21:18:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:20:39 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Login Request Received
-2024-08-29 22:20:39 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet -  Email : chakri@gmail.com
-2024-08-29 22:20:39 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - user cookie added successfully email : chakri@gmail.com and cookie : 17ac65f4-19bc-4330-8261-84cf3e5884f0
-2024-08-29 22:20:39 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - User Cookie added Successfully to browser : jakarta.servlet.http.Cookie@34471c44
-2024-08-29 22:20:39 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 22:20:39 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 22:20:40 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 22:20:40 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=7EC612AFF831323C37BE1DC5DD0DFAA9
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Preparing response to send back to client
-2024-08-29 22:20:45 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyLeavesServletAuthenticationFilter - Response successfully sent back to client
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=7EC612AFF831323C37BE1DC5DD0DFAA9
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:20:51 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:20:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:20:57 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=7EC612AFF831323C37BE1DC5DD0DFAA9
-2024-08-29 22:20:58 [http-nio-8080-exec-1] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:73) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:15:02 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Fetching leave summary for employee ID: 2
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:18:59 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:04 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:19:04 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:19:04 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:19:04 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:13 [http-nio-8080-exec-6] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error processing Leave request for user ID: 20
+com.wavemaker.employee.exception.LeaveDaysExceededException: Total days exceed the maximum allowed for this leave type.
+	at com.wavemaker.employee.service.impl.MyLeaveServiceImpl.applyForLeave(MyLeaveServiceImpl.java:33) ~[classes/:?]
+	at com.wavemaker.employee.controller.MyLeavesServlet.doPost(MyLeavesServlet.java:92) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
+	at com.wavemaker.employee.login.AuthenticationFilter.doFilter(AuthenticationFilter.java:51) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
@@ -318,37 +416,36 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve l
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:20:58 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:20:58 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:20:58 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:20:58 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:20:58 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:20:58 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:21:07 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 22:21:07 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=7EC612AFF831323C37BE1DC5DD0DFAA9
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:21:08 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=7EC612AFF831323C37BE1DC5DD0DFAA9
-2024-08-29 22:21:13 [http-nio-8080-exec-9] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:73) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:13 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:23 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:19:23 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:19:23 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:19:23 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:30 [http-nio-8080-exec-10] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error processing Leave request for user ID: 20
+com.wavemaker.employee.exception.LeaveDaysExceededException: Total days exceed the maximum allowed for this leave type.
+	at com.wavemaker.employee.service.impl.MyLeaveServiceImpl.applyForLeave(MyLeaveServiceImpl.java:33) ~[classes/:?]
+	at com.wavemaker.employee.controller.MyLeavesServlet.doPost(MyLeavesServlet.java:92) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
+	at com.wavemaker.employee.login.AuthenticationFilter.doFilter(AuthenticationFilter.java:51) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
@@ -368,37 +465,36 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve l
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:21:13 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:22:38 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 22:22:38 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 22:22:40 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:22:40 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=876E331FD578D64433303BABEF47BEC6
-2024-08-29 22:23:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:23:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:23:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:23:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:23:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:23:01 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:23:09 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:23:09 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=876E331FD578D64433303BABEF47BEC6
-2024-08-29 22:28:04 [http-nio-8080-exec-7] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:73) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:30 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:52 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:19:52 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:19:52 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:19:52 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:59 [http-nio-8080-exec-6] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error processing Leave request for user ID: 20
+com.wavemaker.employee.exception.LeaveDaysExceededException: Total days exceed the maximum allowed for this leave type.
+	at com.wavemaker.employee.service.impl.MyLeaveServiceImpl.applyForLeave(MyLeaveServiceImpl.java:33) ~[classes/:?]
+	at com.wavemaker.employee.controller.MyLeavesServlet.doPost(MyLeavesServlet.java:92) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
+	at com.wavemaker.employee.login.AuthenticationFilter.doFilter(AuthenticationFilter.java:51) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
@@ -418,37 +514,79 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve l
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:28:04 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:28:04 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:28:04 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:28:04 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:28:04 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:28:04 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:28:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 22:28:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=BA2CB5CF0EF01707A71D7EBA9EA7D29D
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:28:30 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:28:33 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:28:33 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=BA2CB5CF0EF01707A71D7EBA9EA7D29D
-2024-08-29 22:28:34 [http-nio-8080-exec-7] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:71) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:19:59 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:20:16 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:20:16 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:20:16 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:20:16 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=9E04370CE9F3C99D04A7A0AB158B5B04
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:20:24 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-5] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Fetching leave summary for employee ID: 2
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Session retrieved: sessionId=70BF1CD24797921284F509C83FA22DA1
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Preparing response to send back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.EmployeeLeaveSummaryServlet - Response successfully sent back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:23:44 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=70BF1CD24797921284F509C83FA22DA1
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:23:45 [http-nio-8080-exec-8] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client
+2024-09-02 03:23:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
+2024-09-02 03:23:52 [http-nio-8080-exec-9] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
+2024-09-02 03:23:52 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Preparing response to send back to client
+2024-09-02 03:23:52 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.LeaveTypeServlet - Response successfully sent back to client
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Authentication Successfully before proceeding chain.doFilter()
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=70BF1CD24797921284F509C83FA22DA1
+2024-09-02 03:24:02 [http-nio-8080-exec-1] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error processing Leave request for user ID: 20
+com.wavemaker.employee.exception.LeaveDaysExceededException: Total days exceed the maximum allowed for this leave type.
+	at com.wavemaker.employee.service.impl.MyLeaveServiceImpl.applyForLeave(MyLeaveServiceImpl.java:33) ~[classes/:?]
+	at com.wavemaker.employee.controller.MyLeavesServlet.doPost(MyLeavesServlet.java:92) ~[classes/:?]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
+	at com.wavemaker.employee.login.AuthenticationFilter.doFilter(AuthenticationFilter.java:51) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
@@ -468,149 +606,8 @@ com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve l
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:28:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:28:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:28:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:28:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:28:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:28:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=BA2CB5CF0EF01707A71D7EBA9EA7D29D
-2024-08-29 22:32:38 [http-nio-8080-exec-10] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:71) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[catalina.jar:10.1.28]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-util.jar:10.1.28]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
-	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:32:38 [http-nio-8080-exec-10] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=BA2CB5CF0EF01707A71D7EBA9EA7D29D
-2024-08-29 22:32:46 [http-nio-8080-exec-3] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:71) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[catalina.jar:10.1.28]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-util.jar:10.1.28]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
-	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:32:46 [http-nio-8080-exec-3] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=BA2CB5CF0EF01707A71D7EBA9EA7D29D
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:32:51 [http-nio-8080-exec-2] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:34:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Preparing response to send back to client
-2024-08-29 22:34:28 [http-nio-8080-exec-4] INFO  com.wavemaker.employee.login.LoginServlet - Response successfully sent back to client
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=430756899C889D5612655E64656D1161
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl - final query : SELECT lr.LEAVE_REQUEST_ID, lr.EMP_ID, e.NAME, lr.LEAVE_TYPE_ID, lt.LEAVE_TYPE, lr.LEAVE_REASON, lr.FROM_DATE, lr.TO_DATE, lr.DATE_OF_APPLICATION, lr.LEAVE_STATUS, lr.DATE_OF_ACTION FROM LEAVE_REQUEST lr JOIN EMPLOYEE e ON lr.EMP_ID = e.EMP_ID JOIN LEAVE_TYPE lt ON lr.LEAVE_TYPE_ID = lt.LEAVE_TYPE_ID WHERE e.MANAGER_ID = ? ORDER BY CASE WHEN lr.LEAVE_STATUS = 'PENDING' THEN 1 ELSE 2 END, lr.FROM_DATE ASC
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:34:29 [http-nio-8080-exec-6] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
-2024-08-29 22:34:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Authentication Successfully before proceeding chain.doFilter()
-2024-08-29 22:34:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Session retrieved: sessionId=430756899C889D5612655E64656D1161
-2024-08-29 22:34:34 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl - final query : SELECT lr.LEAVE_REQUEST_ID, lr.EMP_ID, e.NAME, lr.LEAVE_TYPE_ID, lt.LEAVE_TYPE, lr.LEAVE_REASON, lr.FROM_DATE, lr.TO_DATE, lr.DATE_OF_APPLICATION, lr.LEAVE_STATUS, lr.DATE_OF_ACTION FROM LEAVE_REQUEST lr JOIN EMPLOYEE e ON lr.EMP_ID = e.EMP_ID JOIN LEAVE_TYPE lt ON lr.LEAVE_TYPE_ID = lt.LEAVE_TYPE_ID WHERE e.MANAGER_ID = ? ORDER BY CASE WHEN lr.LEAVE_STATUS = 'PENDING' THEN 1 ELSE 2 END, lr.FROM_DATE ASC AND lr.LEAVE_STATUS = ?
-2024-08-29 22:34:35 [http-nio-8080-exec-7] ERROR com.wavemaker.employee.controller.MyLeavesServlet - Error fetching Leave details for user ID: 19
-com.wavemaker.employee.exception.ServerUnavilableException: Unable to retrieve leave requests for team members.
-	at com.wavemaker.employee.repository.impl.MyTeamLeaveRepositoryImpl.getMyTeamLeaveRequests(MyTeamLeaveRepositoryImpl.java:75) ~[classes/:?]
-	at com.wavemaker.employee.service.impl.MyTeamLeaveServiceImpl.getMyTeamLeaveRequests(MyTeamLeaveServiceImpl.java:20) ~[classes/:?]
-	at com.wavemaker.employee.controller.MyTeamLeavesServlet.doGet(MyTeamLeavesServlet.java:56) ~[classes/:?]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[servlet-api.jar:6.0]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[servlet-api.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-websocket.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter.doFilter(MyTeamLeavesAuthenticateFilter.java:51) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[catalina.jar:10.1.28]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[catalina.jar:10.1.28]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-coyote.jar:10.1.28]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-util.jar:10.1.28]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-util.jar:10.1.28]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-util.jar:10.1.28]
-	at java.base/java.lang.Thread.run(Thread.java:1570) [?:?]
-2024-08-29 22:34:35 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
-2024-08-29 22:34:35 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
-2024-08-29 22:34:35 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response sent with status: 200
-2024-08-29 22:34:35 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - After chain.doFilter(), Code for Post Processing
-2024-08-29 22:34:35 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Preparing response to send back to client
-2024-08-29 22:34:35 [http-nio-8080-exec-7] INFO  com.wavemaker.employee.login.MyTeamLeavesAuthenticateFilter - Response successfully sent back to client
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Preparing response to send back to client
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.controller.MyLeavesServlet - Response successfully sent back to client
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - After chain.doFilter(), Code for Post Processing
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Preparing response to send back to client
+2024-09-02 03:24:02 [http-nio-8080-exec-1] INFO  com.wavemaker.employee.login.AuthenticationFilter - Response successfully sent back to client

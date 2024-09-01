@@ -3,6 +3,7 @@ package com.wavemaker.employee.pojo.dto;
 import com.wavemaker.employee.constants.LeaveRequestStatus;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class EmployeeLeaveRequestVO {
     private int leaveRequestId;
@@ -11,6 +12,7 @@ public class EmployeeLeaveRequestVO {
     private Date fromDate;
     private Date toDate;
     private Date dateOfApplication;
+    private int totalDays;
     private LeaveRequestStatus leaveRequestStatus;
     private Date dateOfApproved;
 
@@ -40,6 +42,14 @@ public class EmployeeLeaveRequestVO {
 
     public Date getFromDate() {
         return fromDate;
+    }
+
+    public int getTotalDays() {
+        return totalDays;
+    }
+
+    public void setTotalDays(int totalDays) {
+        this.totalDays = totalDays;
     }
 
     public void setFromDate(Date fromDate) {
@@ -76,5 +86,33 @@ public class EmployeeLeaveRequestVO {
 
     public void setDateOfApproved(Date dateOfApproved) {
         this.dateOfApproved = dateOfApproved;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        EmployeeLeaveRequestVO that = (EmployeeLeaveRequestVO) object;
+        return leaveRequestId == that.leaveRequestId && Objects.equals(leaveType, that.leaveType) && Objects.equals(leaveReason, that.leaveReason) && Objects.equals(fromDate, that.fromDate) && Objects.equals(toDate, that.toDate) && Objects.equals(dateOfApplication, that.dateOfApplication) && leaveRequestStatus == that.leaveRequestStatus && Objects.equals(dateOfApproved, that.dateOfApproved);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(leaveRequestId, leaveType, leaveReason, fromDate, toDate, dateOfApplication, leaveRequestStatus, dateOfApproved);
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeLeaveRequestVO{" +
+                "leaveRequestId=" + leaveRequestId +
+                ", leaveType='" + leaveType + '\'' +
+                ", leaveReason='" + leaveReason + '\'' +
+                ", fromDate=" + fromDate +
+                ", toDate=" + toDate +
+                ", dateOfApplication=" + dateOfApplication +
+                ", totalDays=" + totalDays +
+                ", leaveRequestStatus=" + leaveRequestStatus +
+                ", dateOfApproved=" + dateOfApproved +
+                '}';
     }
 }
